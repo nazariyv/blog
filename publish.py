@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-import os, sys
+import os
+import sys
 
 HEADER = """
 
@@ -73,7 +74,7 @@ def extract_metadata(fil, filename=None):
     if filename:
         assert filename[-3:] == '.md'
         metadata["filename"] = filename[:-3]+'.html'
-    while 1:
+    while True:
         line = fil.readline()
         if line and line[0] == '[' and ']' in line:
             key = line[1:line.find(']')]
@@ -121,21 +122,21 @@ if __name__ == '__main__':
     for file_location in sys.argv[1:]:
         filename = os.path.split(file_location)[1]
         print("Processing file: {}".format(filename))
-        
+
         # Extract path
         file_data = open(file_location).read()
         metadata = extract_metadata(open(file_location), filename)
         path = metadata_to_path(metadata)
         print("Path selected: {}".format(path))
-        
+
         # Make sure target directory exists
         truncated_path = os.path.split(path)[0]
         os.system('mkdir -p {}'.format(os.path.join('site', truncated_path)))
-        
+
         # Generate the html file
         out_location = os.path.join('site', path)
         options = metadata.get('pandoc', '')
-        
+
         os.system('pandoc -o /tmp/temp_output.html {} {}'.format(file_location, options))
         total_file_contents = (
             HEADER +
@@ -143,7 +144,7 @@ if __name__ == '__main__':
             defancify(open('/tmp/temp_output.html').read()) +
             FOOTER
         )
-    
+
         # Put it in the desired location
         open(out_location, 'w').write(total_file_contents)
 
