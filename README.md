@@ -1,7 +1,15 @@
-Vitalik's blog. Site at http://vitalik.eth.limo
+# Blog
 
-Please feel free to make pull requests to the posts in the [posts](./posts/) directory if you see any fixes that need to be made! (Or contribute translations etc)
+forked from [Vitalik Buterin's blog](https://github.com/vbuterin/blog)
 
-Blog posts, including the text and all images made by myself, are released freely to the world under the [WTFPL](http://www.wtfpl.net/).
+## Dev
 
-Credit to https://hackmd.io for CSS styles.
+To serve this blog locally, navigate to `site/` and run
+
+```bash
+python3 -m http.server
+```
+
+## Hosting
+
+I use fleek.xyz just like Vitalik
