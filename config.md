@@ -1,4 +1,4 @@
-[title]: <> (naz's blog)
+[title]: <> (nazariy's blog)
 [icon]: <> (http://nazariy.eth.limo/images/icon.png)
 [server]: <> (root@naz.ooo)
 [website_root]: <> (/var/www/html)

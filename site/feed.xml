@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 <rss version="2.0">
 <channel>
-  <title>naz's blog</title>
+  <title>nazariy's blog</title>
   <link>https://nazariy.eth.limo/</link>
-  <description>naz's blog</description>
+  <description>nazariy's blog</description>
   <image>
       <url>http://nazariy.eth.limo/images/icon.png</url>
-      <title>naz's blog</title>
+      <title>nazariy's blog</title>
       <link>https://nazariy.eth.limo/</link>
   </image>
 
