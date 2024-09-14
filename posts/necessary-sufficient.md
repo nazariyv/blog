@@ -7,5 +7,6 @@ Every so often I need to refresh my memory about the intuitive meaning of the "n
 
 Let's start with the definitions and focus on implication. We first define any two events: $P$ and $Q$.
 
-"P is a necessary condition for Q" means: $P \leftarrow Q$
-"P is a sufficient condition for Q" means: $P \rightarrow Q$
+"P is a necessary condition for Q" means: $P \Leftarrow Q$
+
+"P is a sufficient condition for Q" means: $P \Rightarrow Q$
