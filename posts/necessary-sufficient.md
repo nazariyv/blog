@@ -43,9 +43,9 @@ From our set-theoretic perspective, we know that:
 
 1. **Being a red shape is necessary for being a red circle**. In logic, this is expressed as:
 
-   $$ R \Rightarrow S $$
+   $$ RC \Rightarrow RS $$
 
-   This means that if something is a red circle ($R$ is true), then it must be a red shape ($S$ is true).
+   This means that if something is a red circle ($RC$ is true), then it must be a red shape ($RS$ is true).
 
 2. **Being a red circle is sufficient for being a red shape**. This is the same implication:
 
