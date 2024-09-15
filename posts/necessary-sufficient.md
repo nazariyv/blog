@@ -67,7 +67,7 @@ From our set-theoretic perspective, we know that:
 
 In logic, the statement "_P is a necessary condition for Q_" means that $Q$ cannot be true unless $P$ is true, which is expressed as:
 
-$$ Q \Rightarrow P $$
+$$ P \Leftarrow Q $$
 
 Conversely, "_P is a sufficient condition for Q_" means that whenever $P$ is true, $Q$ is also true:
 
