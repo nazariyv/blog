@@ -21,7 +21,7 @@ Also, to be both a _red shape_ and a _coloured circle_ is a **necessary** and **
 
 You can extend this thinking to an arbitrary number of sets to get an even better understanding of **necessary** conditions. For example, have a look at the following diagram.
 
-![](../images/necessary-sufficient/venn-letters.png)
+![source: https://en.wikipedia.org/wiki/Venn_diagram](../images/necessary-sufficient/venn-letters.png)
 
 Clearly, now there are 3 **necessary** conditions if we are talking about the letters that are common among all the sets. This reasoning, of course, extends to an arbitrary number of **necessary** conditions.
 
