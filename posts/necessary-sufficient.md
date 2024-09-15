@@ -1,6 +1,6 @@
 [category]: <> (Math)
 [date]: <> (2024/09/14)
-[title]: <> (Necessary and sufficient conditions in mathematics)
+[title]: <> (Necessary and Sufficient Conditions)
 [pandoc]: <> (--mathjax)
 
 Every so often I need to refresh my memory about the intuitive meaning of the **necessary** and **sufficient** conditions in mathematics. Chances are, you do too. So I'm writing this post to have as clear exposition as possible on this topic. Hopefully, by the end of this article you will have a crystal clear understanding of these concepts.
