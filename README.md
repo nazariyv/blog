@@ -20,7 +20,9 @@ then, run `publish.py posts/<name-of-your-new-post>` to generate the html for yo
 
 ## see how it looks locally
 
-To serve this blog locally, just open `site/index.html` in your browser
+to server this blog locally, go to `site/` and run `python3 -m http.server`
+
+open a browser tab and go to `http://localhost:8000`
 
 ## hosting
 

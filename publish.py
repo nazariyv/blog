@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import os
 import sys
+import re
 
 HEADER = """
 
@@ -204,6 +205,19 @@ def make_toc_item(metadata):
     link = os.path.join('/', metadata_to_path(metadata))
     return TOC_ITEM_TEMPLATE.format(year+' '+month+' '+day, link, metadata['title'])
 
+
+def update_image_srcs(html_content):
+    # This regex looks for img tags with src attributes starting with "../images/"
+    pattern = r'<img[^>]*src=["\']\.\.\/images\/([^"\']+)["\']'
+
+    # This function will be called for each match
+    def replace_src(match):
+        return match.group(0).replace("../images/", "/images/")
+
+    # Replace all matching src attributes
+    return re.sub(pattern, replace_src, html_content)
+
+
 if __name__ == '__main__':
     # Get blog config
     global_config = extract_metadata(open('config.md'))
@@ -228,10 +242,12 @@ if __name__ == '__main__':
         options = metadata.get('pandoc', '')
 
         os.system('pandoc -o /tmp/temp_output.html {} {}'.format(file_location, options))
+        temp_content = open('/tmp/temp_output.html').read()
+        processed_content = update_image_srcs(temp_content)
         total_file_contents = (
             HEADER +
             make_twitter_card(metadata, global_config) +
-            defancify(open('/tmp/temp_output.html').read()) +
+            defancify(processed_content) +
             FOOTER
         )
 
