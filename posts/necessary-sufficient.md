@@ -17,7 +17,7 @@ Similarly, to be a _red circle_ it is **necessary** to be a _coloured circle_. B
 
 Conversely, being a _red circle_ is a **sufficient** condition for being both a _red shape_ and a _coloured circle_. Knowing that a shape is a _red circle_ guarantees that it is a _red shape_ and that it is a _coloured circle_.
 
-Also, to be a _red shape_ and a _coloured circle_ is a **necessary** and **sufficient** condition for being a _red circle_. Meaning they are **the same** conditions.
+Also, to be a _red shape_ and a _coloured circle_ is a **necessary** and **sufficient** condition for being a _red circle_. Meaning they are **the same** conditions (_red shape_ and _coloured circle_ $\iff$ _red circle_).
 
 You can extend this thinking to an arbitrary number of sets, to get an even better understanding of **necessary** conditions. For example, have a look at the following diagram.
 
