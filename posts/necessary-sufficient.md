@@ -86,12 +86,14 @@ This might seem confusing because the implication is the same in both cases. How
 
 Let's look at the truth table for the implication $R \Rightarrow S$:
 
+<center>
 | $R$ | $S$ | $R \Rightarrow S$ |
 | --- | --- | ----------------- |
 | T   | T   | T                 |
 | T   | F   | **F**             |
 | F   | T   | T                 |
 | F   | F   | T                 |
+</center>
 
 - When $R$ is true and $S$ is true, the implication holds.
 - When $R$ is true but $S$ is false, the implication fails. This aligns with our understanding: something cannot be a red circle without being a red shape.
