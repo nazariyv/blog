@@ -19,6 +19,12 @@ Conversely, being a _red circle_ is a **sufficient** condition for being both a 
 
 Also, to be a _red shape_ and a _coloured circle_ is a **necessary** and **sufficient** condition for being a _red circle_.
 
+You can extend this thinking to an arbitrary number of sets, to get an even better understanding of **necessary** conditions. For example, have a look at the following diagram.
+
+![venn diagram letters](../images/necessary-sufficient/venn-letters.png)
+
+Clearly, now there are 3 **necessary** conditions if we are talking about the letters that are common among all the sets.
+
 ## logic view
 
 Define any two events: $P$ and $Q$.
