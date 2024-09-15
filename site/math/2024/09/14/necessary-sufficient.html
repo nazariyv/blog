@@ -214,18 +214,18 @@ letters:</p>
 <ol type="1">
 <li><p><strong>Being a red shape is necessary for being a red
 circle</strong>. In logic, this is expressed as:</p>
-<p><span class="math display">\[ RC \Rightarrow RS \]</span></p>
+<p><span class="math display">\[ RC \Lefttarrow RS \]</span></p>
 <p>This means that if something is a red circle (<span
 class="math inline">\(RC\)</span> is true), then it must be a red shape
 (<span class="math inline">\(RS\)</span> is true).</p></li>
+<li><p>Similarly, <strong>being a coloured circle is necessary for being
+a red circle</strong>:</p>
+<p><span class="math display">\[ RC \Leftarrow CC \]</span></p></li>
 <li><p><strong>Being a red circle is sufficient for being a red
 shape</strong>. This is the same implication:</p>
 <p><span class="math display">\[ RC \Rightarrow RS \]</span></p>
 <p>Here, <span class="math inline">\(RC\)</span> being true guarantees
 that <span class="math inline">\(RS\)</span> is true.</p></li>
-<li><p>Similarly, <strong>being a coloured circle is necessary for being
-a red circle</strong>:</p>
-<p><span class="math display">\[ RC \Rightarrow CC \]</span></p></li>
 <li><p><strong>Being both a red shape and a coloured circle is necessary
 and sufficient for being a red circle</strong>. This is expressed
 as:</p>
@@ -233,7 +233,11 @@ as:</p>
 \]</span></p>
 <p>This means that <span class="math inline">\(RC\)</span> is true if
 and only if both <span class="math inline">\(RS\)</span> and <span
-class="math inline">\(CC\)</span> are true.</p></li>
+class="math inline">\(CC\)</span> are true.</p>
+<p>You can denote <span class="math inline">\(RS \land CC\)</span> with
+a single letter, like <span class="math inline">\(C\)</span> to make the
+above statement appear more conventionally, then you have <span
+class="math inline">\(RC \Leftrightarrow C\)</span>.</p></li>
 </ol>
 <p>In logic, the statement "<em>P is a necessary condition for Q</em>"
 means that <span class="math inline">\(Q\)</span> cannot be true unless

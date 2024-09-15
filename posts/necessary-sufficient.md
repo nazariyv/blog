@@ -43,25 +43,27 @@ From our set-theoretic perspective, we know that:
 
 1. **Being a red shape is necessary for being a red circle**. In logic, this is expressed as:
 
-   $$ RC \Rightarrow RS $$
+   $$ RC \Lefttarrow RS $$
 
    This means that if something is a red circle ($RC$ is true), then it must be a red shape ($RS$ is true).
 
-2. **Being a red circle is sufficient for being a red shape**. This is the same implication:
+2. Similarly, **being a coloured circle is necessary for being a red circle**:
+
+   $$ RC \Leftarrow CC $$
+
+3. **Being a red circle is sufficient for being a red shape**. This is the same implication:
 
    $$ RC \Rightarrow RS $$
 
    Here, $RC$ being true guarantees that $RS$ is true.
-
-3. Similarly, **being a coloured circle is necessary for being a red circle**:
-
-   $$ RC \Rightarrow CC $$
 
 4. **Being both a red shape and a coloured circle is necessary and sufficient for being a red circle**. This is expressed as:
 
    $$ RC \Leftrightarrow RS \land CC $$
 
    This means that $RC$ is true if and only if both $RS$ and $CC$ are true.
+
+   You can denote $RS \land CC$ with a single letter, like $C$ to make the above statement appear more conventionally, then you have $RC \Leftrightarrow C$.
 
 In logic, the statement "_P is a necessary condition for Q_" means that $Q$ cannot be true unless $P$ is true, which is expressed as:
 
