@@ -139,87 +139,161 @@
 <small style="float:right; color: #888"><a href="/">See all posts</a></small>
 <br> <br> <br>
 <title> Necessary and Sufficient Conditions </title>
-<p>Every so often I need to refresh my memory about the intuitive meaning of the <strong>necessary</strong> and <strong>sufficient</strong> conditions in mathematics. Chances are, you do too. So I'm writing this post to have as clear exposition as possible on this topic. Hopefully, by the end of this article you will have a crystal clear understanding of these concepts.</p>
+<p>Every so often I need to refresh my memory about the intuitive
+meaning of the <strong>necessary</strong> and
+<strong>sufficient</strong> conditions in mathematics. Chances are, you
+do too. So I'm writing this post to have as clear exposition as possible
+on this topic. Hopefully, by the end of this article you will have a
+crystal clear understanding of these concepts.</p>
 <h2 id="set-theory-perspective">Set Theory Perspective</h2>
-<p>Let's start with a set view of these concepts. Have a look at the following diagram. We have contrived a universe in which a <em>red circle</em> is a combination of a <em>red shape</em> and a <em>coloured circle</em>.</p>
+<p>Let's start with a set view of these concepts. Have a look at the
+following diagram. We have contrived a universe in which a <em>red
+circle</em> is a combination of a <em>red shape</em> and a <em>coloured
+circle</em>.</p>
 <p><img src="/images/necessary-sufficient/venn.png" /></p>
-<p>To be a <em>red circle</em>, it is <strong>necessary</strong> to be a <em>red shape</em>. But not <strong>sufficient</strong>! (because you might be a <em>red square</em> or any other <em>non-circle red shape</em>).</p>
-<p>Similarly, to be a <em>red circle</em>, it is <strong>necessary</strong> to be a <em>coloured circle</em>. But not <strong>sufficient</strong>!</p>
-<p>Conversely, being a <em>red circle</em> is a <strong>sufficient</strong> condition for being both a <em>red shape</em> and a <em>coloured circle</em>. Knowing that a shape is a <em>red circle</em> guarantees that it is a <em>red shape</em> and that it is a <em>coloured circle</em>.</p>
-<p>Also, to be both a <em>red shape</em> and a <em>coloured circle</em> is a <strong>necessary</strong> and <strong>sufficient</strong> condition for being a <em>red circle</em>. Meaning they are <strong>the same</strong> conditions (<em>red shape</em> and <em>coloured circle</em> <span class="math inline">\(\iff\)</span> <em>red circle</em>).</p>
-<p>You can extend this thinking to an arbitrary number of sets to get an even better understanding of <strong>necessary</strong> conditions. For example, have a look at the following diagram.</p>
+<p>To be a <em>red circle</em>, it is <strong>necessary</strong> to be a
+<em>red shape</em>. But not <strong>sufficient</strong>! (because you
+might be a <em>red square</em> or any other <em>non-circle red
+shape</em>).</p>
+<p>Similarly, to be a <em>red circle</em>, it is
+<strong>necessary</strong> to be a <em>coloured circle</em>. But not
+<strong>sufficient</strong>!</p>
+<p>Conversely, being a <em>red circle</em> is a
+<strong>sufficient</strong> condition for being both a <em>red
+shape</em> and a <em>coloured circle</em>. Knowing that a shape is a
+<em>red circle</em> guarantees that it is a <em>red shape</em> and that
+it is a <em>coloured circle</em>.</p>
+<p>Also, to be both a <em>red shape</em> and a <em>coloured circle</em>
+is a <strong>necessary</strong> and <strong>sufficient</strong>
+condition for being a <em>red circle</em>. Meaning they are <strong>the
+same</strong> conditions (<em>red shape</em> and <em>coloured
+circle</em> <span class="math inline">\(\iff\)</span> <em>red
+circle</em>).</p>
+<p>You can extend this thinking to an arbitrary number of sets to get an
+even better understanding of <strong>necessary</strong> conditions. For
+example, have a look at the following diagram.</p>
 <figure>
-<img src="/images/necessary-sufficient/venn-letters.png" alt="" /><figcaption>source: https://en.wikipedia.org/wiki/Venn_diagram</figcaption>
+<img src="/images/necessary-sufficient/venn-letters.png"
+alt="source: https://en.wikipedia.org/wiki/Venn_diagram" />
+<figcaption aria-hidden="true">source:
+https://en.wikipedia.org/wiki/Venn_diagram</figcaption>
 </figure>
-<p>Clearly, now there are 3 <strong>necessary</strong> conditions if we are talking about the letters that are common among all the sets. This reasoning, of course, extends to an arbitrary number of <strong>necessary</strong> conditions.</p>
+<p>Clearly, now there are 3 <strong>necessary</strong> conditions if we
+are talking about the letters that are common among all the sets. This
+reasoning, of course, extends to an arbitrary number of
+<strong>necessary</strong> conditions.</p>
 <blockquote>
-<p>Intuition takeaway from this section: you can have many <strong>necessary</strong> conditions, that all are individually required, but also they individually do not guarantee the final condition. On the other hand, if something is a <strong>sufficient</strong> condition, you know immediately that it guarantees the final condition.</p>
+<p>Intuition takeaway from this section: you can have many
+<strong>necessary</strong> conditions, that all are individually
+required, but also they individually do not guarantee the final
+condition. On the other hand, if something is a
+<strong>sufficient</strong> condition, you know immediately that it
+guarantees the final condition.</p>
 </blockquote>
-<p>Feel free to stop here as this will already give you a solid basic understanding of the concepts. However, if you want to look at these conditions from a logic perspective, continue reading.</p>
+<p>Feel free to stop here as this will already give you a solid basic
+understanding of the concepts. However, if you want to look at these
+conditions from a logic perspective, continue reading.</p>
 <h2 id="logic-theory-perspective">Logic Theory Perspective</h2>
-<p>In logic, we express <strong>necessary</strong> and <strong>sufficient</strong> conditions using implications. Let's revisit our earlier example from a logical standpoint.</p>
-<p>First, let's define our propositions:</p>
+<p>In logic, we express <strong>necessary</strong> and
+<strong>sufficient</strong> conditions using implications. Let's revisit
+our earlier example from a logical standpoint.</p>
+<p>First, let's define our propositions. We will be a little
+unconventional and denote events with two letters instead of one. There
+is no significance in this, other than making it instantenous to
+understand what proposition we have in mind just by looking at the
+letters:</p>
 <ul>
-<li>Let <span class="math inline">\(R\)</span> be the proposition "<em>It is a red circle</em>".</li>
-<li>Let <span class="math inline">\(S\)</span> be the proposition "<em>It is a red shape</em>".</li>
-<li>Let <span class="math inline">\(C\)</span> be the proposition "<em>It is a coloured circle</em>".</li>
+<li>Let <span class="math inline">\(RC\)</span> be the proposition
+"<em>It is a red circle</em>".</li>
+<li>Let <span class="math inline">\(RS\)</span> be the proposition
+"<em>It is a red shape</em>".</li>
+<li>Let <span class="math inline">\(CC\)</span> be the proposition
+"<em>It is a coloured circle</em>".</li>
 </ul>
 <p>From our set-theoretic perspective, we know that:</p>
 <ol type="1">
-<li><p><strong>Being a red shape is necessary for being a red circle</strong>. In logic, this is expressed as:</p>
+<li><p><strong>Being a red shape is necessary for being a red
+circle</strong>. In logic, this is expressed as:</p>
 <p><span class="math display">\[ R \Rightarrow S \]</span></p>
-<p>This means that if something is a red circle (<span class="math inline">\(R\)</span> is true), then it must be a red shape (<span class="math inline">\(S\)</span> is true).</p></li>
-<li><p><strong>Being a red circle is sufficient for being a red shape</strong>. This is the same implication:</p>
-<p><span class="math display">\[ R \Rightarrow S \]</span></p>
-<p>Here, <span class="math inline">\(R\)</span> being true guarantees that <span class="math inline">\(S\)</span> is true.</p></li>
-<li><p>Similarly, <strong>being a coloured circle is necessary for being a red circle</strong>:</p>
-<p><span class="math display">\[ R \Rightarrow C \]</span></p></li>
-<li><p><strong>Being both a red shape and a coloured circle is necessary and sufficient for being a red circle</strong>. This is expressed as:</p>
-<p><span class="math display">\[ R \Leftrightarrow S \land C \]</span></p>
-<p>This means that <span class="math inline">\(R\)</span> is true if and only if both <span class="math inline">\(S\)</span> and <span class="math inline">\(C\)</span> are true.</p></li>
+<p>This means that if something is a red circle (<span
+class="math inline">\(R\)</span> is true), then it must be a red shape
+(<span class="math inline">\(S\)</span> is true).</p></li>
+<li><p><strong>Being a red circle is sufficient for being a red
+shape</strong>. This is the same implication:</p>
+<p><span class="math display">\[ RC \Rightarrow RS \]</span></p>
+<p>Here, <span class="math inline">\(RC\)</span> being true guarantees
+that <span class="math inline">\(RS\)</span> is true.</p></li>
+<li><p>Similarly, <strong>being a coloured circle is necessary for being
+a red circle</strong>:</p>
+<p><span class="math display">\[ RC \Rightarrow CC \]</span></p></li>
+<li><p><strong>Being both a red shape and a coloured circle is necessary
+and sufficient for being a red circle</strong>. This is expressed
+as:</p>
+<p><span class="math display">\[ RC \Leftrightarrow RS \land CC
+\]</span></p>
+<p>This means that <span class="math inline">\(RC\)</span> is true if
+and only if both <span class="math inline">\(RS\)</span> and <span
+class="math inline">\(CC\)</span> are true.</p></li>
 </ol>
-<p>In logic, the statement "<em>P is a necessary condition for Q</em>" means that <span class="math inline">\(Q\)</span> cannot be true unless <span class="math inline">\(P\)</span> is true, which is expressed as:</p>
+<p>In logic, the statement "<em>P is a necessary condition for Q</em>"
+means that <span class="math inline">\(Q\)</span> cannot be true unless
+<span class="math inline">\(P\)</span> is true, which is expressed
+as:</p>
 <p><span class="math display">\[ Q \Rightarrow P \]</span></p>
-<p>Conversely, "<em>P is a sufficient condition for Q</em>" means that whenever <span class="math inline">\(P\)</span> is true, <span class="math inline">\(Q\)</span> is also true:</p>
+<p>Conversely, "<em>P is a sufficient condition for Q</em>" means that
+whenever <span class="math inline">\(P\)</span> is true, <span
+class="math inline">\(Q\)</span> is also true:</p>
 <p><span class="math display">\[ P \Rightarrow Q \]</span></p>
 <p>Applying this to our example:</p>
 <ul>
-<li><p><strong>Necessary Condition</strong>: Since being a red shape (<span class="math inline">\(S\)</span>) is necessary for being a red circle (<span class="math inline">\(R\)</span>), we have:</p>
-<p><span class="math display">\[ R \Rightarrow S \]</span></p></li>
-<li><p><strong>Sufficient Condition</strong>: Being a red circle (<span class="math inline">\(R\)</span>) is sufficient for being a red shape (<span class="math inline">\(S\)</span>):</p>
-<p><span class="math display">\[ R \Rightarrow S \]</span></p></li>
+<li><p><strong>Necessary Condition</strong>: Since being a red shape
+(<span class="math inline">\(RS\)</span>) is necessary for being a red
+circle (<span class="math inline">\(RC\)</span>), we have:</p>
+<p><span class="math display">\[ RC \Rightarrow RS \]</span></p></li>
+<li><p><strong>Sufficient Condition</strong>: Being a red circle (<span
+class="math inline">\(RC\)</span>) is sufficient for being a red shape
+(<span class="math inline">\(RS\)</span>):</p>
+<p><span class="math display">\[ RC \Rightarrow RS \]</span></p></li>
 </ul>
-<p>This might seem confusing because the implication is the same in both cases. However, the direction of the implication tells us both that:</p>
+<p>This might seem confusing because the implication is the same in both
+cases. However, the direction of the implication tells us both that:</p>
 <ul>
-<li><span class="math inline">\(R\)</span> is sufficient for <span class="math inline">\(S\)</span> (if <span class="math inline">\(R\)</span> is true, <span class="math inline">\(S\)</span> must be true).</li>
-<li><span class="math inline">\(S\)</span> is necessary for <span class="math inline">\(R\)</span> (for <span class="math inline">\(R\)</span> to be true, <span class="math inline">\(S\)</span> must be true).</li>
+<li><span class="math inline">\(RC\)</span> is sufficient for <span
+class="math inline">\(RS\)</span> (if <span
+class="math inline">\(RC\)</span> is true, <span
+class="math inline">\(RS\)</span> must be true).</li>
+<li><span class="math inline">\(RS\)</span> is necessary for <span
+class="math inline">\(RC\)</span> (for <span
+class="math inline">\(RC\)</span> to be true, <span
+class="math inline">\(RS\)</span> must be true).</li>
 </ul>
-<p>Let's look at the truth table for the implication <span class="math inline">\(R \Rightarrow S\)</span>:</p>
+<p>Let's look at the truth table for the implication <span
+class="math inline">\(RC \Rightarrow RS\)</span>:</p>
 <table>
 <thead>
-<tr class="header">
-<th><span class="math inline">\(R\)</span></th>
-<th><span class="math inline">\(S\)</span></th>
-<th><span class="math inline">\(R \Rightarrow S\)</span></th>
+<tr>
+<th><span class="math inline">\(RC\)</span></th>
+<th><span class="math inline">\(RS\)</span></th>
+<th><span class="math inline">\(RC \Rightarrow RS\)</span></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>T</td>
 <td>T</td>
 <td>T</td>
 </tr>
-<tr class="even">
+<tr>
 <td>T</td>
 <td>F</td>
 <td><strong>F</strong></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>F</td>
 <td>T</td>
 <td>T</td>
 </tr>
-<tr class="even">
+<tr>
 <td>F</td>
 <td>F</td>
 <td>T</td>
@@ -227,49 +301,101 @@
 </tbody>
 </table>
 <ul>
-<li>When <span class="math inline">\(R\)</span> is true and <span class="math inline">\(S\)</span> is true, the implication holds.</li>
-<li>When <span class="math inline">\(R\)</span> is true but <span class="math inline">\(S\)</span> is false, the implication fails. This aligns with our understanding: something cannot be a red circle without being a red shape.</li>
-<li>When <span class="math inline">\(R\)</span> is false (it's not a red circle), the implication <span class="math inline">\(R \Rightarrow S\)</span> is always true, regardless of the truth value of <span class="math inline">\(S\)</span>. This is because the implication only asserts something about cases where <span class="math inline">\(R\)</span> is true.</li>
+<li>When <span class="math inline">\(RC\)</span> is true and <span
+class="math inline">\(RS\)</span> is true, the implication holds.</li>
+<li>When <span class="math inline">\(RC\)</span> is true but <span
+class="math inline">\(RS\)</span> is false, the implication fails. This
+aligns with our understanding: something cannot be a red circle without
+being a red shape.</li>
+<li>When <span class="math inline">\(RC\)</span> is false (it's not a
+red circle), the implication <span class="math inline">\(RC \Rightarrow
+RS\)</span> is always true, regardless of the truth value of <span
+class="math inline">\(RS\)</span>. This is because the implication only
+asserts something about cases where <span
+class="math inline">\(RC\)</span> is true.</li>
 </ul>
-<p>Similarly, for <span class="math inline">\(R \Leftrightarrow S \land C\)</span>, the truth table would confirm that <span class="math inline">\(R\)</span> is true if and only if both <span class="math inline">\(S\)</span> and <span class="math inline">\(C\)</span> are true.</p>
-<p>In summary, the logical perspective reinforces the relationships we observed in the set-theory perspective:</p>
+<p>Similarly, for <span class="math inline">\(RC \Leftrightarrow RS
+\land CC\)</span>, the truth table would confirm that <span
+class="math inline">\(RC\)</span> is true if and only if both <span
+class="math inline">\(RS\)</span> and <span
+class="math inline">\(CC\)</span> are true.</p>
+<p>In summary, the logical perspective reinforces the relationships we
+observed in the set-theory perspective:</p>
 <ul>
-<li><strong>Being a red circle (<span class="math inline">\(R\)</span>) is sufficient for being a red shape (<span class="math inline">\(S\)</span>) and a coloured circle (<span class="math inline">\(C\)</span>)</strong>.</li>
-<li><strong>Being a red shape (<span class="math inline">\(S\)</span>) and a coloured circle (<span class="math inline">\(C\)</span>) is necessary and sufficient for being a red circle (<span class="math inline">\(R\)</span>)</strong>.</li>
+<li><strong>Being a red circle (<span class="math inline">\(RC\)</span>)
+is sufficient for being a red shape (<span
+class="math inline">\(RS\)</span>) and a coloured circle (<span
+class="math inline">\(CC\)</span>)</strong>.</li>
+<li><strong>Being a red shape (<span class="math inline">\(RS\)</span>)
+and a coloured circle (<span class="math inline">\(CC\)</span>) is
+necessary and sufficient for being a red circle (<span
+class="math inline">\(RC\)</span>)</strong>.</li>
 </ul>
-<p>Understanding these logical implications helps solidify our grasp of necessary and sufficient conditions.</p>
-<h2 id="why-is-this-concept-important">Why Is This Concept Important?</h2>
-<p>Understanding necessary and sufficient conditions is crucial in mathematics and many other fields because they form the foundation of logical reasoning and proof construction. These concepts help us:</p>
+<p>Understanding these logical implications helps solidify our grasp of
+necessary and sufficient conditions.</p>
+<h2 id="why-is-this-concept-important">Why Is This Concept
+Important?</h2>
+<p>Understanding necessary and sufficient conditions is crucial in
+mathematics and many other fields because they form the foundation of
+logical reasoning and proof construction. These concepts help us:</p>
 <ul>
-<li><p><strong>Clarify Definitions</strong>: They allow us to define concepts precisely by specifying exactly what is required (necessary conditions) and what is enough (sufficient conditions) for a statement to be true.</p></li>
-<li><p><strong>Develop Theorems and Proofs</strong>: Many mathematical theorems are structured around necessary and sufficient conditions. Recognizing these conditions aids in both proving new theorems and understanding existing ones.</p></li>
-<li><p><strong>Enhance Logical Reasoning</strong>: Grasping these ideas improves our ability to construct valid arguments and avoid logical fallacies, which is essential not only in mathematics but also in everyday decision-making.</p></li>
-<li><p><strong>Solve Complex Problems</strong>: Breaking down problems into necessary and sufficient conditions can simplify complex scenarios, making them more manageable and easier to solve.</p></li>
+<li><p><strong>Clarify Definitions</strong>: They allow us to define
+concepts precisely by specifying exactly what is required (necessary
+conditions) and what is enough (sufficient conditions) for a statement
+to be true.</p></li>
+<li><p><strong>Develop Theorems and Proofs</strong>: Many mathematical
+theorems are structured around necessary and sufficient conditions.
+Recognizing these conditions aids in both proving new theorems and
+understanding existing ones.</p></li>
+<li><p><strong>Enhance Logical Reasoning</strong>: Grasping these ideas
+improves our ability to construct valid arguments and avoid logical
+fallacies, which is essential not only in mathematics but also in
+everyday decision-making.</p></li>
+<li><p><strong>Solve Complex Problems</strong>: Breaking down problems
+into necessary and sufficient conditions can simplify complex scenarios,
+making them more manageable and easier to solve.</p></li>
 </ul>
 <h2 id="exercises">Exercises</h2>
-<p>Want to test your understanding? See if you can answer the following questions.</p>
+<p>Want to test your understanding? See if you can answer the following
+questions.</p>
 <ol type="1">
 <li><p><strong>Identifying Conditions</strong>:</p>
 <ol type="a">
-<li><p>Is being a mammal a necessary or sufficient condition for being a human?</p></li>
-<li><p>Is being a square a necessary or sufficient condition for being a rectangle?</p></li>
+<li><p>Is being a mammal a necessary or sufficient condition for being a
+human?</p></li>
+<li><p>Is being a square a necessary or sufficient condition for being a
+rectangle?</p></li>
 </ol></li>
 <li><p><strong>Logical Implications</strong>:</p>
-<p>Let <span class="math inline">\(P\)</span> be "It is a bird," and <span class="math inline">\(Q\)</span> be "It can fly."</p>
+<p>Let <span class="math inline">\(P\)</span> be "It is a bird," and
+<span class="math inline">\(Q\)</span> be "It can fly."</p>
 <ol type="a">
-<li><p>Is <span class="math inline">\(P\)</span> a sufficient condition for <span class="math inline">\(Q\)</span>?</p></li>
-<li><p>Is <span class="math inline">\(Q\)</span> a necessary condition for <span class="math inline">\(P\)</span>?</p></li>
+<li><p>Is <span class="math inline">\(P\)</span> a sufficient condition
+for <span class="math inline">\(Q\)</span>?</p></li>
+<li><p>Is <span class="math inline">\(Q\)</span> a necessary condition
+for <span class="math inline">\(P\)</span>?</p></li>
 </ol></li>
 <li><p><strong>Set Theory Application</strong>:</p>
-<p>Given sets <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> such that <span class="math inline">\(A \subseteq B\)</span> and <span class="math inline">\(B \subseteq C\)</span>.</p>
+<p>Given sets <span class="math inline">\(A\)</span>, <span
+class="math inline">\(B\)</span>, and <span
+class="math inline">\(C\)</span> such that <span class="math inline">\(A
+\subseteq B\)</span> and <span class="math inline">\(B \subseteq
+C\)</span>.</p>
 <ol type="a">
-<li><p>Is being an element of <span class="math inline">\(A\)</span> a sufficient condition for being an element of <span class="math inline">\(C\)</span>?</p></li>
-<li><p>Is being an element of <span class="math inline">\(C\)</span> a necessary condition for being an element of <span class="math inline">\(A\)</span>?</p></li>
+<li><p>Is being an element of <span class="math inline">\(A\)</span> a
+sufficient condition for being an element of <span
+class="math inline">\(C\)</span>?</p></li>
+<li><p>Is being an element of <span class="math inline">\(C\)</span> a
+necessary condition for being an element of <span
+class="math inline">\(A\)</span>?</p></li>
 </ol></li>
 <li><p><strong>Combining Conditions</strong>:</p>
-<p>If being enrolled in a university course requires both paying tuition and registering for classes, are these conditions necessary, sufficient, or both for enrollment?</p></li>
+<p>If being enrolled in a university course requires both paying tuition
+and registering for classes, are these conditions necessary, sufficient,
+or both for enrollment?</p></li>
 <li><p><strong>Real-Life Scenario</strong>:</p>
-<p>Consider the statement: "Having a key is sufficient to open the door."</p>
+<p>Consider the statement: "Having a key is sufficient to open the
+door."</p>
 <ol type="a">
 <li><p>Is having a key a necessary condition to open the door?</p></li>
 <li><p>Explain why or why not.</p></li>
@@ -279,25 +405,47 @@
 <ol type="1">
 <li><p><strong>Identifying Conditions</strong>:</p>
 <ol type="a">
-<li><p><strong>Necessary Condition</strong>: Being a mammal is necessary for being a human, but not sufficient (since not all mammals are humans).</p></li>
-<li><p><strong>Sufficient Condition</strong>: Being a square is sufficient for being a rectangle, but not necessary (since rectangles can be non-square).</p></li>
+<li><p><strong>Necessary Condition</strong>: Being a mammal is necessary
+for being a human, but not sufficient (since not all mammals are
+humans).</p></li>
+<li><p><strong>Sufficient Condition</strong>: Being a square is
+sufficient for being a rectangle, but not necessary (since rectangles
+can be non-square).</p></li>
 </ol></li>
 <li><p><strong>Logical Implications</strong>:</p>
 <ol type="a">
-<li><p><strong>Not Sufficient</strong>: Being a bird is not a sufficient condition for being able to fly (e.g., ostriches and penguins are birds that cannot fly).</p></li>
-<li><p><strong>Not Necessary</strong>: Being able to fly is not a necessary condition for being a bird (as above, some birds cannot fly).</p></li>
+<li><p><strong>Not Sufficient</strong>: Being a bird is not a sufficient
+condition for being able to fly (e.g., ostriches and penguins are birds
+that cannot fly).</p></li>
+<li><p><strong>Not Necessary</strong>: Being able to fly is not a
+necessary condition for being a bird (as above, some birds cannot
+fly).</p></li>
 </ol></li>
 <li><p><strong>Set Theory Application</strong>:</p>
 <ol type="a">
-<li><p><strong>Sufficient Condition</strong>: Yes, if an element is in <span class="math inline">\(A\)</span>, it is sufficient to say it is in <span class="math inline">\(C\)</span> because <span class="math inline">\(A \subseteq C\)</span>.</p></li>
-<li><p><strong>Necessary Condition</strong>: Yes, being in <span class="math inline">\(C\)</span> is necessary for being in <span class="math inline">\(A\)</span> since all elements of <span class="math inline">\(A\)</span> are contained in <span class="math inline">\(C\)</span>.</p></li>
+<li><p><strong>Sufficient Condition</strong>: Yes, if an element is in
+<span class="math inline">\(A\)</span>, it is sufficient to say it is in
+<span class="math inline">\(C\)</span> because <span
+class="math inline">\(A \subseteq C\)</span>.</p></li>
+<li><p><strong>Necessary Condition</strong>: Yes, being in <span
+class="math inline">\(C\)</span> is necessary for being in <span
+class="math inline">\(A\)</span> since all elements of <span
+class="math inline">\(A\)</span> are contained in <span
+class="math inline">\(C\)</span>.</p></li>
 </ol></li>
 <li><p><strong>Combining Conditions</strong>:</p>
-<p>Both paying tuition and registering for classes are <strong>necessary</strong> conditions for enrollment. Together, they are <strong>sufficient</strong> conditions.</p></li>
+<p>Both paying tuition and registering for classes are
+<strong>necessary</strong> conditions for enrollment. Together, they are
+<strong>sufficient</strong> conditions.</p></li>
 <li><p><strong>Real-Life Scenario</strong>:</p>
 <ol type="a">
-<li><p><strong>Not Necessary</strong>: Having a key is not a necessary condition to open the door (the door could be opened by other means, like someone else opening it from the inside).</p></li>
-<li><p><strong>Explanation</strong>: While a key is one way to open the door (sufficient condition), it's not the only way (not necessary). Other methods might include using a keypad code or having someone else open it.</p></li>
+<li><p><strong>Not Necessary</strong>: Having a key is not a necessary
+condition to open the door (the door could be opened by other means,
+like someone else opening it from the inside).</p></li>
+<li><p><strong>Explanation</strong>: While a key is one way to open the
+door (sufficient condition), it's not the only way (not necessary).
+Other methods might include using a keypad code or having someone else
+open it.</p></li>
 </ol></li>
 </ol>
 

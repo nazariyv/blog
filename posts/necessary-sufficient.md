@@ -33,11 +33,11 @@ Feel free to stop here as this will already give you a solid basic understanding
 
 In logic, we express **necessary** and **sufficient** conditions using implications. Let's revisit our earlier example from a logical standpoint.
 
-First, let's define our propositions:
+First, let's define our propositions. We will be a little unconventional and denote events with two letters instead of one. There is no significance in this, other than making it instantenous to understand what proposition we have in mind just by looking at the letters:
 
-- Let $R$ be the proposition "_It is a red circle_".
-- Let $S$ be the proposition "_It is a red shape_".
-- Let $C$ be the proposition "_It is a coloured circle_".
+- Let $RC$ be the proposition "_It is a red circle_".
+- Let $RS$ be the proposition "_It is a red shape_".
+- Let $CC$ be the proposition "_It is a coloured circle_".
 
 From our set-theoretic perspective, we know that:
 
@@ -49,19 +49,19 @@ From our set-theoretic perspective, we know that:
 
 2. **Being a red circle is sufficient for being a red shape**. This is the same implication:
 
-   $$ R \Rightarrow S $$
+   $$ RC \Rightarrow RS $$
 
-   Here, $R$ being true guarantees that $S$ is true.
+   Here, $RC$ being true guarantees that $RS$ is true.
 
 3. Similarly, **being a coloured circle is necessary for being a red circle**:
 
-   $$ R \Rightarrow C $$
+   $$ RC \Rightarrow CC $$
 
 4. **Being both a red shape and a coloured circle is necessary and sufficient for being a red circle**. This is expressed as:
 
-   $$ R \Leftrightarrow S \land C $$
+   $$ RC \Leftrightarrow RS \land CC $$
 
-   This means that $R$ is true if and only if both $S$ and $C$ are true.
+   This means that $RC$ is true if and only if both $RS$ and $CC$ are true.
 
 In logic, the statement "_P is a necessary condition for Q_" means that $Q$ cannot be true unless $P$ is true, which is expressed as:
 
@@ -73,38 +73,38 @@ $$ P \Rightarrow Q $$
 
 Applying this to our example:
 
-- **Necessary Condition**: Since being a red shape ($S$) is necessary for being a red circle ($R$), we have:
+- **Necessary Condition**: Since being a red shape ($RS$) is necessary for being a red circle ($RC$), we have:
 
-  $$ R \Rightarrow S $$
+  $$ RC \Rightarrow RS $$
 
-- **Sufficient Condition**: Being a red circle ($R$) is sufficient for being a red shape ($S$):
+- **Sufficient Condition**: Being a red circle ($RC$) is sufficient for being a red shape ($RS$):
 
-  $$ R \Rightarrow S $$
+  $$ RC \Rightarrow RS $$
 
 This might seem confusing because the implication is the same in both cases. However, the direction of the implication tells us both that:
 
-- $R$ is sufficient for $S$ (if $R$ is true, $S$ must be true).
-- $S$ is necessary for $R$ (for $R$ to be true, $S$ must be true).
+- $RC$ is sufficient for $RS$ (if $RC$ is true, $RS$ must be true).
+- $RS$ is necessary for $RC$ (for $RC$ to be true, $RS$ must be true).
 
-Let's look at the truth table for the implication $R \Rightarrow S$:
+Let's look at the truth table for the implication $RC \Rightarrow RS$:
 
-| $R$ | $S$ | $R \Rightarrow S$ |
+| $RC$ | $RS$ | $RC \Rightarrow RS$ |
 | --- | --- | ----------------- |
 | T   | T   | T                 |
 | T   | F   | **F**             |
 | F   | T   | T                 |
 | F   | F   | T                 |
 
-- When $R$ is true and $S$ is true, the implication holds.
-- When $R$ is true but $S$ is false, the implication fails. This aligns with our understanding: something cannot be a red circle without being a red shape.
-- When $R$ is false (it's not a red circle), the implication $R \Rightarrow S$ is always true, regardless of the truth value of $S$. This is because the implication only asserts something about cases where $R$ is true.
+- When $RC$ is true and $RS$ is true, the implication holds.
+- When $RC$ is true but $RS$ is false, the implication fails. This aligns with our understanding: something cannot be a red circle without being a red shape.
+- When $RC$ is false (it's not a red circle), the implication $RC \Rightarrow RS$ is always true, regardless of the truth value of $RS$. This is because the implication only asserts something about cases where $RC$ is true.
 
-Similarly, for $R \Leftrightarrow S \land C$, the truth table would confirm that $R$ is true if and only if both $S$ and $C$ are true.
+Similarly, for $RC \Leftrightarrow RS \land CC$, the truth table would confirm that $RC$ is true if and only if both $RS$ and $CC$ are true.
 
 In summary, the logical perspective reinforces the relationships we observed in the set-theory perspective:
 
-- **Being a red circle ($R$) is sufficient for being a red shape ($S$) and a coloured circle ($C$)**.
-- **Being a red shape ($S$) and a coloured circle ($C$) is necessary and sufficient for being a red circle ($R$)**.
+- **Being a red circle ($RC$) is sufficient for being a red shape ($RS$) and a coloured circle ($CC$)**.
+- **Being a red shape ($RS$) and a coloured circle ($CC$) is necessary and sufficient for being a red circle ($RC$)**.
 
 Understanding these logical implications helps solidify our grasp of necessary and sufficient conditions.
 
