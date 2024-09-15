@@ -25,6 +25,8 @@ You can extend this thinking to an arbitrary number of sets to get an even bette
 
 Clearly, now there are 3 **necessary** conditions if we are talking about the letters that are common among all the sets. This reasoning, of course, extends to an arbitrary number of **necessary** conditions.
 
+> Intuition takeaway from this section: you can have many **necessary** conditions, that all are individually required, but also they individually do not guarantee the final condition. On the other hand, if something is a **sufficient** condition, you know immediately that it guarantees the final condition.
+
 Feel free to stop here as this will already give you a solid basic understanding of the concepts. However, if you want to look at these conditions from a logic perspective, continue reading.
 
 ## Logic Theory Perspective
