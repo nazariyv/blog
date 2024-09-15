@@ -3,7 +3,7 @@
 [title]: <> (Necessary and sufficient conditions in mathematics)
 [pandoc]: <> (--mathjax)
 
-Every so often I need to refresh my memory about the intuitive meaning of the "necessary" and "sufficient" conditions in mathematics. Chances are, you do too. So I'm writing this post to have as clear exposition as possible. My goal for this post is to be the go-to reference on the web for this topic.
+Every so often I need to refresh my memory about the intuitive meaning of the "necessary" and "sufficient" conditions in mathematics. Chances are, you do too. So I'm writing this post to have as clear exposition as possible.
 
 ## set view
 
