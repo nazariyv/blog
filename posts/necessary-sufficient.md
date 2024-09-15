@@ -51,7 +51,7 @@ From our set-theoretic perspective, we know that:
 
    $$ CC \Leftarrow RC $$
 
-3. **Being a red circle is sufficient for being a red shape**. This is the same implication:
+3. **Being a red circle is sufficient for being a red shape**. This is the same implication as in (1) above:
 
    $$ RC \Rightarrow RS $$
 
