@@ -191,6 +191,19 @@ def make_twitter_card(metadata, global_config):
     return TWITTER_CARD_TEMPLATE.format(metadata['title'], global_config['icon'])
 
 
+def make_post_header(metadata):
+    year, month, day = metadata['date'].split('/')
+    month = 'JanFebMarAprMayJunJulAugSepOctNovDec'[int(month)*3-3:][:3]
+    return f"""
+<br>
+<h1 style="margin-bottom:7px"> {metadata['title']} </h1>
+<small style="float:left; color: #888"> {year} {month} {day} </small>
+<small style="float:right; color: #888"><a href="/">See all posts</a></small>
+<br> <br> <br>
+<title> {metadata['title']} </title>
+"""
+
+
 def defancify(text):
     return text \
         .replace("’", "'") \
@@ -247,6 +260,7 @@ if __name__ == '__main__':
         total_file_contents = (
             HEADER +
             make_twitter_card(metadata, global_config) +
+            make_post_header(metadata) +
             defancify(processed_content) +
             FOOTER
         )
