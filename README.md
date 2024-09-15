@@ -10,7 +10,7 @@ simply create a new markdown file in `posts/`, follow the usual rules of writing
 
 once you are done, run `publish.py` to generate `index.html`
 
-then, run `publish.py <name-of-your-new-post>` to generate the html for your new post (note that you need to have `pandoc` installed)
+then, run `publish.py posts/<name-of-your-new-post>` to generate the html for your new post (note that you need to have `pandoc` installed)
 
 ## see how it looks locally
 
