@@ -43,13 +43,13 @@ From our set-theoretic perspective, we know that:
 
 1. **Being a red shape is necessary for being a red circle**. In logic, this is expressed as:
 
-   $$ RC \Leftarrow RS $$
+   $$ RS \Leftarrow RC $$
 
    This means that if something is a red circle ($RC$ is true), then it must be a red shape ($RS$ is true).
 
 2. Similarly, **being a coloured circle is necessary for being a red circle**:
 
-   $$ RC \Leftarrow CC $$
+   $$ CC \Leftarrow RC $$
 
 3. **Being a red circle is sufficient for being a red shape**. This is the same implication:
 
