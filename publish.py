@@ -208,12 +208,6 @@ if __name__ == '__main__':
     # Get blog config
     global_config = extract_metadata(open('config.md'))
 
-    # Special case: '--sync' option
-    if sys.argv[1:] == ['--sync']:
-        os.system('rsync -av site/. {}:{}'.format(global_config['server'], global_config['website_root']))
-        os.system('rsync -av images {}:{}'.format(global_config['server'], global_config['website_root']))
-        sys.exit()
-
     # Normal case: process each provided file
     for file_location in sys.argv[1:]:
         filename = os.path.split(file_location)[1]
