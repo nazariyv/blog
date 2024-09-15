@@ -156,8 +156,6 @@ Want to test your understanding? See if you can answer the following questions.
 
    b) Explain why or why not.
 
-<br> <br> <br> <br> <br> <br> <br> <br>
-
 ## Answers
 
 1. **Identifying Conditions**:
