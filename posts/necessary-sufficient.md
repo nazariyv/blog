@@ -43,7 +43,7 @@ From our set-theoretic perspective, we know that:
 
 1. **Being a red shape is necessary for being a red circle**. In logic, this is expressed as:
 
-   $$ RC \Lefttarrow RS $$
+   $$ RC \Leftarrow RS $$
 
    This means that if something is a red circle ($RC$ is true), then it must be a red shape ($RS$ is true).
 
