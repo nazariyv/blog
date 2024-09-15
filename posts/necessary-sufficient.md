@@ -25,6 +25,8 @@ You can extend this thinking to an arbitrary number of sets, to get an even bett
 
 Clearly, now there are 3 **necessary** conditions if we are talking about the letters that are common among all the sets. This reasoning, of course, extends to an arbitrary number of **necessary** conditions.
 
+Feel free to stop here as this will already grant you a solid basic understading of the concepts. However, if you want to look at these conditions from logic perspective, continue reading.
+
 ## logic view
 
 Define any two events: $P$ and $Q$.

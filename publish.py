@@ -135,7 +135,13 @@ HEADER = """
     </script>
 """
 
-FOOTER = """ </div> """
+FOOTER = """
+</div>
+
+<div>
+<small>noticed a mistake or have a suggestion? submit a pull request <a href="https://github.com/nazariyv/blog" target="_blank">here</a></small>
+</div>
+"""
 
 TOC_HEADER = """
 
