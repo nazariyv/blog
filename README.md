@@ -8,7 +8,13 @@ this is a fork of [Vitalik Buterin's blog](https://github.com/vbuterin/blog)
 
 simply create a new markdown file in `posts/`, follow the usual rules of writing a markdown file
 
-once you are done, run `publish.py` to generate `index.html`
+to add an image, you need to put it in two places:
+
+1/ in `images/<name-of-your-new-post>/<image-name>`
+
+2/ in `site/images/<name-of-your-new-post>/<image-name>`
+
+once you are done writing the **poast**, run `publish.py` to generate `index.html`
 
 then, run `publish.py posts/<name-of-your-new-post>` to generate the html for your new post (note that you need to have `pandoc` installed)
 
