@@ -3,11 +3,11 @@
 [title]: <> (Necessary and sufficient conditions in mathematics)
 [pandoc]: <> (--mathjax)
 
-Every so often I need to refresh my memory about the intuitive meaning of the **necessary** and **sufficient** conditions in mathematics. Chances are, you do too. So I'm writing this post to have as clear exposition as possible for this topic.
+Every so often I need to refresh my memory about the intuitive meaning of the **necessary** and **sufficient** conditions in mathematics. Chances are, you do too. So I'm writing this post to have as clear exposition as possible on this topic.
 
 ## set view
 
-Let's start with a set view of these concepts. Have a look at the following diagram.
+Let's start with a set view of these concepts. Have a look at the following diagram. We have contrived a universe in which a _red circle_ is a combination of a _red shape_ and a _coloured circle_.
 
 ![set view](../images/necessary-sufficient/venn.png)
 
@@ -23,7 +23,7 @@ You can extend this thinking to an arbitrary number of sets, to get an even bett
 
 ![venn diagram letters](../images/necessary-sufficient/venn-letters.png)
 
-Clearly, now there are 3 **necessary** conditions if we are talking about the letters that are common among all the sets.
+Clearly, now there are 3 **necessary** conditions if we are talking about the letters that are common among all the sets. This reasoning, of course, extends to an arbitrary number of **necessary** conditions.
 
 ## logic view
 
