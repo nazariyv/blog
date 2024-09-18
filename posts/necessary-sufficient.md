@@ -1,5 +1,5 @@
 [category]: <> (Math)
-[date]: <> (2024/09/14)
+[date]: <> (2024/09/18)
 [title]: <> (Necessary and Sufficient Conditions)
 [pandoc]: <> (--mathjax)
 
@@ -30,6 +30,8 @@ Clearly, now there are 3 **necessary** conditions if we are talking about the le
 Feel free to stop here as this will already give you a solid basic understanding of the concepts. However, if you want to look at these conditions from a logic perspective, continue reading.
 
 ## Logic Theory Perspective
+
+Unless you are very comfortable with material conditional, I highly recommend reading <a href="/implication" target="_blank" rel="noopener noreferrer">my other post on the topic</a>.
 
 In logic, we express **necessary** and **sufficient** conditions using implications. Let's revisit our earlier example from a logical standpoint.
 
@@ -91,11 +93,11 @@ This might seem confusing because the implication is the same in both cases. How
 Let's look at the truth table for the implication $RC \Rightarrow RS$:
 
 | $RC$ | $RS$ | $RC \Rightarrow RS$ |
-| --- | --- | ----------------- |
-| T   | T   | T                 |
-| T   | F   | **F**             |
-| F   | T   | T                 |
-| F   | F   | T                 |
+| ---- | ---- | ------------------- |
+| T    | T    | T                   |
+| T    | F    | **F**               |
+| F    | T    | T                   |
+| F    | F    | T                   |
 
 - When $RC$ is true and $RS$ is true, the implication holds.
 - When $RC$ is true but $RS$ is false, the implication fails. This aligns with our understanding: something cannot be a red circle without being a red shape.
@@ -192,8 +194,4 @@ Want to test your understanding? See if you can answer the following questions.
 
 ## References
 
-deduction: https://www.rationalrealm.com/philosophy/logic/propositional-logic-primer-page3.html
-
-material conditional: https://www.youtube.com/watch?v=XhQp8suacqI&t=6s
-
-extremely good resource on material conditional: https://philosophy.lander.edu/logic/conditional.html
+<a href="https://www.rationalrealm.com/philosophy/logic/propositional-logic-primer-page3.html" target="_blank" rel="noopener noreferrer">deduction</a>
