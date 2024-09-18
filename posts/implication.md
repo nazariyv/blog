@@ -5,7 +5,80 @@
 
 Implication is taught poorly. 95% of the resources that you come across online explain it poorly too. This post attempts to overcome these shortcomings.
 
-## Paradoxes
+---
+
+Why is that dreaded implication **True** when the hypothesis is **False**?
+
+- "Just remember the truth table and use it"
+- "It's just a definition"
+- "It's a vacuous truth"
+- "Becase I haven't broken a promise"
+
+Somehow, none of these answers are satisfactory. Whoever came up with implication must have had a good reason for it. What is it?
+
+I went through a thought experiment to understand this. To my pleasant surprise, I have also stumbled upon an article that went through a very similar thought experiment.
+
+Let's begin.
+
+---
+
+Imagine you are a freshly baked logician. You are coming up with a formal logic system that is consistent and complete. We already have disjunction and conjunction, but we keep exploring what else we can do. So we want to come up with a new and unique connective that deals with two statements that may be related (but not necessarily). We want to come up with a connective that might tell us something about the conclusion if we know some information about the premise.
+
+Let premise be denoted by $P$ and conclusion be denoted by $Q$. Let's also denote the connective by $P \implies Q$. We start thinking about what the truth table of $P \implies Q$ might look like.
+
+| $P$ | $Q$ | $P \Rightarrow Q$ |
+| --- | --- | ----------------- |
+| T   | T   | T                 |
+| T   | F   | F                 |
+| F   | T   | ?                 |
+| F   | F   | ?                 |
+
+First two rows are easy. But what about the last two? In a true-false system we have to pick one of the two. False feels "intuitive". What happens if we pick False for both?
+
+| $P$ | $Q$ | $P \Rightarrow Q$ |
+| --- | --- | ----------------- |
+| T   | T   | T                 |
+| T   | F   | F                 |
+| F   | T   | F?                |
+| F   | F   | F?                |
+
+Well, this is just conjunction:
+
+| $P$ | $Q$ | $P \land Q$ |
+| --- | --- | ----------- |
+| T   | T   | T           |
+| T   | F   | F           |
+| F   | T   | F           |
+| F   | F   | F           |
+
+We haven't produced any new mathematics, so those two rows certainly aren't both False. Therefore, at least one of the two rows must resolve to True. Which one? Let's start with the third row.
+
+| $P$ | $Q$ | $P \Rightarrow Q$ |
+| --- | --- | ----------------- |
+| T   | T   | T                 |
+| T   | F   | F                 |
+| F   | T   | T?                |
+| F   | F   | F?                |
+
+What does this mean? It means that holistically our connective says: "Q whatever is P" or equivalently, quite literally, just "Q", and that's hardly useful. Alright, perhaps we should pick True for the last row.
+
+| $P$ | $Q$ | $P \Rightarrow Q$ |
+| --- | --- | ----------------- |
+| T   | T   | T                 |
+| T   | F   | F                 |
+| F   | T   | F?                |
+| F   | F   | T?                |
+
+Intuitively, the last row feels wrong, but have arrived at exactly this combination through a rigorous process of thought so we can't throw it away based on how it "feels". There is something odd however with when $P$ is False, Q is True and implication False. We have a premise that is False, conclusion that is True, but somehow our implication is still False. If our premise $P$ is "I exercise", and conclusion $Q$ is "I lose weight" and it so happens that I have lost weight but did not exercise (I stopped chugging soda every day) our implication "I exercise => I lose weight" is False, despite me losing weight. This is clearly wrong. We arrive at the only final reasonable configuration that must be the one, and it is. The implication table you all know and love.
+
+| $P$ | $Q$ | $P \Rightarrow Q$ |
+| --- | --- | ----------------- |
+| T   | T   | T                 |
+| T   | F   | F                 |
+| F   | T   | T                |
+| F   | F   | T                |
+
+## Paradoxess
 
 ## References
 
