@@ -11,9 +11,9 @@ Let's start with a set view of these concepts. Have a look at the following diag
 
 ![](../images/necessary-sufficient/venn.png)
 
-To be a _red circle_, it is **necessary** to be a _red shape_. But not **sufficient**! (because you might be a _red square_ or any other _non-circle red shape_).
+To be a _red circle_, it is **necessary** to be a _red shape_. But not **sufficient**! (because you might be a _red square_ or any other _non-circle red shape_)
 
-Similarly, to be a _red circle_, it is **necessary** to be a _coloured circle_. But not **sufficient**!
+Similarly, to be a _red circle_, it is **necessary** to be a _coloured circle_. But not **sufficient**! (why?)
 
 Conversely, being a _red circle_ is a **sufficient** condition for being both a _red shape_ and a _coloured circle_. Knowing that a shape is a _red circle_ guarantees that it is a _red shape_ and that it is a _coloured circle_.
 
@@ -25,7 +25,7 @@ You can extend this thinking to an arbitrary number of sets to get an even bette
 
 Clearly, now there are 3 **necessary** conditions if we are talking about the letters that are common among all the sets. This reasoning, of course, extends to an arbitrary number of **necessary** conditions.
 
-> Intuition takeaway from this section: you can have many **necessary** conditions, that all are individually required, but also they individually do not guarantee the final condition. On the other hand, if something is a **sufficient** condition, you know immediately that it guarantees the final condition.
+> Intuition takeaway from this section: you can have many **necessary** conditions, that all are _individually_ required, but also they _individually_ do not guarantee the final outcome. On the other hand, if something is a **sufficient** condition, you know immediately that it guarantees the final outcome.
 
 Feel free to stop here as this will already give you a solid basic understanding of the concepts. However, if you want to look at these conditions from a logic perspective, continue reading.
 
@@ -189,3 +189,11 @@ Want to test your understanding? See if you can answer the following questions.
    a) **Not Necessary**: Having a key is not a necessary condition to open the door (the door could be opened by other means, like someone else opening it from the inside).
 
    b) **Explanation**: While a key is one way to open the door (sufficient condition), it's not the only way (not necessary). Other methods might include using a keypad code or having someone else open it.
+
+## References
+
+deduction: https://www.rationalrealm.com/philosophy/logic/propositional-logic-primer-page3.html
+
+material conditional: https://www.youtube.com/watch?v=XhQp8suacqI&t=6s
+
+extremely good resource on material conditional: https://philosophy.lander.edu/logic/conditional.html
