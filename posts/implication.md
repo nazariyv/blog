@@ -71,9 +71,20 @@ Intuitively, the last row feels wrong, but we have arrived at exactly this confi
 | F   | T   | T                 |
 | F   | F   | T                 |
 
-## Paradoxess
+## Paradoxes
 
-Implication isn't without some peculiarities.
+Implication isn't without some peculiarities. Two classes of paradoxes arise from the definition of implication. Note, however, that paradoxes do not imply inconsistency (when you can prove both the statement and its negation). They are just unintuitive.
+
+1. Paradoxes arising when the hypothesis is false.
+   - Whenever the hypothesis is false, the whole conditional is true, regardless of the conclusion.
+   - This leads to counterintuitive results like "If moon is made of cheese, then life exists on other planets" being considered true.
+2. Paradoxes arising when the conclusion is true.
+   - Whenever the conclusion is true, the conditional is true, regardless of the hypothesis.
+   - This leads to counterintuitive results like "If life exists on other planets, then life exists on earth" being considered true.
+
+These paradoxes stem from the truth table definition of material implication, where the conditional is only false when the hypothesis is true and the conclusion is false. In all other cases, including when the hypothesis is false or the conclusion is true, the conditional is considered true.
+
+These are considered paradoxes in the sense of violating intuition, rather than being actual logical contradictions. They arise from trying to use material implication to capture all uses of "if...then" statements in natural language, when it is just one specific type of implication that does not always align with colloquial usage (if you are interested, try researching <a href="https://en.wikipedia.org/wiki/Non-classical_logic" target="_blank" rel="noopener noreferrer">"non-classical logic").
 
 ## References
 
