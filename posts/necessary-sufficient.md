@@ -3,7 +3,7 @@
 [title]: <> (Necessary and Sufficient Conditions)
 [pandoc]: <> (--mathjax)
 
-## Set Theory Perspective
+## set theory perspective
 
 Let's start with a set view of these concepts. Have a look at the following diagram. We have contrived a universe in which a _red circle_ is a combination of a _red shape_ and a _coloured circle_.
 
@@ -27,7 +27,7 @@ Clearly, now there are 3 **necessary** conditions if we are talking about the le
 
 Feel free to stop here as this will already give you a solid basic understanding of the concepts. However, if you want to look at these conditions from a logic perspective, continue reading.
 
-## Logic Theory Perspective
+## logic perspective
 
 Unless you are very comfortable with material conditional, I highly recommend reading <a href="/implication" target="_blank" rel="noopener noreferrer">my other post on the topic</a>.
 
@@ -110,7 +110,7 @@ In summary, the logical perspective reinforces the relationships we observed in 
 
 Understanding these logical implications helps solidify our grasp of necessary and sufficient conditions.
 
-## Why Is This Concept Important?
+## why is it important?
 
 Understanding necessary and sufficient conditions is crucial in mathematics and many other fields because they form the foundation of logical reasoning and proof construction. These concepts help us:
 
@@ -122,7 +122,7 @@ Understanding necessary and sufficient conditions is crucial in mathematics and 
 
 - **Solve Complex Problems**: Breaking down problems into necessary and sufficient conditions can simplify complex scenarios, making them more manageable and easier to solve.
 
-## Exercises
+## exercises
 
 Want to test your understanding? See if you can answer the following questions.
 
@@ -160,7 +160,7 @@ Want to test your understanding? See if you can answer the following questions.
 
    b) Explain why or why not.
 
-## Answers
+## answers
 
 1. **Identifying Conditions**:
 
@@ -190,6 +190,6 @@ Want to test your understanding? See if you can answer the following questions.
 
    b) **Explanation**: While a key is one way to open the door (sufficient condition), it's not the only way (not necessary). Other methods might include using a keypad code or having someone else open it.
 
-## References
+## references
 
 <a href="https://www.rationalrealm.com/philosophy/logic/propositional-logic-primer-page3.html" target="_blank" rel="noopener noreferrer">deduction</a>
