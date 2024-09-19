@@ -48,7 +48,18 @@ then we can read it as:
 <center>P is sufficient for Q</center>
 <center>Q is necessary for P</center>
 
-Note, when we use "necessary" / "sufficient" statements, we implicitly assume implication is true.
+These two statements are equivalent. If, however, we stated that $P$ is sufficient for $Q$ and $P$ is necessary for $Q$, then we would have a biconditional statement, which would mean that both are either true or both are false.
+
+We know from earlier, that "necessary" means that conclusion cannot be true, unless hypothesis is true. Let's pull up a truth table for this:
+
+| $P$ | $Q$ | $P \Rightarrow Q$ |
+| --- | --- | ----------------- |
+| T   | T   | T                 |
+| T   | F   | F                 |
+| F   | T   | F                 |
+| F   | F   | T                 |
+
+Note that the only way for $P \Rightarrow Q$ to be true is if $P$ is true and $Q$ is true.
 
 Now, let's apply this knowledge to the above example we have contrived. First, let's define our propositions. We will be a little unconventional and denote events with two letters instead of one. There is no significance in this, other than making it instantaneous to understand what proposition we have in mind just by looking at the letters:
 
@@ -176,4 +187,4 @@ Want to test your understanding? Try to solve these exercises before checking th
 
 5. <a href="https://math.stackexchange.com/questions/tagged/necessary-sufficient-conditions" target="_blank" rel="noopener noreferrer">Mathematics Stack Exchange: Discussions on Necessary and Sufficient Conditions</a>
 
-These resources provide deeper insights into the concepts of necessary and sufficient conditions, their applications in various fields, and more advanced topics in logic and mathematical reasoning.
+6. <a href="https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/economics/sets-and-logic/necessity-and-sufficiency.html#External%20Resources" target="_blank" rel="noopener noreferrer">Newcaslte University: Necessary and Sufficient Conditions</a>
