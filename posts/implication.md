@@ -3,10 +3,6 @@
 [title]: <> (Implication)
 [pandoc]: <> (--mathjax)
 
-I find most explanations of the implication unsatisfactory, personally. This post attempts to motivate the definition of implication, rather than trying to explain it.
-
----
-
 In mathematical logic, implication is a logical operation typically denoted as $P \Rightarrow Q$, which can be read as "if $P$, then $Q$". It's a fundamental concept that forms the basis of many logical arguments and proofs. However, its definition often leads to confusion, particularly when the hypothesis is false.
 
 Why is that dreaded implication **true** when the hypothesis is **false**?
