@@ -41,7 +41,7 @@ In logic, the statement "_P is a necessary condition for Q_" means that $P$ cann
 
 $$ P \Leftarrow Q $$
 
-This symbol $\Leftarrow$ is read as "is implied by" or "if and only if".
+This symbol $\Leftarrow$ is read as "is implied by".
 
 Conversely, "_P is a sufficient condition for Q_" means that whenever $P$ is true, $Q$ is also true:
 
