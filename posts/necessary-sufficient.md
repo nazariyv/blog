@@ -3,8 +3,6 @@
 [title]: <> (Necessary and Sufficient Conditions)
 [pandoc]: <> (--mathjax)
 
-Every so often I need to refresh my memory about the intuitive meaning of the **necessary** and **sufficient** conditions in mathematics. Chances are, you do too. So I'm writing this post to have as clear exposition as possible on this topic. Hopefully, by the end of this article you will have a crystal clear understanding of these concepts.
-
 ## Set Theory Perspective
 
 Let's start with a set view of these concepts. Have a look at the following diagram. We have contrived a universe in which a _red circle_ is a combination of a _red shape_ and a _coloured circle_.
