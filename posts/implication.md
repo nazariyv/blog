@@ -7,12 +7,16 @@ I find most explanations of the implication unsatisfactory, personally. This pos
 
 ---
 
-Why is that dreaded implication **True** when the hypothesis is **False**?
+In mathematical logic, implication is a logical operation typically denoted as $P \Rightarrow Q$, which can be read as "if $P$, then $Q$". It's a fundamental concept that forms the basis of many logical arguments and proofs. However, its definition often leads to confusion, particularly when the hypothesis is false.
+
+Why is that dreaded implication **true** when the hypothesis is **false**?
+
+Common explanations include:
 
 - "Just remember the truth table and use it"
 - "It's just a definition"
 - "It's a vacuous truth"
-- "Becase I haven't broken a promise"
+- "Because I haven't broken a promise"
 
 Somehow, none of these answers are satisfactory. Whoever came up with implication must have had a good reason for it. What is it?
 
@@ -33,7 +37,9 @@ Let hypothesis be denoted by $P$ and conclusion be denoted by $Q$. Let's also de
 | F   | T   | ?                 |
 | F   | F   | ?                 |
 
-First two rows are easy. But what about the last two? In a binary (true or false) system we have to pick one of the two. False feels "intuitive". What happens if we pick False for both?
+The first two rows are easy to determine. When $P$ is true and $Q$ is true, the implication is clearly true - if the hypothesis is true and the conclusion is true, the implication holds. When $P$ is true and $Q$ is false, the implication must be false - if the hypothesis is true but the conclusion is false, the implication doesn't hold.
+
+But what about the last two? In a binary (true or false) system we have to pick one of the two. false feels "intuitive". What happens if we pick false for both?
 
 Well, this is just conjunction:
 
@@ -44,7 +50,7 @@ Well, this is just conjunction:
 | F   | T   | **F?**            | **F**       |
 | F   | F   | **F?**            | **F**       |
 
-We haven't produced any new concept here, so those two rows certainly aren't both False. Therefore, **at least one of the two rows must resolve to True**. Which one? Let's start with the third row.
+We haven't produced any new concept here, so those two rows certainly aren't both false. Therefore, **at least one of the two rows must resolve to true**. Which one? Let's start with the third row.
 
 | $P$ | $Q$   | $P \Rightarrow Q$ |
 | --- | ----- | ----------------- |
@@ -53,7 +59,7 @@ We haven't produced any new concept here, so those two rows certainly aren't bot
 | F   | **T** | **T?**            |
 | F   | **F** | **F?**            |
 
-What does this mean? It means that holistically our connective says: "Q whatever is P" or equivalently, quite literally, just "Q", and that's hardly useful. Again, this isn't the right configuration. Alright, perhaps we should pick True for the last row.
+What does this mean? It means that holistically our connective says: "$Q$ whatever is $P$" or equivalently, quite literally, just "$Q$", and that's hardly useful. Again, this isn't the right configuration. Alright, perhaps we should pick true for the last row.
 
 | $P$ | $Q$ | $P \Rightarrow Q$ |
 | --- | --- | ----------------- |
@@ -62,7 +68,7 @@ What does this mean? It means that holistically our connective says: "Q whatever
 | F   | T   | F?                |
 | F   | F   | T?                |
 
-Intuitively, the last row feels wrong, but we have arrived at exactly this configuration through a rigorous process of thought and after exhausting all other options, so we can't throw it away based on how it "feels". There is something odd however with when $P$ is False, $Q$ is True and implication is False. We have a hypothesis that is False, conclusion that is True, but somehow our implication is still False. If our hypothesis $P$ is "I exercise", and conclusion $Q$ is "I lose weight" and it so happens that I have lost weight but did not exercise (I stopped chugging soda every day) our implication "I exercise => I lose weight" is False, despite me losing weight. This is wrong. We arrive at the only final configuration that must be the one, and as we know: it is. The implication table you all know and love.
+Intuitively, the last row feels wrong, but we have arrived at exactly this configuration through a rigorous process of thought and after exhausting all other options, so we can't throw it away based on how it "feels". There is something odd however with when $P$ is false, $Q$ is true and implication is false. We have a hypothesis that is false, conclusion that is true, but somehow our implication is still false. If our hypothesis $P$ is "I exercise", and conclusion $Q$ is "I lose weight" and it so happens that I have lost weight but did not exercise (I stopped chugging soda every day) our implication "I exercise => I lose weight" is false, despite me losing weight. This is wrong. We arrive at the only final configuration that must be the one, and as we know: it is. The implication table you all know and love.
 
 | $P$ | $Q$ | $P \Rightarrow Q$ |
 | --- | --- | ----------------- |
@@ -71,7 +77,7 @@ Intuitively, the last row feels wrong, but we have arrived at exactly this confi
 | F   | T   | T                 |
 | F   | F   | T                 |
 
-## Paradoxes
+## paradoxes
 
 Implication isn't without some peculiarities. Two classes of paradoxes arise from the definition of implication. Note, however, that paradoxes do not imply inconsistency (when you can prove both the statement and its negation). They are just unintuitive.
 
@@ -84,9 +90,19 @@ Implication isn't without some peculiarities. Two classes of paradoxes arise fro
 
 These paradoxes stem from the truth table definition of material implication, where the conditional is only false when the hypothesis is true and the conclusion is false. In all other cases, including when the hypothesis is false or the conclusion is true, the conditional is considered true.
 
-These are considered paradoxes in the sense of violating intuition, rather than being actual logical contradictions. They arise from trying to use material implication to capture all uses of "if...then" statements in natural language, when it is just one specific type of implication that does not always align with colloquial usage (if you are interested, try researching <a href="https://en.wikipedia.org/wiki/Non-classical_logic" target="_blank" rel="noopener noreferrer">"non-classical logic").
+These are called "paradoxes" not because they lead to logical contradictions, but because they violate our intuitive understanding of "if-then" statements in everyday language. In natural language, we often assume a causal or relevant connection between the "if" part and the "then" part, which isn't necessarily the case in mathematical logic. This disconnect between formal logic and intuitive reasoning is what makes these situations feel paradoxical, even though they're logically consistent within the framework of material implication.
 
-## References
+These paradoxes arise from trying to use material implication to capture all uses of "if...then" statements in natural language, when it is just one specific type of implication that does not always align with colloquial usage (if you are interested, try researching <a href="https://en.wikipedia.org/wiki/Non-classical_logic" target="_blank" rel="noopener noreferrer">"non-classical logic"</a>).
+
+## conclusion
+
+Understanding implication is crucial in logic and mathematics. It forms the basis of many logical arguments, proofs, and deductions. While its definition might seem counterintuitive at first, especially when the hypothesis is false, we've seen that it arises naturally when we try to create a logical operator that relates two statements in a meaningful way.
+
+The seeming paradoxes of implication highlight the difference between formal logical systems and our intuitive reasoning. By understanding these nuances, we can use implication more effectively in formal logic while being aware of its limitations when applied to natural language.
+
+Remember, in the realm of mathematical logic, implication is a precisely defined concept that behaves in ways that might not always align with our everyday understanding of "if-then" statements. This precision is what makes it so powerful in formal reasoning, even if it sometimes leads to results that feel paradoxical.
+
+## references
 
 <a href="https://en.wikipedia.org/wiki/Implication_(logic)" target="_blank" rel="noopener noreferrer">implication wikipedia article</a>
 

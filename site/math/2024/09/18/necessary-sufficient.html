@@ -139,19 +139,32 @@
 <small style="float:right; color: #888"><a href="/">See all posts</a></small>
 <br> <br> <br>
 <title> Necessary and Sufficient Conditions </title>
+<h2 id="introduction">introduction</h2>
+<p>Necessary and sufficient conditions are fundamental concepts in
+logic, mathematics, and many other fields of study. They provide a
+framework for precise reasoning and help us understand the relationships
+between different statements or properties. This article will explore
+these concepts from both set theory and logical perspectives,
+demonstrating their importance and practical applications.</p>
 <h2 id="set-theory-perspective">set theory perspective</h2>
 <p>Let's start with a set view of these concepts. Have a look at the
 following diagram. We have contrived a universe in which a <em>red
 circle</em> is a combination of a <em>red shape</em> and a <em>coloured
 circle</em>.</p>
-<p><img src="/images/necessary-sufficient/venn.png" /></p>
+<figure>
+<img src="/images/necessary-sufficient/venn.png"
+alt="Venn diagram of red shapes and colored circles" />
+<figcaption aria-hidden="true">Venn diagram of red shapes and colored
+circles</figcaption>
+</figure>
 <p>To be a <em>red circle</em>, it is <strong>necessary</strong> to be a
 <em>red shape</em>. But not <strong>sufficient</strong>! (because you
 might be a <em>red square</em> or any other <em>non-circle red
 shape</em>)</p>
 <p>Similarly, to be a <em>red circle</em>, it is
 <strong>necessary</strong> to be a <em>coloured circle</em>. But not
-<strong>sufficient</strong>! (why?)</p>
+<strong>sufficient</strong>! (because it could be a blue circle or any
+other non-red colored circle)</p>
 <p>Conversely, being a <em>red circle</em> is a
 <strong>sufficient</strong> condition for being both a <em>red
 shape</em> and a <em>coloured circle</em>. Knowing that a shape is a
@@ -168,9 +181,9 @@ even better understanding of <strong>necessary</strong> conditions. For
 example, have a look at the following diagram.</p>
 <figure>
 <img src="/images/necessary-sufficient/venn-letters.png"
-alt="source: https://en.wikipedia.org/wiki/Venn_diagram" />
-<figcaption aria-hidden="true">source:
-https://en.wikipedia.org/wiki/Venn_diagram</figcaption>
+alt="Venn diagram with multiple overlapping sets" />
+<figcaption aria-hidden="true">Venn diagram with multiple overlapping
+sets</figcaption>
 </figure>
 <p>Clearly, now there are 3 <strong>necessary</strong> conditions if we
 are talking about the letters that are common among all the sets. This
@@ -188,16 +201,32 @@ guarantees the final outcome.</p>
 understanding of the concepts. However, if you want to look at these
 conditions from a logic perspective, continue reading.</p>
 <h2 id="logic-perspective">logic perspective</h2>
-<p>Unless you are very comfortable with material conditional, I highly
+<p>Unless you are very comfortable with material conditional
+(implication, which is a logical relationship between two statements
+where if the first is true, the second must also be true), I highly
 recommend reading
 <a href="/implication" target="_blank" rel="noopener noreferrer">my
 other post on the topic</a>.</p>
 <p>In logic, we express <strong>necessary</strong> and
 <strong>sufficient</strong> conditions using implications. Let's revisit
 our earlier example from a logical standpoint.</p>
-<p>First, let's define our propositions. We will be a little
+<p>In logic, the statement "<em>P is a necessary condition for Q</em>"
+means that <span class="math inline">\(P\)</span> cannot be true unless
+<span class="math inline">\(Q\)</span> is true, which is expressed
+as:</p>
+<p><span class="math display">\[ P \Leftarrow Q \]</span></p>
+<p>This symbol <span class="math inline">\(\Leftarrow\)</span> is read
+as "is implied by" or "if and only if".</p>
+<p>Conversely, "<em>P is a sufficient condition for Q</em>" means that
+whenever <span class="math inline">\(P\)</span> is true, <span
+class="math inline">\(Q\)</span> is also true:</p>
+<p><span class="math display">\[ P \Rightarrow Q \]</span></p>
+<p>This symbol <span class="math inline">\(\Rightarrow\)</span> is read
+as "implies" or "if...then".</p>
+<p>Now, let's apply this knowledge to the above example we have
+contrived. First, let's define our propositions. We will be a little
 unconventional and denote events with two letters instead of one. There
-is no significance in this, other than making it instantenous to
+is no significance in this, other than making it instantaneous to
 understand what proposition we have in mind just by looking at the
 letters:</p>
 <ul>
@@ -237,128 +266,39 @@ a single letter, like <span class="math inline">\(C\)</span> to make the
 above statement appear more conventionally, then you have <span
 class="math inline">\(RC \Leftrightarrow C\)</span>.</p></li>
 </ol>
-<p>In logic, the statement "<em>P is a necessary condition for Q</em>"
-means that <span class="math inline">\(Q\)</span> cannot be true unless
-<span class="math inline">\(P\)</span> is true, which is expressed
-as:</p>
-<p><span class="math display">\[ P \Leftarrow Q \]</span></p>
-<p>Conversely, "<em>P is a sufficient condition for Q</em>" means that
-whenever <span class="math inline">\(P\)</span> is true, <span
-class="math inline">\(Q\)</span> is also true:</p>
-<p><span class="math display">\[ P \Rightarrow Q \]</span></p>
-<p>Applying this to our example:</p>
-<ul>
-<li><p><strong>Necessary Condition</strong>: Since being a red shape
-(<span class="math inline">\(RS\)</span>) is necessary for being a red
-circle (<span class="math inline">\(RC\)</span>), we have:</p>
-<p><span class="math display">\[ RC \Rightarrow RS \]</span></p></li>
-<li><p><strong>Sufficient Condition</strong>: Being a red circle (<span
-class="math inline">\(RC\)</span>) is sufficient for being a red shape
-(<span class="math inline">\(RS\)</span>):</p>
-<p><span class="math display">\[ RC \Rightarrow RS \]</span></p></li>
-</ul>
-<p>This might seem confusing because the implication is the same in both
-cases. However, the direction of the implication tells us both that:</p>
-<ul>
-<li><span class="math inline">\(RC\)</span> is sufficient for <span
-class="math inline">\(RS\)</span> (if <span
-class="math inline">\(RC\)</span> is true, <span
-class="math inline">\(RS\)</span> must be true).</li>
-<li><span class="math inline">\(RS\)</span> is necessary for <span
-class="math inline">\(RC\)</span> (for <span
-class="math inline">\(RC\)</span> to be true, <span
-class="math inline">\(RS\)</span> must be true).</li>
-</ul>
-<p>Let's look at the truth table for the implication <span
-class="math inline">\(RC \Rightarrow RS\)</span>:</p>
-<table>
-<thead>
-<tr>
-<th><span class="math inline">\(RC\)</span></th>
-<th><span class="math inline">\(RS\)</span></th>
-<th><span class="math inline">\(RC \Rightarrow RS\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>T</td>
-<td>T</td>
-<td>T</td>
-</tr>
-<tr>
-<td>T</td>
-<td>F</td>
-<td><strong>F</strong></td>
-</tr>
-<tr>
-<td>F</td>
-<td>T</td>
-<td>T</td>
-</tr>
-<tr>
-<td>F</td>
-<td>F</td>
-<td>T</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>When <span class="math inline">\(RC\)</span> is true and <span
-class="math inline">\(RS\)</span> is true, the implication holds.</li>
-<li>When <span class="math inline">\(RC\)</span> is true but <span
-class="math inline">\(RS\)</span> is false, the implication fails. This
-aligns with our understanding: something cannot be a red circle without
-being a red shape.</li>
-<li>When <span class="math inline">\(RC\)</span> is false (it's not a
-red circle), the implication <span class="math inline">\(RC \Rightarrow
-RS\)</span> is always true, regardless of the truth value of <span
-class="math inline">\(RS\)</span>. This is because the implication only
-asserts something about cases where <span
-class="math inline">\(RC\)</span> is true.</li>
-</ul>
-<p>Similarly, for <span class="math inline">\(RC \Leftrightarrow RS
-\land CC\)</span>, the truth table would confirm that <span
-class="math inline">\(RC\)</span> is true if and only if both <span
-class="math inline">\(RS\)</span> and <span
-class="math inline">\(CC\)</span> are true.</p>
-<p>In summary, the logical perspective reinforces the relationships we
-observed in the set-theory perspective:</p>
-<ul>
-<li><strong>Being a red circle (<span class="math inline">\(RC\)</span>)
-is sufficient for being a red shape (<span
-class="math inline">\(RS\)</span>) and a coloured circle (<span
-class="math inline">\(CC\)</span>)</strong>.</li>
-<li><strong>Being a red shape (<span class="math inline">\(RS\)</span>)
-and a coloured circle (<span class="math inline">\(CC\)</span>) is
-necessary and sufficient for being a red circle (<span
-class="math inline">\(RC\)</span>)</strong>.</li>
-</ul>
-<p>Understanding these logical implications helps solidify our grasp of
-necessary and sufficient conditions.</p>
 <h2 id="why-is-it-important">why is it important?</h2>
 <p>Understanding necessary and sufficient conditions is crucial in
 mathematics and many other fields because they form the foundation of
 logical reasoning and proof construction. These concepts help us:</p>
 <ul>
-<li><p><strong>Clarify Definitions</strong>: They allow us to define
+<li><p><strong>Clarify definitions</strong>: they allow us to define
 concepts precisely by specifying exactly what is required (necessary
 conditions) and what is enough (sufficient conditions) for a statement
 to be true.</p></li>
-<li><p><strong>Develop Theorems and Proofs</strong>: Many mathematical
+<li><p><strong>Develop theorems and proofs</strong>: many mathematical
 theorems are structured around necessary and sufficient conditions.
 Recognizing these conditions aids in both proving new theorems and
 understanding existing ones.</p></li>
-<li><p><strong>Enhance Logical Reasoning</strong>: Grasping these ideas
-improves our ability to construct valid arguments and avoid logical
-fallacies, which is essential not only in mathematics but also in
-everyday decision-making.</p></li>
-<li><p><strong>Solve Complex Problems</strong>: Breaking down problems
+<li><p><strong>Solve complex problems</strong>: breaking down problems
 into necessary and sufficient conditions can simplify complex scenarios,
 making them more manageable and easier to solve.</p></li>
 </ul>
+<p>For example, in medicine, understanding necessary and sufficient
+conditions can be crucial for diagnosis. A certain symptom might be
+necessary for a diagnosis (the disease cannot be present without it) but
+not sufficient (the symptom alone doesn't guarantee the disease). On the
+other hand, a positive result from a highly specific test might be both
+necessary and sufficient for diagnosing a particular condition.</p>
+<p>In computer science, necessary and sufficient conditions are often
+used in algorithm design and verification. For instance, in sorting
+algorithms, certain conditions might be necessary for an array to be
+considered sorted, while others might be sufficient to guarantee that
+the sorting process is complete.</p>
 <h2 id="exercises">exercises</h2>
-<p>Want to test your understanding? See if you can answer the following
-questions.</p>
+<p>Want to test your understanding? Try to solve these exercises before
+checking the answers below. These questions will help you apply the
+concepts of necessary and sufficient conditions to various
+scenarios.</p>
 <ol type="1">
 <li><p><strong>Identifying Conditions</strong>:</p>
 <ol type="a">
@@ -432,7 +372,11 @@ class="math inline">\(A \subseteq C\)</span>.</p></li>
 class="math inline">\(C\)</span> is necessary for being in <span
 class="math inline">\(A\)</span> since all elements of <span
 class="math inline">\(A\)</span> are contained in <span
-class="math inline">\(C\)</span>.</p></li>
+class="math inline">\(C\)</span>. However, it's important to note that
+while being in <span class="math inline">\(C\)</span> is necessary for
+being in <span class="math inline">\(A\)</span>, it's not sufficient (as
+there might be elements in <span class="math inline">\(C\)</span> that
+are not in <span class="math inline">\(A\)</span>).</p></li>
 </ol></li>
 <li><p><strong>Combining Conditions</strong>:</p>
 <p>Both paying tuition and registering for classes are
@@ -449,8 +393,26 @@ Other methods might include using a keypad code or having someone else
 open it.</p></li>
 </ol></li>
 </ol>
-<h2 id="references">references</h2>
-<p><a href="https://www.rationalrealm.com/philosophy/logic/propositional-logic-primer-page3.html" target="_blank" rel="noopener noreferrer">deduction</a></p>
+<h2 id="references-and-further-reading">references and further
+reading</h2>
+<ol type="1">
+<li><p><a href="https://www.rationalrealm.com/philosophy/logic/propositional-logic-primer-page3.html" target="_blank" rel="noopener noreferrer">Propositional
+Logic Primer: Deduction</a></p></li>
+<li><p>Hurley, P. J. (2014). A Concise Introduction to Logic. Cengage
+Learning.</p></li>
+<li><p>Velleman, D. J. (2006). How to Prove It: A Structured Approach.
+Cambridge University Press.</p></li>
+<li><p><a href="https://plato.stanford.edu/entries/necessary-sufficient/" target="_blank" rel="noopener noreferrer">Stanford
+Encyclopedia of Philosophy: Necessary and Sufficient
+Conditions</a></p></li>
+<li><p><a href="https://math.stackexchange.com/questions/tagged/necessary-sufficient-conditions" target="_blank" rel="noopener noreferrer">Mathematics
+Stack Exchange: Discussions on Necessary and Sufficient
+Conditions</a></p></li>
+</ol>
+<p>These resources provide deeper insights into the concepts of
+necessary and sufficient conditions, their applications in various
+fields, and more advanced topics in logic and mathematical
+reasoning.</p>
 
 </div>
 
