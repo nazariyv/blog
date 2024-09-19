@@ -35,19 +35,20 @@ Feel free to stop here as this will already give you a solid basic understanding
 
 Unless you are very comfortable with material conditional, I highly recommend reading <a href="/implication" target="_blank" rel="noopener noreferrer">my other post on the topic</a>.
 
-In logic, we express **necessary** and **sufficient** conditions using implications. Let's revisit our earlier example from a logical standpoint.
+In logic, we express **necessary** and **sufficient** conditions using implications. A nice heuristic for remembering the direction of the arrow:
 
-In logic, the statement "_P is a necessary condition for Q_" means that $P$ cannot be true unless $Q$ is true, which is expressed as:
+$$sufficient => necessary$$
 
-$$ P \Leftarrow Q $$
+so if we have conventional form:
 
-This symbol $\Leftarrow$ is read as "is implied by".
+$$P \Rightarrow Q$$
 
-Conversely, "_P is a sufficient condition for Q_" means that whenever $P$ is true, $Q$ is also true:
+then we can read it as:
 
-$$ P \Rightarrow Q $$
+<center>P is sufficient for Q</center>
+<center>Q is necessary for P</center>
 
-This symbol $\Rightarrow$ is read as "implies" or "if...then".
+Note, when we use "necessary" / "sufficient" statements, we implicitly assume implication is true.
 
 Now, let's apply this knowledge to the above example we have contrived. First, let's define our propositions. We will be a little unconventional and denote events with two letters instead of one. There is no significance in this, other than making it instantaneous to understand what proposition we have in mind just by looking at the letters:
 
