@@ -50,16 +50,16 @@ then we can read it as:
 
 These two statements are equivalent. If, however, we stated that $P$ is sufficient for $Q$ and $P$ is necessary for $Q$, then we would have a biconditional statement, which would mean that both are either true or both are false.
 
-We know from earlier, that "necessary" means that conclusion cannot be true, unless hypothesis is true. Let's pull up a truth table for this:
+We know from earlier, that "Q is necessary for P" means that $P$ can't be true, unless $Q$ is true. Let's pull up a truth table for this:
 
 | $P$ | $Q$ | $P \Rightarrow Q$ |
 | --- | --- | ----------------- |
 | T   | T   | T                 |
 | T   | F   | F                 |
-| F   | T   | F                 |
+| F   | T   | T                 |
 | F   | F   | T                 |
 
-Note that the only way for $P \Rightarrow Q$ to be true is if $P$ is true and $Q$ is true.
+Let's first look at all the cases where $P$ is true. It's first two rows. But second row leads to a false implication, so we ignore it. Therefore, holistically, the only for $P$ to be true is if $Q$ is true.
 
 Now, let's apply this knowledge to the above example we have contrived. First, let's define our propositions. We will be a little unconventional and denote events with two letters instead of one. There is no significance in this, other than making it instantaneous to understand what proposition we have in mind just by looking at the letters:
 
