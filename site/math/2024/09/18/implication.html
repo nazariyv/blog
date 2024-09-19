@@ -139,57 +139,79 @@
 <small style="float:right; color: #888"><a href="/">See all posts</a></small>
 <br> <br> <br>
 <title> Implication </title>
-<p>I find most explanations of the implication unsatisfactory, personally. This post attempts to motivate the definition of implication, rather than trying to explain it.</p>
+<p>I find most explanations of the implication unsatisfactory,
+personally. This post attempts to motivate the definition of
+implication, rather than trying to explain it.</p>
 <hr />
-<p>Why is that dreaded implication <strong>True</strong> when the hypothesis is <strong>False</strong>?</p>
+<p>Why is that dreaded implication <strong>True</strong> when the
+hypothesis is <strong>False</strong>?</p>
 <ul>
 <li>"Just remember the truth table and use it"</li>
 <li>"It's just a definition"</li>
 <li>"It's a vacuous truth"</li>
 <li>"Becase I haven't broken a promise"</li>
 </ul>
-<p>Somehow, none of these answers are satisfactory. Whoever came up with implication must have had a good reason for it. What is it?</p>
-<p>I went through a thought experiment to understand this. To my pleasant surprise, I have also stumbled upon an <a href="https://philosophy.lander.edu/logic/conditional.html" target="_blank" rel="noopener noreferrer">article</a> that went through a very similar thought experiment.</p>
+<p>Somehow, none of these answers are satisfactory. Whoever came up with
+implication must have had a good reason for it. What is it?</p>
+<p>I went through a thought experiment to understand this. To my
+pleasant surprise, I have also stumbled upon an
+<a href="https://philosophy.lander.edu/logic/conditional.html" target="_blank" rel="noopener noreferrer">article</a>
+that went through a very similar thought experiment.</p>
 <p>Let's begin.</p>
 <hr />
-<p>Imagine you are a logician coming up with connectives. You are devising a formal logic system that is consistent and complete (at least until Gödel drops a bombshell on you). We already have disjunction and conjunction, but we keep exploring what else we can do. So we want to come up with a new and unique connective that deals with two statements that may be related (but not necessarily). We want to come up with a connective that might tell us something about the conclusion if we know some information about the hypothesis (and they may very well be unrelated).</p>
-<p>Let hypothesis be denoted by <span class="math inline">\(P\)</span> and conclusion be denoted by <span class="math inline">\(Q\)</span>. Let's also denote the connective by <span class="math inline">\(\implies\)</span> and call it "implication". We start thinking about what the truth table of <span class="math inline">\(P \implies Q\)</span> might look like.</p>
+<p>Imagine you are a logician coming up with connectives. You are
+devising a formal logic system that is consistent and complete (at least
+until Gödel drops a bombshell on you). We already have negation,
+disjunction and conjunction, but we keep exploring what else we can do.
+So we want to come up with a new and unique connective that deals with
+two statements that may be related (but not necessarily). We want to
+come up with a connective that might tell us something about the
+conclusion if we know some information about the hypothesis (and they
+may very well be unrelated).</p>
+<p>Let hypothesis be denoted by <span class="math inline">\(P\)</span>
+and conclusion be denoted by <span class="math inline">\(Q\)</span>.
+Let's also denote the connective by <span
+class="math inline">\(\implies\)</span> and call it "implication". We
+start thinking about what the truth table of <span
+class="math inline">\(P \implies Q\)</span> might look like.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th><span class="math inline">\(P\)</span></th>
 <th><span class="math inline">\(Q\)</span></th>
 <th><span class="math inline">\(P \Rightarrow Q\)</span></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>T</td>
 <td>T</td>
 <td>T</td>
 </tr>
-<tr class="even">
+<tr>
 <td>T</td>
 <td>F</td>
 <td>F</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>F</td>
 <td>T</td>
 <td>?</td>
 </tr>
-<tr class="even">
+<tr>
 <td>F</td>
 <td>F</td>
 <td>?</td>
 </tr>
 </tbody>
 </table>
-<p>First two rows are easy. But what about the last two? In a binary (true or false) system we have to pick one of the two. False feels "intuitive". What happens if we pick False for both?</p>
+<p>First two rows are easy. But what about the last two? In a binary
+(true or false) system we have to pick one of the two. False feels
+"intuitive". What happens if we pick False for both?</p>
 <p>Well, this is just conjunction:</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th><span class="math inline">\(P\)</span></th>
 <th><span class="math inline">\(Q\)</span></th>
 <th><span class="math inline">\(P \Rightarrow Q\)</span></th>
@@ -197,25 +219,25 @@
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>T</td>
 <td>T</td>
 <td><strong>T</strong></td>
 <td><strong>T</strong></td>
 </tr>
-<tr class="even">
+<tr>
 <td>T</td>
 <td>F</td>
 <td><strong>F</strong></td>
 <td><strong>F</strong></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>F</td>
 <td>T</td>
 <td><strong>F?</strong></td>
 <td><strong>F</strong></td>
 </tr>
-<tr class="even">
+<tr>
 <td>F</td>
 <td>F</td>
 <td><strong>F?</strong></td>
@@ -223,96 +245,115 @@
 </tr>
 </tbody>
 </table>
-<p>We haven't produced any new concept here, so those two rows certainly aren't both False. Therefore, <strong>at least one of the two rows must resolve to True</strong>. Which one? Let's start with the third row.</p>
+<p>We haven't produced any new concept here, so those two rows certainly
+aren't both False. Therefore, <strong>at least one of the two rows must
+resolve to True</strong>. Which one? Let's start with the third row.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th><span class="math inline">\(P\)</span></th>
 <th><span class="math inline">\(Q\)</span></th>
 <th><span class="math inline">\(P \Rightarrow Q\)</span></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>T</td>
 <td><strong>T</strong></td>
 <td><strong>T</strong></td>
 </tr>
-<tr class="even">
+<tr>
 <td>T</td>
 <td><strong>F</strong></td>
 <td><strong>F</strong></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>F</td>
 <td><strong>T</strong></td>
 <td><strong>T?</strong></td>
 </tr>
-<tr class="even">
+<tr>
 <td>F</td>
 <td><strong>F</strong></td>
 <td><strong>F?</strong></td>
 </tr>
 </tbody>
 </table>
-<p>What does this mean? It means that holistically our connective says: "Q whatever is P" or equivalently, quite literally, just "Q", and that's hardly useful. Again, this isn't the right configuration. Alright, perhaps we should pick True for the last row.</p>
+<p>What does this mean? It means that holistically our connective says:
+"Q whatever is P" or equivalently, quite literally, just "Q", and that's
+hardly useful. Again, this isn't the right configuration. Alright,
+perhaps we should pick True for the last row.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th><span class="math inline">\(P\)</span></th>
 <th><span class="math inline">\(Q\)</span></th>
 <th><span class="math inline">\(P \Rightarrow Q\)</span></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>T</td>
 <td>T</td>
 <td>T</td>
 </tr>
-<tr class="even">
+<tr>
 <td>T</td>
 <td>F</td>
 <td>F</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>F</td>
 <td>T</td>
 <td>F?</td>
 </tr>
-<tr class="even">
+<tr>
 <td>F</td>
 <td>F</td>
 <td>T?</td>
 </tr>
 </tbody>
 </table>
-<p>Intuitively, the last row feels wrong, but we have arrived at exactly this configuration through a rigorous process of thought and after exhausting all other options, so we can't throw it away based on how it "feels". There is something odd however with when <span class="math inline">\(P\)</span> is False, <span class="math inline">\(Q\)</span> is True and implication is False. We have a hypothesis that is False, conclusion that is True, but somehow our implication is still False. If our hypothesis <span class="math inline">\(P\)</span> is "I exercise", and conclusion <span class="math inline">\(Q\)</span> is "I lose weight" and it so happens that I have lost weight but did not exercise (I stopped chugging soda every day) our implication "I exercise =&gt; I lose weight" is False, despite me losing weight. This is wrong. We arrive at the only final configuration that must be the one, and as we know: it is. The implication table you all know and love.</p>
+<p>Intuitively, the last row feels wrong, but we have arrived at exactly
+this configuration through a rigorous process of thought and after
+exhausting all other options, so we can't throw it away based on how it
+"feels". There is something odd however with when <span
+class="math inline">\(P\)</span> is False, <span
+class="math inline">\(Q\)</span> is True and implication is False. We
+have a hypothesis that is False, conclusion that is True, but somehow
+our implication is still False. If our hypothesis <span
+class="math inline">\(P\)</span> is "I exercise", and conclusion <span
+class="math inline">\(Q\)</span> is "I lose weight" and it so happens
+that I have lost weight but did not exercise (I stopped chugging soda
+every day) our implication "I exercise =&gt; I lose weight" is False,
+despite me losing weight. This is wrong. We arrive at the only final
+configuration that must be the one, and as we know: it is. The
+implication table you all know and love.</p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th><span class="math inline">\(P\)</span></th>
 <th><span class="math inline">\(Q\)</span></th>
 <th><span class="math inline">\(P \Rightarrow Q\)</span></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>T</td>
 <td>T</td>
 <td>T</td>
 </tr>
-<tr class="even">
+<tr>
 <td>T</td>
 <td>F</td>
 <td>F</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>F</td>
 <td>T</td>
 <td>T</td>
 </tr>
-<tr class="even">
+<tr>
 <td>F</td>
 <td>F</td>
 <td>T</td>
@@ -320,26 +361,48 @@
 </tbody>
 </table>
 <h2 id="paradoxes">Paradoxes</h2>
-<p>Implication isn't without some peculiarities. Two classes of paradoxes arise from the definition of implication. Note, however, that paradoxes do not imply inconsistency (when you can prove both the statement and its negation). They are just unintuitive.</p>
+<p>Implication isn't without some peculiarities. Two classes of
+paradoxes arise from the definition of implication. Note, however, that
+paradoxes do not imply inconsistency (when you can prove both the
+statement and its negation). They are just unintuitive.</p>
 <ol type="1">
 <li>Paradoxes arising when the hypothesis is false.
 <ul>
-<li>Whenever the hypothesis is false, the whole conditional is true, regardless of the conclusion.</li>
-<li>This leads to counterintuitive results like "If moon is made of cheese, then life exists on other planets" being considered true.</li>
+<li>Whenever the hypothesis is false, the whole conditional is true,
+regardless of the conclusion.</li>
+<li>This leads to counterintuitive results like "If moon is made of
+cheese, then life exists on other planets" being considered true.</li>
 </ul></li>
 <li>Paradoxes arising when the conclusion is true.
 <ul>
-<li>Whenever the conclusion is true, the conditional is true, regardless of the hypothesis.</li>
-<li>This leads to counterintuitive results like "If life exists on other planets, then life exists on earth" being considered true.</li>
+<li>Whenever the conclusion is true, the conditional is true, regardless
+of the hypothesis.</li>
+<li>This leads to counterintuitive results like "If life exists on other
+planets, then life exists on earth" being considered true.</li>
 </ul></li>
 </ol>
-<p>These paradoxes stem from the truth table definition of material implication, where the conditional is only false when the hypothesis is true and the conclusion is false. In all other cases, including when the hypothesis is false or the conclusion is true, the conditional is considered true.</p>
-<p>These are considered paradoxes in the sense of violating intuition, rather than being actual logical contradictions. They arise from trying to use material implication to capture all uses of "if...then" statements in natural language, when it is just one specific type of implication that does not always align with colloquial usage (if you are interested, try researching <a href="https://en.wikipedia.org/wiki/Non-classical_logic" target="_blank" rel="noopener noreferrer">"non-classical logic").</p>
+<p>These paradoxes stem from the truth table definition of material
+implication, where the conditional is only false when the hypothesis is
+true and the conclusion is false. In all other cases, including when the
+hypothesis is false or the conclusion is true, the conditional is
+considered true.</p>
+<p>These are considered paradoxes in the sense of violating intuition,
+rather than being actual logical contradictions. They arise from trying
+to use material implication to capture all uses of "if...then" statements
+in natural language, when it is just one specific type of implication
+that does not always align with colloquial usage (if you are interested,
+try researching
+<a href="https://en.wikipedia.org/wiki/Non-classical_logic" target="_blank" rel="noopener noreferrer">"non-classical
+logic").</p>
 <h2 id="references">References</h2>
-<p><a href="https://en.wikipedia.org/wiki/Implication_(logic)" target="_blank" rel="noopener noreferrer">implication wikipedia article</a></p>
-<p><a href="https://www.wikiwand.com/en/articles/Paradoxes_of_material_implication" target="_blank" rel="noopener noreferrer">paradoxes of material implication</a></p>
-<p><a href="https://www.youtube.com/watch?v=XhQp8suacqI&t=6s" target="_blank" rel="noopener noreferrer">material conditional is permissible</a></p>
-<p><a href="https://philosophy.lander.edu/logic/conditional.html" target="_blank" rel="noopener noreferrer">an extremely good resource on material conditional</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Implication_(logic)" target="_blank" rel="noopener noreferrer">implication
+wikipedia article</a></p>
+<p><a href="https://www.wikiwand.com/en/articles/Paradoxes_of_material_implication" target="_blank" rel="noopener noreferrer">paradoxes
+of material implication</a></p>
+<p><a href="https://www.youtube.com/watch?v=XhQp8suacqI&t=6s" target="_blank" rel="noopener noreferrer">material
+conditional is permissible</a></p>
+<p><a href="https://philosophy.lander.edu/logic/conditional.html" target="_blank" rel="noopener noreferrer">an
+extremely good resource on material conditional</a></p>
 
 </div>
 

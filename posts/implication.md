@@ -22,7 +22,7 @@ Let's begin.
 
 ---
 
-Imagine you are a logician coming up with connectives. You are devising a formal logic system that is consistent and complete (at least until Gödel drops a bombshell on you). We already have disjunction and conjunction, but we keep exploring what else we can do. So we want to come up with a new and unique connective that deals with two statements that may be related (but not necessarily). We want to come up with a connective that might tell us something about the conclusion if we know some information about the hypothesis (and they may very well be unrelated).
+Imagine you are a logician coming up with connectives. You are devising a formal logic system that is consistent and complete (at least until Gödel drops a bombshell on you). We already have negation, disjunction and conjunction, but we keep exploring what else we can do. So we want to come up with a new and unique connective that deals with two statements that may be related (but not necessarily). We want to come up with a connective that might tell us something about the conclusion if we know some information about the hypothesis (and they may very well be unrelated).
 
 Let hypothesis be denoted by $P$ and conclusion be denoted by $Q$. Let's also denote the connective by $\implies$ and call it "implication". We start thinking about what the truth table of $P \implies Q$ might look like.
 
