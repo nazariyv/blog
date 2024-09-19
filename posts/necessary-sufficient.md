@@ -33,7 +33,7 @@ Feel free to stop here as this will already give you a solid basic understanding
 
 ## logic perspective
 
-Unless you are very comfortable with material conditional (implication, which is a logical relationship between two statements where if the first is true, the second must also be true), I highly recommend reading <a href="/implication" target="_blank" rel="noopener noreferrer">my other post on the topic</a>.
+Unless you are very comfortable with material conditional, I highly recommend reading <a href="/implication" target="_blank" rel="noopener noreferrer">my other post on the topic</a>.
 
 In logic, we express **necessary** and **sufficient** conditions using implications. Let's revisit our earlier example from a logical standpoint.
 
