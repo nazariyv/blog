@@ -5,7 +5,15 @@
 
 ## introduction
 
-Necessary and sufficient conditions are fundamental concepts in logic, mathematics, and many other fields of study. They provide a framework for precise reasoning and help us understand the relationships between different statements or properties. This article will explore these concepts from both set theory and logical perspectives, demonstrating their importance and practical applications.
+**Necessary** and **sufficient** conditions are fundamental concepts in logic, mathematics, and many other fields of study. They provide a framework for precise reasoning and help us understand the relationships between different statements or properties. This article will explore these concepts from both set theory and logical perspectives, demonstrating their importance and practical applications.
+
+> Event A is said to
+be a **sufficient** condition for event B whenever
+the occurrence of A is all that is required for the
+occurrence of B.
+
+> On the other hand, event A is said
+to be a **necessary** condition for event B whenever B cannot occur without the occurrence of A
 
 ## set theory perspective
 
