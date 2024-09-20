@@ -3,17 +3,14 @@
 [title]: <> (Necessary and Sufficient Conditions)
 [pandoc]: <> (--mathjax)
 
-## introduction
+## definitions
 
-**Necessary** and **sufficient** conditions are fundamental concepts in logic, mathematics, and many other fields of study. They provide a framework for precise reasoning and help us understand the relationships between different statements or properties. This article will explore these concepts from both set theory and logical perspectives, demonstrating their importance and practical applications.
-
-> Event A is said to
-be a **sufficient** condition for event B whenever
-the occurrence of A is all that is required for the
-occurrence of B.
-
-> On the other hand, event A is said
-to be a **necessary** condition for event B whenever B cannot occur without the occurrence of A
+> Event $P$ is said to
+be a **sufficient** condition for event $Q$ whenever
+the occurrence of $P$ is all that is required for the
+occurrence of $Q$. </br> </br>
+> On the other hand, event $P$ is said
+to be a **necessary** condition for event $Q$ whenever $Q$ cannot occur without the occurrence of $P$.
 
 ## set theory perspective
 
@@ -58,18 +55,7 @@ then we can read it as:
 
 These two statements are equivalent. If, however, we stated that $P$ is sufficient for $Q$ and $P$ is necessary for $Q$, then we would have a biconditional statement, which would mean that both are either true or both are false.
 
-We know from earlier, that "Q is necessary for P" means that $P$ can't be true, unless $Q$ is true. Let's pull up a truth table for this:
-
-| $P$ | $Q$ | $P \Rightarrow Q$ |
-| --- | --- | ----------------- |
-| T   | T   | T                 |
-| T   | F   | F                 |
-| F   | T   | T                 |
-| F   | F   | T                 |
-
-Let's first look at all the cases where $P$ is true. It's first two rows. But second row leads to a false implication, so we ignore it. Therefore, holistically, the only for $P$ to be true is if $Q$ is true.
-
-Now, let's apply this knowledge to the above example we have contrived. First, let's define our propositions. We will be a little unconventional and denote events with two letters instead of one. There is no significance in this, other than making it instantaneous to understand what proposition we have in mind just by looking at the letters:
+Now, let's apply this knowledge to an earlier example we have contrived about red circles. First, let's define our propositions. We will be a little unconventional and denote events with two letters instead of one. There is no significance in this, other than making it instantaneous to understand what proposition we have in mind just by looking at the letters:
 
 - Let $RC$ be the proposition "_It is a red circle_".
 - Let $RS$ be the proposition "_It is a red shape_".

@@ -139,23 +139,18 @@
 <small style="float:right; color: #888"><a href="/">See all posts</a></small>
 <br> <br> <br>
 <title> Necessary and Sufficient Conditions </title>
-<h2 id="introduction">introduction</h2>
-<p><strong>Necessary</strong> and <strong>sufficient</strong> conditions
-are fundamental concepts in logic, mathematics, and many other fields of
-study. They provide a framework for precise reasoning and help us
-understand the relationships between different statements or properties.
-This article will explore these concepts from both set theory and
-logical perspectives, demonstrating their importance and practical
-applications.</p>
+<h2 id="definitions">definitions</h2>
 <blockquote>
-<p>Event A is said to be a <strong>sufficient</strong> condition for
-event B whenever the occurrence of A is all that is required for the
-occurrence of B.</p>
-</blockquote>
-<blockquote>
-<p>On the other hand, event A is said to be a <strong>necessary</strong>
-condition for event B whenever B cannot occur without the occurrence of
-A</p>
+<p>Event <span class="math inline">\(P\)</span> is said to be a
+<strong>sufficient</strong> condition for event <span
+class="math inline">\(Q\)</span> whenever the occurrence of <span
+class="math inline">\(P\)</span> is all that is required for the
+occurrence of <span class="math inline">\(Q\)</span>. </br> </br> On the
+other hand, event <span class="math inline">\(P\)</span> is said to be a
+<strong>necessary</strong> condition for event <span
+class="math inline">\(Q\)</span> whenever <span
+class="math inline">\(Q\)</span> cannot occur without the occurrence of
+<span class="math inline">\(P\)</span>.</p>
 </blockquote>
 <h2 id="set-theory-perspective">set theory perspective</h2>
 <p>Let's start with a set view of these concepts. Have a look at the
@@ -236,52 +231,12 @@ class="math inline">\(P\)</span> is necessary for <span
 class="math inline">\(Q\)</span>, then we would have a biconditional
 statement, which would mean that both are either true or both are
 false.</p>
-<p>We know from earlier, that "Q is necessary for P" means that <span
-class="math inline">\(P\)</span> can't be true, unless <span
-class="math inline">\(Q\)</span> is true. Let's pull up a truth table
-for this:</p>
-<table>
-<thead>
-<tr>
-<th><span class="math inline">\(P\)</span></th>
-<th><span class="math inline">\(Q\)</span></th>
-<th><span class="math inline">\(P \Rightarrow Q\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>T</td>
-<td>T</td>
-<td>T</td>
-</tr>
-<tr>
-<td>T</td>
-<td>F</td>
-<td>F</td>
-</tr>
-<tr>
-<td>F</td>
-<td>T</td>
-<td>T</td>
-</tr>
-<tr>
-<td>F</td>
-<td>F</td>
-<td>T</td>
-</tr>
-</tbody>
-</table>
-<p>Let's first look at all the cases where <span
-class="math inline">\(P\)</span> is true. It's first two rows. But
-second row leads to a false implication, so we ignore it. Therefore,
-holistically, the only for <span class="math inline">\(P\)</span> to be
-true is if <span class="math inline">\(Q\)</span> is true.</p>
-<p>Now, let's apply this knowledge to the above example we have
-contrived. First, let's define our propositions. We will be a little
-unconventional and denote events with two letters instead of one. There
-is no significance in this, other than making it instantaneous to
-understand what proposition we have in mind just by looking at the
-letters:</p>
+<p>Now, let's apply this knowledge to an earlier example we have
+contrived about red circles. First, let's define our propositions. We
+will be a little unconventional and denote events with two letters
+instead of one. There is no significance in this, other than making it
+instantaneous to understand what proposition we have in mind just by
+looking at the letters:</p>
 <ul>
 <li>Let <span class="math inline">\(RC\)</span> be the proposition
 "<em>It is a red circle</em>".</li>
