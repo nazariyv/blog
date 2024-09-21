@@ -3,14 +3,18 @@
 [title]: <> (Necessary and Sufficient Conditions)
 [pandoc]: <> (--mathjax)
 
+Oftentimes, there is considerable confusion when the concepts of **necessary** and **sufficient** conditions are taught. This article aims to make a clear exposition of these concepts from two points of view: that of set theory and logical implications.
+
 ## definitions
 
+Let's start by considering precise definitions. You don't need to learn these. My hope is that by the end of this post, they will become natural to you. But it is useful to keep these in mind, before we set off.
+
 > Event $P$ is said to
-be a **sufficient** condition for event $Q$ whenever
-the occurrence of $P$ is all that is required for the
-occurrence of $Q$. </br> </br>
-> On the other hand, event $P$ is said
-to be a **necessary** condition for event $Q$ whenever $Q$ cannot occur without the occurrence of $P$.
+> be a **sufficient** condition for event $Q$: </br> whenever
+> the occurrence of $P$ is all that is required for the
+> occurrence of $Q$. </br> </br>
+> On the other hand, </br></br> Event $P$ is said
+> to be a **necessary** condition for event $Q$: </br> whenever $Q$ cannot occur without the occurrence of $P$.
 
 ## set theory perspective
 
@@ -39,6 +43,29 @@ Feel free to stop here as this will already give you a solid basic understanding
 ## logic perspective
 
 Unless you are very comfortable with material conditional, I highly recommend reading <a href="/implication" target="_blank" rel="noopener noreferrer">my other post on the topic</a>.
+
+Let's begin by looking at the truth table of the material conditional:
+
+| $P$ | $Q$ | $P \Rightarrow Q$ |
+| --- | --- | ----------------- |
+| T   | T   | T                 |
+| T   | F   | F                 |
+| F   | T   | T                 |
+| F   | F   | T                 |
+
+Strike out the row where implication is false, since we are only concerned with the true implications.
+
+| $P$ | $Q$ | $P \Rightarrow Q$ |         |
+| --- | --- | ----------------- | ------- |
+| T   | T   | T                 | (row 1) |
+|     |     |                   |         |
+| F   | T   | T                 | (row 3) |
+| F   | F   | T                 | (row 4) |
+
+> The fact that Q is true in every row where P is true (i.e., row 1) tells us that P is sufficient for Q. </br> </br>
+> The fact that P is false in every row where Q is false (i.e., row 4) tells us that Q is necessary for P. [^1]
+
+[^1]: ryang, "Interpreting sufficiency and necessity from the truth table", Math Stack Exchange, 2024.
 
 In logic, we express **necessary** and **sufficient** conditions using implications. A nice heuristic for remembering the direction of the arrow:
 
@@ -169,10 +196,10 @@ Want to test your understanding? Try to solve these exercises before checking th
 
 2. Hurley, P. J. (2014). A Concise Introduction to Logic. Cengage Learning.
 
-3. Velleman, D. J. (2006). How to Prove It: A Structured Approach. Cambridge University Press.
+3. <a href="https://plato.stanford.edu/entries/necessary-sufficient/" target="_blank" rel="noopener noreferrer">Stanford Encyclopedia of Philosophy: Necessary and Sufficient Conditions</a>
 
-4. <a href="https://plato.stanford.edu/entries/necessary-sufficient/" target="_blank" rel="noopener noreferrer">Stanford Encyclopedia of Philosophy: Necessary and Sufficient Conditions</a>
+4. <a href="https://math.stackexchange.com/questions/tagged/necessary-sufficient-conditions" target="_blank" rel="noopener noreferrer">Mathematics Stack Exchange: Discussions on Necessary and Sufficient Conditions</a>
 
-5. <a href="https://math.stackexchange.com/questions/tagged/necessary-sufficient-conditions" target="_blank" rel="noopener noreferrer">Mathematics Stack Exchange: Discussions on Necessary and Sufficient Conditions</a>
+5. <a href="https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/economics/sets-and-logic/necessity-and-sufficiency.html#External%20Resources" target="_blank" rel="noopener noreferrer">Newcaslte University: Necessary and Sufficient Conditions</a>
 
-6. <a href="https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/economics/sets-and-logic/necessity-and-sufficiency.html#External%20Resources" target="_blank" rel="noopener noreferrer">Newcaslte University: Necessary and Sufficient Conditions</a>
+6. ryang (https://math.stackexchange.com/users/21813/ryang), Interpreting sufficiency and necessity from the truth table, URL (version: 2024-09-21): https://math.stackexchange.com/q/4974479
