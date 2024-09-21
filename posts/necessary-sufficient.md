@@ -97,7 +97,7 @@ Now, let's apply this knowledge to an earlier example we have contrived about re
 
 From our set-theoretic perspective, we know that:
 
-1. **Being a red shape is necessary for being a red circle**. In logic, this is expressed as:
+1. **Being a red shape is necessary for being a red circle**.
 
    $$ RS \Leftarrow RC $$
 
@@ -118,8 +118,6 @@ From our set-theoretic perspective, we know that:
    $$ RC \Leftrightarrow RS \land CC $$
 
    This means that $RC$ is true if and only if both $RS$ and $CC$ are true.
-
-   You can denote $RS \land CC$ with a single letter, like $C$ to make the above statement appear more conventionally, then you have $RC \Leftrightarrow C$.
 
 ## why is it important?
 
