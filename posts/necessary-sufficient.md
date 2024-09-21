@@ -62,12 +62,19 @@ Strike out the row where implication is false, since we are only concerned with 
 | F   | T   | T                 | (row 3) |
 | F   | F   | T                 | (row 4) |
 
-> The fact that Q is true in every row where P is true (i.e., row 1) tells us that P is sufficient for Q. </br> </br>
-> The fact that P is false in every row where Q is false (i.e., row 4) tells us that Q is necessary for P. [^1]
+> The fact that $Q$ is true in every row where $P$ is true (i.e., row 1) tells us that $P$ is sufficient for $Q$. </br> </br>
+> The fact that $P$ is false in every row where $Q$ is false (i.e., row 4) tells us that $Q$ is necessary for $P$. [^1]
 
-[^1]: ryang, "Interpreting sufficiency and necessity from the truth table", Math Stack Exchange, 2024.
+[^1]: ryang (https://math.stackexchange.com/users/21813/ryang), Interpreting sufficiency and necessity from the truth table, URL (version: 2024-09-21): https://math.stackexchange.com/q/4974479
 
-In logic, we express **necessary** and **sufficient** conditions using implications. A nice heuristic for remembering the direction of the arrow:
+Alternatively and equivalently:
+
+> When $P \Rightarrow Q$ is true, then $P$ is only true when $Q$ is true, although $P$ may be false when $Q$ is true. So $Q$ is necessary for $P$, but not sufficient. </br> </br>
+> When $P \Rightarrow Q$ is true, then $Q$ is always true whenever $P$ is true, although $Q$ may be true if $P$ is false. So $P$ is sufficient for $Q$, but not necessary. [^2]
+
+[^2]: Graham Kemp (https://math.stackexchange.com/users/135106/graham-kemp), Interpreting sufficiency and necessity from the truth table, URL (version: 2018-01-27): https://math.stackexchange.com/q/2623453
+
+A nice heuristic for remembering the direction of the arrow:
 
 $$sufficient => necessary$$
 
@@ -202,4 +209,4 @@ Want to test your understanding? Try to solve these exercises before checking th
 
 5. <a href="https://www.ncl.ac.uk/webtemplate/ask-assets/external/maths-resources/economics/sets-and-logic/necessity-and-sufficiency.html#External%20Resources" target="_blank" rel="noopener noreferrer">Newcaslte University: Necessary and Sufficient Conditions</a>
 
-6. ryang (https://math.stackexchange.com/users/21813/ryang), Interpreting sufficiency and necessity from the truth table, URL (version: 2024-09-21): https://math.stackexchange.com/q/4974479
+6. 
