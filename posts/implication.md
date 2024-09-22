@@ -61,8 +61,8 @@ What does this mean? It means that holistically our connective says: "$Q$ whatev
 | --- | --- | ----------------- |
 | T   | T   | T                 |
 | T   | F   | F                 |
-| F   | T   | F?                |
-| F   | F   | T?                |
+| F   | T   | **F?**            |
+| F   | F   | **T?**            |
 
 Intuitively, the last row feels wrong, but we have arrived at exactly this configuration through a rigorous process of thought and after exhausting all other options, so we can't throw it away based on how it "feels". There is something odd however with when $P$ is false, $Q$ is true and implication is false. We have a hypothesis that is false, conclusion that is true, but somehow our implication is still false. If our hypothesis $P$ is "I exercise", and conclusion $Q$ is "I lose weight" and it so happens that I have lost weight but did not exercise (I stopped chugging soda every day) our implication "I exercise => I lose weight" is false, despite me losing weight. This is wrong. We arrive at the only final configuration that must be the one, and as we know: it is. The implication table you all know and love.
 
