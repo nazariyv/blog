@@ -1,0 +1,300 @@
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link rel="stylesheet" type="text/css" href="/css/common-vendor.b8ecfc406ac0b5f77a26.css">
+<link rel="stylesheet" type="text/css" href="/css/font-vendor.b86e2bf451b246b1a88e.css">
+<link rel="stylesheet" type="text/css" href="/css/fretboard.f32f2a8d5293869f0195.css">
+<link rel="stylesheet" type="text/css" href="/css/pretty.0ae3265014f89d9850bf.css">
+<link rel="stylesheet" type="text/css" href="/css/pretty-vendor.83ac49e057c3eac4fce3.css">
+<link rel="stylesheet" type="text/css" href="/css/global.css">
+<link rel="stylesheet" type="text/css" href="/css/misc.css">
+
+<script type="text/javascript" id="MathJax-script" async
+  src="/scripts/mathjax.js">
+</script>
+
+<style>
+@font-face {
+    font-family: MJXc-TeX-math-Iw;
+    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
+}
+@font-face {
+    font-family: MJXZERO;
+    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
+}
+@font-face {
+    font-family: MJXTEX;
+    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
+}
+
+.math { font-family: MJXc-TeX-math-Iw }
+</style>
+
+<div id="doc" class="container-fluid markdown-body comment-enabled" data-hard-breaks="true">
+
+  <script type="text/x-mathjax-config">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\(', '\)']]
+      },
+      svg: {
+        fontCache: 'global',
+      }
+    };
+  </script>
+  <script
+    type="text/javascript"
+    id="MathJax-script"
+    async
+    src="/scripts/tex-svg.js"
+  ></script>
+
+  <div
+    id="doc"
+    class="container-fluid markdown-body comment-enabled"
+    data-hard-breaks="true"
+  >
+    <div id="color-mode-switch">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+        />
+      </svg>
+      <input type="checkbox" id="switch" />
+      <label for="switch">Dark Mode Toggle</label>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+        />
+      </svg>
+    </div>
+
+    <script type="text/javascript">
+      // Update root html class to set CSS colors
+      const toggleDarkMode = () => {
+        const root = document.querySelector("html");
+        root.classList.toggle("dark");
+      };
+
+      // Update local storage value for colorScheme
+      const toggleColorScheme = () => {
+        const colorScheme = localStorage.getItem("colorScheme");
+        if (colorScheme === "light")
+          localStorage.setItem("colorScheme", "dark");
+        else localStorage.setItem("colorScheme", "light");
+      };
+
+      // Set toggle input handler
+      const toggle = document.querySelector(
+        '#color-mode-switch input[type="checkbox"]'
+      );
+      if (toggle)
+        toggle.onclick = () => {
+          toggleDarkMode();
+          toggleColorScheme();
+        };
+
+      // Check for color scheme on init
+      const checkColorScheme = () => {
+        const colorScheme = localStorage.getItem("colorScheme");
+        // Default to light for first view
+        if (colorScheme === null || colorScheme === undefined)
+          localStorage.setItem("colorScheme", "light");
+        // If previously saved to dark, toggle switch and update colors
+        if (colorScheme === "dark") {
+          toggle.checked = true;
+          toggleDarkMode();
+        }
+      };
+      checkColorScheme();
+    </script>
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="The Uncountability of the Cantor Set: A Journey Through Base-3" />
+<meta name="twitter:image" content="http://nazariy.eth.limo/images/icon.png" />
+
+<br>
+<h1 style="margin-bottom:7px"> The Uncountability of the Cantor Set: A Journey Through Base-3 </h1>
+<small style="float:left; color: #888"> 2024 Jan 06 </small>
+<small style="float:right; color: #888"><a href="/">See all posts</a></small>
+<br> <br> <br>
+<title> The Uncountability of the Cantor Set: A Journey Through Base-3 </title>
+<p>The Cantor set is one of the most fascinating mathematical objects ever discovered. It's a set that seems to vanish before our eyes as we construct it, yet contains so many points that they cannot be counted - even using infinite counting! Today, we'll explore this remarkable set and prove its uncountability using Georg Cantor's famous diagonalization argument.</p>
+<h2 id="what-is-the-cantor-set">What is the Cantor Set?</h2>
+<p>The Cantor set is constructed by repeatedly removing the middle third of intervals, starting with the interval <span class="math inline">\([0,1]\)</span>. Let's walk through its construction:</p>
+<ol type="1">
+<li>Start with the interval <span class="math inline">\([0,1]\)</span></li>
+<li>Remove the middle third <span class="math inline">\((\frac{1}{3}, \frac{2}{3})\)</span>, leaving <span class="math inline">\([0, \frac{1}{3}] \cup [\frac{2}{3}, 1]\)</span></li>
+<li>Remove the middle third of each remaining interval</li>
+<li>Continue this process infinitely</li>
+</ol>
+<p>After each step, we get a collection of intervals. Let's calculate the first few iterations:</p>
+<ul>
+<li>Step 0: <span class="math inline">\([0,1]\)</span></li>
+<li>Step 1: <span class="math inline">\([0,\frac{1}{3}] \cup [\frac{2}{3},1]\)</span></li>
+<li>Step 2: <span class="math inline">\([0,\frac{1}{9}] \cup [\frac{2}{9},\frac{1}{3}] \cup [\frac{2}{3},\frac{7}{9}] \cup [\frac{8}{9},1]\)</span></li>
+<li>Step 3: <span class="math inline">\([0,\frac{1}{27}] \cup [\frac{2}{27},\frac{1}{9}] \cup [\frac{2}{9},\frac{7}{27}] \cup [\frac{8}{27},\frac{1}{3}] \cup [\frac{2}{3},\frac{19}{27}] \cup [\frac{20}{27},\frac{7}{9}] \cup [\frac{8}{9},\frac{25}{27}] \cup [\frac{26}{27},1]\)</span></li>
+</ul>
+<p>The Cantor set is what remains after infinitely many steps of this process.</p>
+<h2 id="the-plan-of-attack">The Plan of Attack</h2>
+<p>To prove that the Cantor set is uncountable, we'll follow these steps:</p>
+<ol type="1">
+<li>Convert our intervals into base-3 (ternary) representation</li>
+<li>Show that the Cantor set consists of all numbers in <span class="math inline">\([0,1]\)</span> whose ternary expansion contains only 0s and 2s</li>
+<li>Use Cantor's diagonalization argument to prove uncountability</li>
+</ol>
+<h2 id="converting-numbers-to-different-bases">Converting Numbers to Different Bases</h2>
+<p>Before diving into ternary representations, let's understand how to convert numbers between bases. While our proof will only deal with numbers in <span class="math inline">\([0,1]\)</span> (so we only need to convert fractional parts), understanding both whole and fractional conversions gives us a complete picture.</p>
+<h3 id="converting-whole-numbers">Converting Whole Numbers</h3>
+<p>For whole numbers, we can represent any number as a sum of powers of the base. For example, in base 3 (ternary), each position represents a power of 3:</p>
+<p><span class="math inline">\(201_3 = 2 \cdot 3^2 + 0 \cdot 3^1 + 1 \cdot 3^0 = 18 + 0 + 1 = 19_{10}\)</span></p>
+<p>More generally, each ternary whole number is of the form</p>
+<p><span class="math display">\[x = \sum_k a_k 3^k \text{ where each } a_k \in \{0,1,2\}, \text{ and } k \in \mathbb{N_0}\]</span></p>
+<p>I could never remember the conventional way of converting a whole number to another base, so here is how I do it. Say we want to convert 19 to base 3. Begin by dividing 19 by 3:</p>
+<p><span class="math display">\[19 / 3 = 6 \text{ remainder } 1\]</span></p>
+<p>this means that</p>
+<p><span class="math display">\[19 = 6 \cdot 3^1 + 1 \cdot 3^0\]</span></p>
+<p>we aren't done yet because <span class="math inline">\(6 \notin \{0, 1, 2\}\)</span>, so we continue dividing by 3.</p>
+<p>Divide 6 by 3:</p>
+<p><span class="math display">\[6 / 3 = 2 \text{ remainder } 0\]</span></p>
+<p>this means that</p>
+<p><span class="math display">\[6 = 2 \cdot 3^1 + 0\]</span></p>
+<p>substitute this into the original equation:</p>
+<p><span class="math display">\[19 = \left(2 \cdot 3^1 + 0\right) \cdot 3^1 + 1 \cdot 3^0\]</span></p>
+<p>Expand it all out now:</p>
+<p><span class="math display">\[19 = 2 \cdot 3^2 + 0 \cdot 3^1 + 1 \cdot 3^0\]</span></p>
+<p>in other words:</p>
+<p><span class="math display">\[19_{10} = 201_3\]</span></p>
+<h3 id="converting-fractional-parts">Converting Fractional Parts</h3>
+<p>For the fractional part (which is what we'll need for our Cantor set proof), we're essentially dividing by powers of 3. Just as <span class="math inline">\(0.1_{10}\)</span> means <span class="math inline">\(\frac{1}{10}\)</span>, in base 3, <span class="math inline">\(0.1_3\)</span> means <span class="math inline">\(\frac{1}{3}\)</span>.</p>
+<p>To convert a decimal fraction to base 3, we multiply by 3 and look at the whole number part. Let's convert 0.7 to base 3:</p>
+<p><span class="math display">\[
+\begin{align*}
+0.7 \times 3 &amp;= 2.1 \text{ (write down 2)}\\
+0.1 \times 3 &amp;= 0.3 \text{ (write down 0)}\\
+0.3 \times 3 &amp;= 0.9 \text{ (write down 0)}\\
+0.9 \times 3 &amp;= 2.7 \text{ (write down 2)}\\
+0.7 \times 3 &amp;= 2.1 \text{ (pattern repeats)}\\
+&amp;\vdots
+\end{align*}
+\]</span></p>
+<p>Therefore, <span class="math inline">\(0.7_{10} = 0.20202..._3\)</span></p>
+<p>Each digit in this expansion represents a fraction: <span class="math inline">\(0.20202..._3 = \frac{2}{3^1} + \frac{0}{3^2} + \frac{2}{3^3} + \frac{0}{3^4} + \frac{2}{3^5} + ...\)</span></p>
+<p>This understanding of fractions in base 3 will be crucial for our proof about the Cantor set, as we'll see that every number in the set has a special property in its base-3 representation.</p>
+<h2 id="our-intervals-in-ternary-form">Our Intervals in Ternary Form</h2>
+<p>Let's convert some of the Cantor sets' endpoints to base 3. This will reveal a beautiful pattern!</p>
+<p><span class="math inline">\(\frac{1}{3}\)</span> in base 3: <span class="math display">\[
+\begin{align*}
+0.333333... \times 3 &amp;= 1.0 &amp; \text{ (write down 1)}
+\end{align*}
+\]</span> Therefore, <span class="math inline">\(\frac{1}{3}_{10} = 0.1_3\)</span></p>
+<p><span class="math inline">\(\frac{2}{3}\)</span> in base 3: <span class="math display">\[
+\begin{align*}
+0.666666... \times 3 &amp;= 2.0 &amp; \text{ (write down 2)}
+\end{align*}
+\]</span> Therefore, <span class="math inline">\(\frac{2}{3}_{10} = 0.2_3\)</span></p>
+<p><span class="math inline">\(\frac{1}{9}\)</span> in base 3: <span class="math display">\[
+\begin{align*}
+0.111111... \times 3 &amp;= 0.333333... &amp; \text{ (write down 0)}\\
+0.333333... \times 3 &amp;= 1.0 &amp; \text{ (write down 1)}
+\end{align*}
+\]</span> Therefore, <span class="math inline">\(\frac{1}{9}_{10} = 0.01_3\)</span></p>
+<p><span class="math inline">\(\frac{2}{9}\)</span> in base 3: <span class="math display">\[
+\begin{align*}
+0.222222... \times 3 &amp;= 0.666666... &amp; \text{ (write down 0)}\\
+0.666666... \times 3 &amp;= 2.0 &amp; \text{ (write down 2)}
+\end{align*}
+\]</span> Therefore, <span class="math inline">\(\frac{2}{9}_{10} = 0.02_3\)</span></p>
+<p><span class="math inline">\(\frac{7}{9}\)</span> in base 3: <span class="math display">\[
+\begin{align*}
+0.777777... \times 3 &amp;= 2.333333... &amp; \text{ (write down 2)}\\
+0.333333... \times 3 &amp;= 1.0 &amp; \text{ (write down 1)}
+\end{align*}
+\]</span> Therefore, <span class="math inline">\(\frac{7}{9}_{10} = 0.21_3\)</span></p>
+<p><span class="math inline">\(\frac{8}{9}\)</span> in base 3: <span class="math display">\[
+\begin{align*}
+0.888888... \times 3 &amp;= 2.666666... &amp; \text{ (write down 2)}\\
+0.666666... \times 3 &amp;= 2.0 &amp; \text{ (write down 2)}
+\end{align*}
+\]</span> Therefore, <span class="math inline">\(\frac{8}{9}_{10} = 0.22_3\)</span></p>
+<p>Now our first few intervals in ternary form are:</p>
+<ul>
+<li>Step 0: <span class="math inline">\([0.0_3, 0.2222..._3]\)</span></li>
+<li>Step 1: <span class="math inline">\([0.0_3, 0.0222..._3] \cup [0.2_3, 0.2222..._3]\)</span></li>
+<li>Step 2: <span class="math inline">\([0.0_3, 0.0022..._3] \cup [0.02_3, 0.0222..._3] \cup [0.2_3, 0.2022..._3] \cup [0.22_3, 0.2222..._3]\)</span></li>
+</ul>
+<h2 id="the-magic-of-base-3-removing-numbers-with-1s">The Magic of Base-3: Removing Numbers with 1s</h2>
+<p>Here's where things get interesting! When we remove the middle third of an interval, we're actually removing all numbers that have a 1 in that position of their ternary expansion.</p>
+<p>Let's look at what we remove in each step:</p>
+<ul>
+<li>Step 1: We remove <span class="math inline">\((\frac{1}{3}, \frac{2}{3})\)</span>, which in base 3 is <span class="math inline">\((0.1_3, 0.2_3)\)</span></li>
+<li>Step 2: We remove:
+<ul>
+<li><span class="math inline">\((\frac{1}{9}, \frac{2}{9})\)</span>, which is <span class="math inline">\((0.01_3, 0.02_3)\)</span></li>
+<li><span class="math inline">\((\frac{7}{9}, \frac{8}{9})\)</span>, which is <span class="math inline">\((0.21_3, 0.22_3)\)</span></li>
+</ul></li>
+<li>Step 3: We remove intervals like:
+<ul>
+<li><span class="math inline">\((\frac{1}{27}, \frac{2}{27})\)</span>, which is <span class="math inline">\((0.001_3, 0.002_3)\)</span></li>
+<li><span class="math inline">\((\frac{7}{27}, \frac{8}{27})\)</span>, which is <span class="math inline">\((0.021_3, 0.022_3)\)</span></li>
+<li><span class="math inline">\((\frac{19}{27}, \frac{20}{27})\)</span>, which is <span class="math inline">\((0.201_3, 0.202_3)\)</span></li>
+<li><span class="math inline">\((\frac{25}{27}, \frac{26}{27})\)</span>, which is <span class="math inline">\((0.221_3, 0.222_3)\)</span></li>
+</ul></li>
+</ul>
+<p>In each case, we're removing numbers that have a 1 in the nth position (where n is the step number). This means the Cantor set contains exactly those numbers whose ternary expansion consists only of 0s and 2s!</p>
+<h2 id="the-diagonalization-proof">The Diagonalization Proof</h2>
+<p>Now we can prove the Cantor set is uncountable. Let's proceed by contradiction.</p>
+<p>Suppose the Cantor set is countable. Then we can list all its elements:</p>
+<p><span class="math display">\[
+\begin{align*}
+x_1 &amp;= 0.a_{11}a_{12}a_{13}..._3\\
+x_2 &amp;= 0.a_{21}a_{22}a_{23}..._3\\
+x_3 &amp;= 0.a_{31}a_{32}a_{33}..._3\\
+&amp;\vdots
+\end{align*}
+\]</span></p>
+<p>where each <span class="math inline">\(a_{ij}\)</span> is either 0 or 2.</p>
+<p>We'll construct a number <span class="math inline">\(y\)</span> in the Cantor set that differs from every number in our list. Define <span class="math inline">\(y = 0.b_1b_2b_3..._3\)</span> where:</p>
+<ul>
+<li><span class="math inline">\(b_n = 0\)</span> if <span class="math inline">\(a_{nn} = 2\)</span></li>
+<li><span class="math inline">\(b_n = 2\)</span> if <span class="math inline">\(a_{nn} = 0\)</span></li>
+</ul>
+<p>Since <span class="math inline">\(y\)</span> contains only 0s and 2s, it's in the Cantor set. However, <span class="math inline">\(y\)</span> differs from each <span class="math inline">\(x_n\)</span> in the nth digit, so it can't be in our list. This contradicts our assumption that we listed all elements of the Cantor set.</p>
+<p>Therefore, the Cantor set must be uncountable!</p>
+<h2 id="why-this-matters">Why This Matters</h2>
+<p>The Cantor set is remarkably counterintuitive. Despite having zero length (its Lebesgue measure is 0), it contains uncountably many points. It's a perfect example of how infinite sets can behave in surprising ways, and it plays a crucial role in topology and analysis.</p>
+<p>This uncountability proof also introduces techniques that are useful in many other areas of mathematics. The base-3 representation gives us a concrete way to understand which points are in the Cantor set, while the diagonalization argument is a powerful tool that appears throughout mathematics.</p>
+<h2 id="references">References</h2>
+<ol type="1">
+<li><a href="https://people.maths.bris.ac.uk/~maxmr/analysis1/Pickering_EDITED_FINAL.pdf" target="_blank" rel="noopener noreferrer">Representing fractions using different bases</a></li>
+</ol>
+<h2 id="todos">TODOs</h2>
+<ul>
+<li>re-write the fractional ternary expansion section</li>
+</ul>
+
+</div>
+
+<div>
+<small>noticed a mistake or have a suggestion? submit a pull request <a href="https://github.com/nazariyv/blog" target="_blank">here</a></small>
+</div>
