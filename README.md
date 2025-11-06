@@ -26,4 +26,4 @@ open a browser tab and go to `http://localhost:8000`
 
 ## hosting
 
-I use fleek.xyz just like Vitalik
+I use hosting.fleek.xyz just like Vitalik
