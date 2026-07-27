@@ -2,26 +2,26 @@
 <rss version="2.0">
 <channel>
   <title>nazariy's blog</title>
-  <link>https://nazariy.eth.limo/</link>
+  <link>https://blog.naz.ooo/</link>
   <description>nazariy's blog</description>
   <image>
-      <url>http://nazariy.eth.limo/images/icon.png</url>
+      <url>https://blog.naz.ooo/images/icon.png</url>
       <title>nazariy's blog</title>
-      <link>https://nazariy.eth.limo/</link>
+      <link>https://blog.naz.ooo/</link>
   </image>
 
 <item>
 <title>Necessary and Sufficient Conditions</title>
-<link>https://nazariy.eth.limo/math/2024/09/18/necessary-sufficient.html</link>
-<guid>https://nazariy.eth.limo/math/2024/09/18/necessary-sufficient.html</guid>
+<link>https://blog.naz.ooo/math/2024/09/18/necessary-sufficient</link>
+<guid>https://blog.naz.ooo/math/2024/09/18/necessary-sufficient</guid>
 <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
 <description></description>
 </item>
 
 <item>
 <title>Implication</title>
-<link>https://nazariy.eth.limo/math/2024/09/18/implication.html</link>
-<guid>https://nazariy.eth.limo/math/2024/09/18/implication.html</guid>
+<link>https://blog.naz.ooo/math/2024/09/18/implication</link>
+<guid>https://blog.naz.ooo/math/2024/09/18/implication</guid>
 <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
 <description></description>
 </item>
