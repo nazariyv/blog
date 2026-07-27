@@ -34,7 +34,11 @@ HEADER = r"""
   <script>
     MathJax = {
       tex: {
-        inlineMath: [['$', '$'], ['\(', '\)']]
+        // the backslashes must be doubled: JS drops the backslash in '\(',
+        // which would tell MathJax that inline math is delimited by bare
+        // parens and leave pandoc's real \(...\) spans unrendered
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
       },
       svg: {
         fontCache: 'global',
