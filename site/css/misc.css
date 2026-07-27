@@ -1,43 +1,71 @@
+/*
+  Post list on the homepage.
+
+  Each entry is a date followed by a title, and the whole point is that a
+  reader can tell at a glance which date belongs to which post. That means the
+  gap inside an entry must be clearly smaller than the gap between entries --
+  the vendor stylesheet gives h3 a 42px top margin, which pushed each title
+  further from its own date (48px) than from the entry above it (40px), so
+  proximity pointed at the wrong title.
+*/
 .post-list {
   margin-left: 0;
   padding-left: 0;
-  list-style: none; }
-  .post-list > li {
-    margin-bottom: 30px; }
-
-
-@media only screen and (orientation: landscape) {
-    .post-link {
-      display: block;
-      font-size: 24px; }
-
-    .post-meta {
-      font-size: 14px;
-      color: #828282; }
-
-    .toc-category {
-      display: inline-block;
-      width: 100px;
-      padding-top: 8px;
-      padding-bottom: 8px;
-      padding-right: 4px;
-      padding-left: 4px; }
+  list-style: none;
 }
 
-@media only screen and (orientation: portrait) {
-    .post-link {
-      display: block; }
-    .post-meta {
-      font-size: 24px;
-      color: #828282; }
+.post-list > li {
+  margin-bottom: 2.75em;     /* separation BETWEEN entries */
+}
 
-    .toc-category {
-      display: inline-block;
-      width: 200px;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      padding-right: 12px;
-      padding-left: 12px; }
+.post-list > li:last-child {
+  margin-bottom: 1em;
+}
+
+/* The #doc prefix is load-bearing: global.css sets `#doc span { color: ... }`,
+   and an id outranks any number of classes -- which is why the original
+   `.post-meta { color: #828282 }` never actually took effect and the dates
+   rendered at full body strength, competing with the titles they label. */
+#doc .post-list .post-meta {
+  display: block;            /* its own line, structurally rather than by luck */
+  font-size: 14px;
+  line-height: 1.4;
+  /* muted enough to read as a label, dark enough to clear 4.5:1 on white --
+     the --color-blockquote-text grey lands at 4.48:1, just under */
+  color: #6b6b6b;
+  letter-spacing: 0.04em;
+  margin: 0 0 1px;           /* hug the title it labels */
+}
+
+html.dark #doc .post-list .post-meta {
+  color: #c0bcbc;
+}
+
+/* override the vendor h3 margins that were breaking the grouping */
+.post-list h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.post-list .post-link {
+  display: block;
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+/*
+  The old rules keyed off `orientation`, which is the wrong axis: a phone held
+  sideways got the desktop treatment, and a tall desktop window got 24px dates
+  that competed with the titles. Key off width instead.
+*/
+@media only screen and (max-width: 640px) {
+  .post-list > li {
+    margin-bottom: 2.25em;
+  }
+
+  .post-list .post-link {
+    font-size: 21px;
+  }
 }
 
 
