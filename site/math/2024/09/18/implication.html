@@ -320,6 +320,96 @@
 <p>These paradoxes stem from the truth table definition of material implication, where the conditional is only false when the hypothesis is true and the conclusion is false. In all other cases, including when the hypothesis is false or the conclusion is true, the conditional is considered true.</p>
 <p>These are called "paradoxes" not because they lead to logical contradictions, but because they violate our intuitive understanding of "if-then" statements in everyday language. In natural language, we often assume a causal or relevant connection between the "if" part and the "then" part, which isn't necessarily the case in mathematical logic. This disconnect between formal logic and intuitive reasoning is what makes these situations feel paradoxical, even though they're logically consistent within the framework of material implication.</p>
 <p>These paradoxes arise from trying to use material implication to capture all uses of "if...then" statements in natural language, when it is just one specific type of implication that does not always align with colloquial usage (if you are interested, try researching <a href="https://en.wikipedia.org/wiki/Non-classical_logic" target="_blank" rel="noopener noreferrer">"non-classical logic"</a>).</p>
+<h2 id="exercises">exercises</h2>
+<p>Have a go at each before unfolding the answer underneath it.</p>
+<ol type="1">
+<li><p><strong>Naming the rejects</strong>:</p>
+<p>We arrived at implication by eliminating the three other ways to fill in the last two rows. Each of those rejects is a connective we already had. Name all three.</p>
+<details>
+<summary>show answer</summary>
+<ul>
+<li><strong>F, F</strong> gives <span class="math inline">\(P \land Q\)</span> – conjunction, as the post shows.</li>
+<li><strong>T, F</strong> gives a table that is true exactly when <span class="math inline">\(Q\)</span> is true, so the connective is just <span class="math inline">\(Q\)</span>; it ignores <span class="math inline">\(P\)</span> entirely.</li>
+<li><strong>F, T</strong> gives T, F, F, T – true exactly when <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> agree. That's the <strong>biconditional</strong> <span class="math inline">\(P \Leftrightarrow Q\)</span>.</li>
+</ul>
+<p>That last one is worth dwelling on, because it is the reject that comes closest to being useful. The biconditional is a perfectly good connective, but it is <em>symmetric</em>: swapping <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> leaves it unchanged. We were looking for something that says one thing follows from another, and "follows from" has a direction. A symmetric connective can never express it, so the biconditional disqualifies itself for a structural reason, not merely an intuitive one.</p>
+</details></li>
+<li><p><strong>The only way to fail</strong>:</p>
+<p>Show that <span class="math inline">\(\lnot(P \Rightarrow Q)\)</span> is equivalent to <span class="math inline">\(P \land \lnot Q\)</span>.</p>
+<details>
+<summary>show answer</summary>
+<p><span class="math inline">\(P \Rightarrow Q\)</span> is false in exactly one row of its table – the one where <span class="math inline">\(P\)</span> is true and <span class="math inline">\(Q\)</span> is false. Its negation is therefore true in exactly that row and false in the other three, which is precisely the table of <span class="math inline">\(P \land \lnot Q\)</span>.</p>
+<p>This is the most practical fact about implication: <strong>to refute "if <span class="math inline">\(P\)</span> then <span class="math inline">\(Q\)</span>" you must produce a case where <span class="math inline">\(P\)</span> holds and <span class="math inline">\(Q\)</span> fails.</strong> Nothing else will do. It also explains the false-hypothesis rows without any hand-waving about vacuous truth – when <span class="math inline">\(P\)</span> is false you simply cannot build the one counterexample that would make the implication false, so it stands.</p>
+</details></li>
+<li><p><strong>Implication out of older parts</strong>:</p>
+<p>Show that <span class="math inline">\(P \Rightarrow Q\)</span> is equivalent to <span class="math inline">\(\lnot P \lor Q\)</span>.</p>
+<details>
+<summary>show answer</summary>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(P\)</span></th>
+<th><span class="math inline">\(Q\)</span></th>
+<th><span class="math inline">\(\lnot P\)</span></th>
+<th><span class="math inline">\(\lnot P \lor Q\)</span></th>
+<th><span class="math inline">\(P \Rightarrow Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>T</td>
+<td>T</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>T</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+<td>F</td>
+</tr>
+<tr class="odd">
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>F</td>
+<td>T</td>
+<td>T</td>
+<td>T</td>
+</tr>
+</tbody>
+</table>
+<p>The last two columns match, so the two are the same connective.</p>
+<p>There is a sting in this. The post set out to invent a <em>new</em> connective, and it turns out implication was expressible in negation and disjunction the whole time – so strictly speaking we added no new expressive power. What we gained was a notation matching how we actually reason, which is why implication earns its own symbol despite being redundant. (Read <span class="math inline">\(\lnot P \lor Q\)</span> aloud as "either <span class="math inline">\(P\)</span> fails, or <span class="math inline">\(Q\)</span> holds" and the false-hypothesis rows stop feeling strange.)</p>
+</details></li>
+<li><p><strong>Vacuous truth, on purpose</strong>:</p>
+<p>I claim: "every unicorn in my garden is purple." I have no unicorns. Is my claim true, false, or meaningless? What would you have to show me to refute it?</p>
+<details>
+<summary>show answer</summary>
+<p><strong>True.</strong> The claim says: for every <span class="math inline">\(x\)</span>, if <span class="math inline">\(x\)</span> is a unicorn in my garden, then <span class="math inline">\(x\)</span> is purple. Each instance has a false hypothesis, so each is true, so the whole thing is true.</p>
+<p>To refute it you would need exactly what exercise 2 identified – a case where the hypothesis holds and the conclusion fails, i.e. a unicorn in my garden that isn't purple. You cannot produce one, so the claim stands unrefuted.</p>
+<p>Note that "every unicorn in my garden is green" is true for the same reason. Both a statement and its apparent opposite come out true, which feels alarming but isn't a contradiction: the negation of "all are purple" is "<em>some</em> unicorn of mine is not purple", and that one is false. Nothing inconsistent – the claims just say less than they appear to.</p>
+</details></li>
+<li><p><strong>Converse, inverse, contrapositive</strong>:</p>
+<p>Take "if it rains, the ground gets wet", i.e. <span class="math inline">\(R \Rightarrow W\)</span>. Write down the converse, the inverse and the contrapositive, and say which are equivalent to the original.</p>
+<details>
+<summary>show answer</summary>
+<ul>
+<li>Converse: <span class="math inline">\(W \Rightarrow R\)</span> – "if the ground is wet, it rained." <strong>Not</strong> equivalent.</li>
+<li>Inverse: <span class="math inline">\(\lnot R \Rightarrow \lnot W\)</span> – "if it doesn't rain, the ground doesn't get wet." <strong>Not</strong> equivalent.</li>
+<li>Contrapositive: <span class="math inline">\(\lnot W \Rightarrow \lnot R\)</span> – "if the ground isn't wet, it didn't rain." <strong>Equivalent.</strong></li>
+</ul>
+<p>The contrapositive is equivalent because both statements are false in exactly the same single case, rain with dry ground. The example makes the failures concrete: a sprinkler leaves the ground wet without rain, which refutes both the converse and the inverse while leaving the original untouched.</p>
+<p>Two things worth keeping. The converse and the inverse are contrapositives of each other, so they are equivalent to <em>each other</em> while both differ from the original. And quietly swapping a statement for its converse is the single most common error in informal argument – it is the same move as reading "sufficient" and concluding "necessary", which is the subject of <a href="/math/2024/09/18/necessary-sufficient">the companion post</a>.</p>
+</details></li>
+</ol>
 <h2 id="conclusion">conclusion</h2>
 <p>Understanding implication is crucial in logic and mathematics. It forms the basis of many logical arguments, proofs, and deductions. While its definition might seem counterintuitive at first, especially when the hypothesis is false, we've seen that it arises naturally when we try to create a logical operator that relates two statements in a meaningful way.</p>
 <p>The seeming paradoxes of implication highlight the difference between formal logical systems and our intuitive reasoning. By understanding these nuances, we can use implication more effectively in formal logic while being aware of its limitations when applied to natural language.</p>

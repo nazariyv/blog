@@ -107,6 +107,14 @@ html.dark #doc .post-list .post-meta {
   overflow-x: auto;
 }
 
+/* `display: block` above is an author rule, so it outranks the user-agent rule
+   that hides the children of a closed <details> -- without this, a table inside
+   a folded answer stays on screen with the answer still folded. Re-assert the
+   hiding at author level for every child except the summary. */
+#doc details:not([open]) > *:not(summary) {
+  display: none;
+}
+
 /*
   On a phone the default list indent eats a third of the screen, which leaves
   nested items too narrow for even a short piece of inline math to fit. Pull the

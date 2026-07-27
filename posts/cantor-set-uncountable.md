@@ -250,6 +250,99 @@ Therefore, the Cantor set must be uncountable!
 
 (This is why the familiar "diagonalise the decimals" proof has to be handled with care, and why doing it inside the Cantor set is so much cleaner: banning the digit 1 also bans the ambiguity.)
 
+## Exercises
+
+Have a go at each before unfolding the answer underneath it. The tools are the ones from above: convert to base 3, then ask whether the digits can be made to avoid 1s.
+
+1. **A point you might not expect**:
+
+   Is $\tfrac{1}{4}$ in the Cantor set?
+
+   <details><summary>show answer</summary>
+
+   Run the algorithm:
+
+   $$
+   \begin{align*}
+   \tfrac{1}{4} \times 3 &= \tfrac{3}{4} = \mathbf{0}.75 & \text{write } 0, \text{ keep } \tfrac{3}{4}\\
+   \tfrac{3}{4} \times 3 &= \tfrac{9}{4} = \mathbf{2}.25 & \text{write } 2, \text{ keep } \tfrac{1}{4}
+   \end{align*}
+   $$
+
+   We're back at $\tfrac{1}{4}$, so $\tfrac{1}{4} = 0.\overline{02}_3$. Checking with the closed form:
+
+   $$\frac{0 \cdot 3 + 2}{3^2 - 1} = \frac{2}{8} = \frac{1}{4}$$
+
+   Only 0s and 2s, so **yes**, $\tfrac{1}{4}$ is in the Cantor set.
+
+   This is the exercise worth doing, because $\tfrac{1}{4}$ is not an endpoint of *any* interval at *any* step -- every endpoint has a power of 3 underneath it, and 4 is not one. So the Cantor set is not merely the endpoints left over from the construction. It contains points that arise as limits, and in fact the endpoints are only countably many, so essentially *all* of the Cantor set is points like this one.
+
+   </details>
+
+2. **A point that goes**:
+
+   Is $\tfrac{1}{2}$ in the Cantor set?
+
+   <details><summary>show answer</summary>
+
+   $\tfrac{1}{2} \times 3 = 1.5$, so the first digit is 1 and $\tfrac{1}{2}$ remains -- the digit is 1 forever, giving $\tfrac{1}{2} = 0.\overline{1}_3$, and indeed $\frac{1}{3-1} = \frac{1}{2}$.
+
+   Could it have a second name, the way $\tfrac{1}{3}$ did? No: two names only exist for expansions that terminate, i.e. numbers of the form $\tfrac{k}{3^n}$. This expansion never terminates, so it's the only one available and it is riddled with 1s. **Not** in the Cantor set.
+
+   No surprise geometrically -- $\tfrac{1}{2}$ is dead centre of $(\tfrac{1}{3}, \tfrac{2}{3})$, so it is the very first thing removed.
+
+   </details>
+
+3. **An endpoint that looks wrong**:
+
+   $\tfrac{7}{9}$ is an endpoint of one of the step-2 intervals, so it is never removed and must be in the Cantor set. But we computed earlier that $\tfrac{7}{9} = 0.21_3$, which contains a 1. Resolve the apparent contradiction.
+
+   <details><summary>show answer</summary>
+
+   $\tfrac{7}{9}$ terminates, so it has a second name. Trade the final 1 for a 0 followed by all 2s:
+
+   $$0.20222..._3 = \tfrac{2}{3} + \tfrac{0}{9} + \left(\tfrac{2}{27} + \tfrac{2}{81} + ...\right) = \tfrac{2}{3} + \frac{2/27}{1 - 1/3} = \tfrac{2}{3} + \tfrac{1}{9} = \tfrac{7}{9}$$
+
+   So
+
+   $$\tfrac{7}{9} = 0.21_3 = 0.20222..._3$$
+
+   and the second name uses only 0s and 2s. **In the set**, and the characterisation survives -- which is exactly why it has to be stated as "*has at least one* expansion using only 0s and 2s" rather than "its expansion uses only 0s and 2s".
+
+   The general trick: any terminating expansion ending in a 1 can be rewritten by dropping that 1 to a 0 and appending 2s forever. It's the same manoeuvre as $0.5 = 0.4999...$ in base 10.
+
+   </details>
+
+4. **How much is left**:
+
+   Add up the total length of everything removed. What does that say about the length of the Cantor set, and how does it sit beside the result we just proved?
+
+   <details><summary>show answer</summary>
+
+   At step $n$ we remove $2^{n-1}$ intervals, each of length $3^{-n}$. Summing over all steps:
+
+   $$\sum_{n=1}^{\infty} \frac{2^{n-1}}{3^n} = \frac{1}{3}\sum_{n=1}^{\infty}\left(\tfrac{2}{3}\right)^{n-1} = \frac{1}{3} \cdot \frac{1}{1 - 2/3} = \frac{1}{3} \cdot 3 = 1$$
+
+   We remove total length 1 from an interval of length 1, so the Cantor set has length -- Lebesgue measure -- **zero**. This agrees with the other count: what survives at step $n$ has total length $\left(\tfrac{2}{3}\right)^n \to 0$.
+
+   Set that beside the theorem and you get the punchline of the whole post: the Cantor set has **zero length yet uncountably many points**. Neither fact softens the other. "Uncountable" and "has some length" turn out to be entirely independent properties, which is precisely why measure theory needs to be built as its own subject rather than read off from cardinality.
+
+   </details>
+
+5. **Why the digit ban matters**:
+
+   Suppose you tried the diagonal argument directly on all of $[0,1]$ in base 10: list the reals, then build $y$ by changing the $n$th decimal digit of the $n$th number. Where does this break, and why doesn't the Cantor set version suffer the same fate?
+
+   <details><summary>show answer</summary>
+
+   It breaks at exactly the step we had to be careful about: differing in every digit does **not** guarantee being a different number. Suppose your rule turns a digit 5 into 4, and the list happens to produce $y = 0.4999...$ while $x_1 = 0.5000...$. Every digit differs, yet $y = x_1$, so the "new" number was on the list after all and no contradiction follows.
+
+   The fix in the real-number proof is to choose replacement digits avoiding 0 and 9, so the ambiguous pairs can never arise. Our version gets this for free: allowing only 0s and 2s already rules out both shapes of a double name, since a clash needs one string ending $...1000...$ and the other $...0222...$, and the digit 1 is banned.
+
+   So banning 1s does double duty -- it characterises the Cantor set *and* removes the one loophole that could sink the diagonal argument. That's what made this the tidy setting for the proof.
+
+   </details>
+
 ## Why This Matters
 
 The Cantor set is remarkably counterintuitive. Despite having zero length (its Lebesgue measure is 0), it contains uncountably many points. It's a perfect example of how infinite sets can behave in surprising ways, and it plays a crucial role in topology and analysis.

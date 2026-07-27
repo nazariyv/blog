@@ -189,11 +189,13 @@ Want to test your understanding? Have a go at each one before unfolding the answ
 
    <details><summary>show answer</summary>
 
-   Each is **necessary**: "requires" tells us $\text{enrolled} \Rightarrow \text{paid} \land \text{registered}$, so neither can be skipped.
+   Write $E$ for "enrolled", $T$ for "paid tuition" and $R$ for "registered".
 
-   Whether the two together are **sufficient** does not follow from the word "requires" -- and this is the trap. "$X$ requires $Y$" only ever gives you necessity. To also get sufficiency you need the converse, $\text{paid} \land \text{registered} \Rightarrow \text{enrolled}$, which is an extra claim about the university's rules. In practice there may be further hurdles (prerequisites, a place left on the course), in which case the conditions are necessary but *not* sufficient.
+   Each is **necessary**: "requires" tells us $E \Rightarrow T \land R$, so neither can be skipped.
 
-   If the two conditions really are the whole story, then together they are necessary and sufficient, and enrollment is a biconditional: $\text{enrolled} \Leftrightarrow \text{paid} \land \text{registered}$. That is the same shape as $RC \Leftrightarrow RS \land CC$ from earlier.
+   Whether the two together are **sufficient** does not follow from the word "requires" -- and this is the trap. "$X$ requires $Y$" only ever gives you necessity. To also get sufficiency you need the converse, $T \land R \Rightarrow E$, which is an extra claim about the university's rules. In practice there may be further hurdles (prerequisites, a place left on the course), in which case the conditions are necessary but *not* sufficient.
+
+   If the two conditions really are the whole story, then together they are necessary and sufficient, and enrollment is a biconditional, $E \Leftrightarrow T \land R$ -- the same shape as $RC \Leftrightarrow RS \land CC$ from earlier.
 
    </details>
 

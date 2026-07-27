@@ -289,6 +289,62 @@ x_3 &amp;= 0.a_{31}a_{32}a_{33}..._3\\
 <p>There's one gap left to close, and it's exactly where the two-names problem could have bitten us. Differing in a digit only shows the two <em>strings</em> are different; what we need is that the two <em>numbers</em> are different. Here our convention saves us. For two distinct strings to denote the same number, one would have to end <span class="math inline">\(...a1000...\)</span> and the other <span class="math inline">\(...a0222...\)</span> – and neither of those is free of 1s. Since every string in play consists only of 0s and 2s, distinct strings must denote distinct numbers, so <span class="math inline">\(y \neq x_n\)</span> as real numbers for every <span class="math inline">\(n\)</span>.</p>
 <p>Therefore, the Cantor set must be uncountable!</p>
 <p>(This is why the familiar "diagonalise the decimals" proof has to be handled with care, and why doing it inside the Cantor set is so much cleaner: banning the digit 1 also bans the ambiguity.)</p>
+<h2 id="exercises">Exercises</h2>
+<p>Have a go at each before unfolding the answer underneath it. The tools are the ones from above: convert to base 3, then ask whether the digits can be made to avoid 1s.</p>
+<ol type="1">
+<li><p><strong>A point you might not expect</strong>:</p>
+<p>Is <span class="math inline">\(\tfrac{1}{4}\)</span> in the Cantor set?</p>
+<details>
+<summary>show answer</summary>
+<p>Run the algorithm:</p>
+<p><span class="math display">\[
+\begin{align*}
+\tfrac{1}{4} \times 3 &amp;= \tfrac{3}{4} = \mathbf{0}.75 &amp; \text{write } 0, \text{ keep } \tfrac{3}{4}\\
+\tfrac{3}{4} \times 3 &amp;= \tfrac{9}{4} = \mathbf{2}.25 &amp; \text{write } 2, \text{ keep } \tfrac{1}{4}
+\end{align*}
+\]</span></p>
+<p>We're back at <span class="math inline">\(\tfrac{1}{4}\)</span>, so <span class="math inline">\(\tfrac{1}{4} = 0.\overline{02}_3\)</span>. Checking with the closed form:</p>
+<p><span class="math display">\[\frac{0 \cdot 3 + 2}{3^2 - 1} = \frac{2}{8} = \frac{1}{4}\]</span></p>
+<p>Only 0s and 2s, so <strong>yes</strong>, <span class="math inline">\(\tfrac{1}{4}\)</span> is in the Cantor set.</p>
+<p>This is the exercise worth doing, because <span class="math inline">\(\tfrac{1}{4}\)</span> is not an endpoint of <em>any</em> interval at <em>any</em> step – every endpoint has a power of 3 underneath it, and 4 is not one. So the Cantor set is not merely the endpoints left over from the construction. It contains points that arise as limits, and in fact the endpoints are only countably many, so essentially <em>all</em> of the Cantor set is points like this one.</p>
+</details></li>
+<li><p><strong>A point that goes</strong>:</p>
+<p>Is <span class="math inline">\(\tfrac{1}{2}\)</span> in the Cantor set?</p>
+<details>
+<summary>show answer</summary>
+<p><span class="math inline">\(\tfrac{1}{2} \times 3 = 1.5\)</span>, so the first digit is 1 and <span class="math inline">\(\tfrac{1}{2}\)</span> remains – the digit is 1 forever, giving <span class="math inline">\(\tfrac{1}{2} = 0.\overline{1}_3\)</span>, and indeed <span class="math inline">\(\frac{1}{3-1} = \frac{1}{2}\)</span>.</p>
+<p>Could it have a second name, the way <span class="math inline">\(\tfrac{1}{3}\)</span> did? No: two names only exist for expansions that terminate, i.e. numbers of the form <span class="math inline">\(\tfrac{k}{3^n}\)</span>. This expansion never terminates, so it's the only one available and it is riddled with 1s. <strong>Not</strong> in the Cantor set.</p>
+<p>No surprise geometrically – <span class="math inline">\(\tfrac{1}{2}\)</span> is dead centre of <span class="math inline">\((\tfrac{1}{3}, \tfrac{2}{3})\)</span>, so it is the very first thing removed.</p>
+</details></li>
+<li><p><strong>An endpoint that looks wrong</strong>:</p>
+<p><span class="math inline">\(\tfrac{7}{9}\)</span> is an endpoint of one of the step-2 intervals, so it is never removed and must be in the Cantor set. But we computed earlier that <span class="math inline">\(\tfrac{7}{9} = 0.21_3\)</span>, which contains a 1. Resolve the apparent contradiction.</p>
+<details>
+<summary>show answer</summary>
+<p><span class="math inline">\(\tfrac{7}{9}\)</span> terminates, so it has a second name. Trade the final 1 for a 0 followed by all 2s:</p>
+<p><span class="math display">\[0.20222..._3 = \tfrac{2}{3} + \tfrac{0}{9} + \left(\tfrac{2}{27} + \tfrac{2}{81} + ...\right) = \tfrac{2}{3} + \frac{2/27}{1 - 1/3} = \tfrac{2}{3} + \tfrac{1}{9} = \tfrac{7}{9}\]</span></p>
+<p>So</p>
+<p><span class="math display">\[\tfrac{7}{9} = 0.21_3 = 0.20222..._3\]</span></p>
+<p>and the second name uses only 0s and 2s. <strong>In the set</strong>, and the characterisation survives – which is exactly why it has to be stated as "<em>has at least one</em> expansion using only 0s and 2s" rather than "its expansion uses only 0s and 2s".</p>
+<p>The general trick: any terminating expansion ending in a 1 can be rewritten by dropping that 1 to a 0 and appending 2s forever. It's the same manoeuvre as <span class="math inline">\(0.5 = 0.4999...\)</span> in base 10.</p>
+</details></li>
+<li><p><strong>How much is left</strong>:</p>
+<p>Add up the total length of everything removed. What does that say about the length of the Cantor set, and how does it sit beside the result we just proved?</p>
+<details>
+<summary>show answer</summary>
+<p>At step <span class="math inline">\(n\)</span> we remove <span class="math inline">\(2^{n-1}\)</span> intervals, each of length <span class="math inline">\(3^{-n}\)</span>. Summing over all steps:</p>
+<p><span class="math display">\[\sum_{n=1}^{\infty} \frac{2^{n-1}}{3^n} = \frac{1}{3}\sum_{n=1}^{\infty}\left(\tfrac{2}{3}\right)^{n-1} = \frac{1}{3} \cdot \frac{1}{1 - 2/3} = \frac{1}{3} \cdot 3 = 1\]</span></p>
+<p>We remove total length 1 from an interval of length 1, so the Cantor set has length – Lebesgue measure – <strong>zero</strong>. This agrees with the other count: what survives at step <span class="math inline">\(n\)</span> has total length <span class="math inline">\(\left(\tfrac{2}{3}\right)^n \to 0\)</span>.</p>
+<p>Set that beside the theorem and you get the punchline of the whole post: the Cantor set has <strong>zero length yet uncountably many points</strong>. Neither fact softens the other. "Uncountable" and "has some length" turn out to be entirely independent properties, which is precisely why measure theory needs to be built as its own subject rather than read off from cardinality.</p>
+</details></li>
+<li><p><strong>Why the digit ban matters</strong>:</p>
+<p>Suppose you tried the diagonal argument directly on all of <span class="math inline">\([0,1]\)</span> in base 10: list the reals, then build <span class="math inline">\(y\)</span> by changing the <span class="math inline">\(n\)</span>th decimal digit of the <span class="math inline">\(n\)</span>th number. Where does this break, and why doesn't the Cantor set version suffer the same fate?</p>
+<details>
+<summary>show answer</summary>
+<p>It breaks at exactly the step we had to be careful about: differing in every digit does <strong>not</strong> guarantee being a different number. Suppose your rule turns a digit 5 into 4, and the list happens to produce <span class="math inline">\(y = 0.4999...\)</span> while <span class="math inline">\(x_1 = 0.5000...\)</span>. Every digit differs, yet <span class="math inline">\(y = x_1\)</span>, so the "new" number was on the list after all and no contradiction follows.</p>
+<p>The fix in the real-number proof is to choose replacement digits avoiding 0 and 9, so the ambiguous pairs can never arise. Our version gets this for free: allowing only 0s and 2s already rules out both shapes of a double name, since a clash needs one string ending <span class="math inline">\(...1000...\)</span> and the other <span class="math inline">\(...0222...\)</span>, and the digit 1 is banned.</p>
+<p>So banning 1s does double duty – it characterises the Cantor set <em>and</em> removes the one loophole that could sink the diagonal argument. That's what made this the tidy setting for the proof.</p>
+</details></li>
+</ol>
 <h2 id="why-this-matters">Why This Matters</h2>
 <p>The Cantor set is remarkably counterintuitive. Despite having zero length (its Lebesgue measure is 0), it contains uncountably many points. It's a perfect example of how infinite sets can behave in surprising ways, and it plays a crucial role in topology and analysis.</p>
 <p>This uncountability proof also introduces techniques that are useful in many other areas of mathematics. The base-3 representation gives us a concrete way to understand which points are in the Cantor set, while the diagonalization argument is a powerful tool that appears throughout mathematics.</p>

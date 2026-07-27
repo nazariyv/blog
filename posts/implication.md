@@ -90,6 +90,85 @@ These are called "paradoxes" not because they lead to logical contradictions, bu
 
 These paradoxes arise from trying to use material implication to capture all uses of "if...then" statements in natural language, when it is just one specific type of implication that does not always align with colloquial usage (if you are interested, try researching <a href="https://en.wikipedia.org/wiki/Non-classical_logic" target="_blank" rel="noopener noreferrer">"non-classical logic"</a>).
 
+## exercises
+
+Have a go at each before unfolding the answer underneath it.
+
+1. **Naming the rejects**:
+
+   We arrived at implication by eliminating the three other ways to fill in the last two rows. Each of those rejects is a connective we already had. Name all three.
+
+   <details><summary>show answer</summary>
+
+   - **F, F** gives $P \land Q$ -- conjunction, as the post shows.
+   - **T, F** gives a table that is true exactly when $Q$ is true, so the connective is just $Q$; it ignores $P$ entirely.
+   - **F, T** gives T, F, F, T -- true exactly when $P$ and $Q$ agree. That's the **biconditional** $P \Leftrightarrow Q$.
+
+   That last one is worth dwelling on, because it is the reject that comes closest to being useful. The biconditional is a perfectly good connective, but it is *symmetric*: swapping $P$ and $Q$ leaves it unchanged. We were looking for something that says one thing follows from another, and "follows from" has a direction. A symmetric connective can never express it, so the biconditional disqualifies itself for a structural reason, not merely an intuitive one.
+
+   </details>
+
+2. **The only way to fail**:
+
+   Show that $\lnot(P \Rightarrow Q)$ is equivalent to $P \land \lnot Q$.
+
+   <details><summary>show answer</summary>
+
+   $P \Rightarrow Q$ is false in exactly one row of its table -- the one where $P$ is true and $Q$ is false. Its negation is therefore true in exactly that row and false in the other three, which is precisely the table of $P \land \lnot Q$.
+
+   This is the most practical fact about implication: **to refute "if $P$ then $Q$" you must produce a case where $P$ holds and $Q$ fails.** Nothing else will do. It also explains the false-hypothesis rows without any hand-waving about vacuous truth -- when $P$ is false you simply cannot build the one counterexample that would make the implication false, so it stands.
+
+   </details>
+
+3. **Implication out of older parts**:
+
+   Show that $P \Rightarrow Q$ is equivalent to $\lnot P \lor Q$.
+
+   <details><summary>show answer</summary>
+
+   | $P$ | $Q$ | $\lnot P$ | $\lnot P \lor Q$ | $P \Rightarrow Q$ |
+   | --- | --- | --------- | ---------------- | ----------------- |
+   | T   | T   | F         | T                | T                 |
+   | T   | F   | F         | F                | F                 |
+   | F   | T   | T         | T                | T                 |
+   | F   | F   | T         | T                | T                 |
+
+   The last two columns match, so the two are the same connective.
+
+   There is a sting in this. The post set out to invent a *new* connective, and it turns out implication was expressible in negation and disjunction the whole time -- so strictly speaking we added no new expressive power. What we gained was a notation matching how we actually reason, which is why implication earns its own symbol despite being redundant. (Read $\lnot P \lor Q$ aloud as "either $P$ fails, or $Q$ holds" and the false-hypothesis rows stop feeling strange.)
+
+   </details>
+
+4. **Vacuous truth, on purpose**:
+
+   I claim: "every unicorn in my garden is purple." I have no unicorns. Is my claim true, false, or meaningless? What would you have to show me to refute it?
+
+   <details><summary>show answer</summary>
+
+   **True.** The claim says: for every $x$, if $x$ is a unicorn in my garden, then $x$ is purple. Each instance has a false hypothesis, so each is true, so the whole thing is true.
+
+   To refute it you would need exactly what exercise 2 identified -- a case where the hypothesis holds and the conclusion fails, i.e. a unicorn in my garden that isn't purple. You cannot produce one, so the claim stands unrefuted.
+
+   Note that "every unicorn in my garden is green" is true for the same reason. Both a statement and its apparent opposite come out true, which feels alarming but isn't a contradiction: the negation of "all are purple" is "*some* unicorn of mine is not purple", and that one is false. Nothing inconsistent -- the claims just say less than they appear to.
+
+   </details>
+
+5. **Converse, inverse, contrapositive**:
+
+   Take "if it rains, the ground gets wet", i.e. $R \Rightarrow W$. Write down the converse, the inverse and the contrapositive, and say which are equivalent to the original.
+
+   <details><summary>show answer</summary>
+
+   - Converse: $W \Rightarrow R$ -- "if the ground is wet, it rained." **Not** equivalent.
+   - Inverse: $\lnot R \Rightarrow \lnot W$ -- "if it doesn't rain, the ground doesn't get wet." **Not** equivalent.
+   - Contrapositive: $\lnot W \Rightarrow \lnot R$ -- "if the ground isn't wet, it didn't rain." **Equivalent.**
+
+   The contrapositive is equivalent because both statements are false in exactly the same single case, rain with dry ground. The example makes the failures concrete: a sprinkler leaves the ground wet without rain, which refutes both the converse and the inverse while leaving the original untouched.
+
+   Two things worth keeping. The converse and the inverse are contrapositives of each other, so they are equivalent to *each other* while both differ from the original. And quietly swapping a statement for its converse is the single most common error in informal argument -- it is the same move as reading "sufficient" and concluding "necessary", which is the subject of <a href="/math/2024/09/18/necessary-sufficient">the companion post</a>.
+
+   </details>
+
 ## conclusion
 
 Understanding implication is crucial in logic and mathematics. It forms the basis of many logical arguments, proofs, and deductions. While its definition might seem counterintuitive at first, especially when the hypothesis is false, we've seen that it arises naturally when we try to create a logical operator that relates two statements in a meaningful way.
