@@ -1,6 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Uncountability of the Cantor Set: A Journey Through Base-3</title>
 
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="The Uncountability of the Cantor Set: A Journey Through Base-3" />
+<meta name="twitter:image" content="https://blog.naz.ooo/images/icon.png" />
 
 <link rel="stylesheet" type="text/css" href="/css/common-vendor.b8ecfc406ac0b5f77a26.css">
 <link rel="stylesheet" type="text/css" href="/css/fretboard.f32f2a8d5293869f0195.css">
@@ -9,44 +16,29 @@
 <link rel="stylesheet" type="text/css" href="/css/global.css">
 <link rel="stylesheet" type="text/css" href="/css/misc.css">
 
-<style>
-@font-face {
-    font-family: MJXc-TeX-math-Iw;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
-@font-face {
-    font-family: MJXZERO;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
-@font-face {
-    font-family: MJXTEX;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
+<script>
+  MathJax = {
+    tex: {
+      // the backslashes must be doubled: JS drops the backslash in '\(',
+      // which would tell MathJax that inline math is delimited by bare
+      // parens and leave pandoc's real \(...\) spans unrendered
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global',
+    }
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="/scripts/tex-svg.js"
+></script>
+</head>
 
-.math { font-family: MJXc-TeX-math-Iw }
-</style>
-
-  <script>
-    MathJax = {
-      tex: {
-        // the backslashes must be doubled: JS drops the backslash in '\(',
-        // which would tell MathJax that inline math is delimited by bare
-        // parens and leave pandoc's real \(...\) spans unrendered
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      },
-      svg: {
-        fontCache: 'global',
-      }
-    };
-  </script>
-  <script
-    type="text/javascript"
-    id="MathJax-script"
-    async
-    src="/scripts/tex-svg.js"
-  ></script>
-
+<body>
   <div
     id="doc"
     class="container-fluid markdown-body comment-enabled"
@@ -125,16 +117,11 @@
       checkColorScheme();
     </script>
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="The Uncountability of the Cantor Set: A Journey Through Base-3" />
-<meta name="twitter:image" content="https://blog.naz.ooo/images/icon.png" />
-
 <br>
 <h1 style="margin-bottom:7px"> The Uncountability of the Cantor Set: A Journey Through Base-3 </h1>
 <small style="float:left; color: #888"> 2024 Jan 06 </small>
 <small style="float:right; color: #888"><a href="/">See all posts</a></small>
 <br> <br> <br>
-<title> The Uncountability of the Cantor Set: A Journey Through Base-3 </title>
 <p>The Cantor set is one of the most fascinating mathematical objects ever discovered. It's a set that seems to vanish before our eyes as we construct it, yet contains so many points that they cannot be counted - even using infinite counting! Today, we'll explore this remarkable set and prove its uncountability using Georg Cantor's famous diagonalization argument.</p>
 <h2 id="what-is-the-cantor-set">What is the Cantor Set?</h2>
 <p>The Cantor set is constructed by repeatedly removing the middle third of intervals, starting with the interval <span class="math inline">\([0,1]\)</span>. Let's walk through its construction:</p>
@@ -145,12 +132,16 @@
 <li>Continue this process infinitely</li>
 </ol>
 <p>After each step, we get a collection of intervals. Let's calculate the first few iterations:</p>
-<ul>
-<li>Step 0: <span class="math inline">\([0,1]\)</span></li>
-<li>Step 1: <span class="math inline">\([0,\frac{1}{3}] \cup [\frac{2}{3},1]\)</span></li>
-<li>Step 2: <span class="math inline">\([0,\frac{1}{9}] \cup [\frac{2}{9},\frac{1}{3}] \cup [\frac{2}{3},\frac{7}{9}] \cup [\frac{8}{9},1]\)</span></li>
-<li>Step 3: <span class="math inline">\([0,\frac{1}{27}] \cup [\frac{2}{27},\frac{1}{9}] \cup [\frac{2}{9},\frac{7}{27}] \cup [\frac{8}{27},\frac{1}{3}] \cup [\frac{2}{3},\frac{19}{27}] \cup [\frac{20}{27},\frac{7}{9}] \cup [\frac{8}{9},\frac{25}{27}] \cup [\frac{26}{27},1]\)</span></li>
-</ul>
+<p><span class="math display">\[
+\begin{align*}
+\text{Step 0:}\quad &amp; [0,1]\\[3pt]
+\text{Step 1:}\quad &amp; [0,\tfrac{1}{3}] \cup [\tfrac{2}{3},1]\\[3pt]
+\text{Step 2:}\quad &amp; [0,\tfrac{1}{9}] \cup [\tfrac{2}{9},\tfrac{1}{3}] \cup [\tfrac{2}{3},\tfrac{7}{9}] \cup [\tfrac{8}{9},1]\\[3pt]
+\text{Step 3:}\quad &amp; [0,\tfrac{1}{27}] \cup [\tfrac{2}{27},\tfrac{1}{9}] \cup [\tfrac{2}{9},\tfrac{7}{27}] \cup [\tfrac{8}{27},\tfrac{1}{3}]\ \cup\\[2pt]
+                    &amp; [\tfrac{2}{3},\tfrac{19}{27}] \cup [\tfrac{20}{27},\tfrac{7}{9}] \cup [\tfrac{8}{9},\tfrac{25}{27}] \cup [\tfrac{26}{27},1]
+\end{align*}
+\]</span></p>
+<p>Each step keeps the outer thirds of every interval it is given, so the count of intervals doubles while each one shrinks by a factor of 3: at step <span class="math inline">\(n\)</span> there are <span class="math inline">\(2^n\)</span> intervals, each of length <span class="math inline">\(3^{-n}\)</span>, for a total length of <span class="math inline">\(\left(\tfrac{2}{3}\right)^n\)</span>. That total marches off to 0, which is worth holding on to – we are about to show that what survives is nonetheless uncountable.</p>
 <p>The Cantor set is what remains after infinitely many steps of this process.</p>
 <h2 id="the-plan-of-attack">The Plan of Attack</h2>
 <p>To prove that the Cantor set is uncountable, we'll follow these steps:</p>
@@ -163,9 +154,9 @@
 <p>Before diving into ternary representations, let's understand how to convert numbers between bases. While our proof will only deal with numbers in <span class="math inline">\([0,1]\)</span> (so we only need to convert fractional parts), understanding both whole and fractional conversions gives us a complete picture.</p>
 <h3 id="converting-whole-numbers">Converting Whole Numbers</h3>
 <p>For whole numbers, we can represent any number as a sum of powers of the base. For example, in base 3 (ternary), each position represents a power of 3:</p>
-<p><span class="math inline">\(201_3 = 2 \cdot 3^2 + 0 \cdot 3^1 + 1 \cdot 3^0 = 18 + 0 + 1 = 19_{10}\)</span></p>
+<p><span class="math display">\[201_3 = 2 \cdot 3^2 + 0 \cdot 3^1 + 1 \cdot 3^0 = 18 + 0 + 1 = 19_{10}\]</span></p>
 <p>More generally, each ternary whole number is of the form</p>
-<p><span class="math display">\[x = \sum_k a_k 3^k \text{ where each } a_k \in \{0,1,2\}, \text{ and } k \in \mathbb{N_0}\]</span></p>
+<p><span class="math display">\[x = \sum_k a_k 3^k \text{ where each } a_k \in \{0,1,2\}, \text{ and } k \in \mathbb{N}_0\]</span></p>
 <p>I could never remember the conventional way of converting a whole number to another base, so here is how I do it. Say we want to convert 19 to base 3. Begin by dividing 19 by 3:</p>
 <p><span class="math display">\[19 / 3 = 6 \text{ remainder } 1\]</span></p>
 <p>this means that</p>
@@ -182,21 +173,25 @@
 <p>in other words:</p>
 <p><span class="math display">\[19_{10} = 201_3\]</span></p>
 <h3 id="converting-fractional-parts">Converting Fractional Parts</h3>
-<p>For the fractional part (which is what we'll need for our Cantor set proof), we're essentially dividing by powers of 3. Just as <span class="math inline">\(0.1_{10}\)</span> means <span class="math inline">\(\frac{1}{10}\)</span>, in base 3, <span class="math inline">\(0.1_3\)</span> means <span class="math inline">\(\frac{1}{3}\)</span>.</p>
-<p>To convert a decimal fraction to base 3, we multiply by 3 and look at the whole number part. Let's convert 0.7 to base 3:</p>
+<p>For the fractional part (which is what we'll need for our Cantor set proof), the positions to the right of the point are <em>negative</em> powers of the base. Just as <span class="math inline">\(0.1_{10}\)</span> means <span class="math inline">\(\frac{1}{10}\)</span>, in base 3, <span class="math inline">\(0.1_3\)</span> means <span class="math inline">\(\frac{1}{3}\)</span>:</p>
+<p><span class="math display">\[0.d_1d_2d_3..._3 = \frac{d_1}{3} + \frac{d_2}{3^2} + \frac{d_3}{3^3} + ... \text{ where each } d_k \in \{0,1,2\}\]</span></p>
+<p>That sum hands us the algorithm. Multiplying by 3 shifts every digit one place to the left, so <span class="math inline">\(d_1\)</span> pops out as the whole-number part and the rest stays behind the point:</p>
+<p><span class="math display">\[3 \times 0.d_1d_2d_3..._3 = d_1 . d_2d_3..._3\]</span></p>
+<p>So: multiply by 3, write down the whole part as your next digit, discard it, and repeat with what's left. Let's convert <span class="math inline">\(0.7\)</span>:</p>
 <p><span class="math display">\[
 \begin{align*}
-0.7 \times 3 &amp;= 2.1 \text{ (write down 2)}\\
-0.1 \times 3 &amp;= 0.3 \text{ (write down 0)}\\
-0.3 \times 3 &amp;= 0.9 \text{ (write down 0)}\\
-0.9 \times 3 &amp;= 2.7 \text{ (write down 2)}\\
-0.7 \times 3 &amp;= 2.1 \text{ (pattern repeats)}\\
-&amp;\vdots
+0.7 \times 3 &amp;= \mathbf{2}.1 &amp; \text{write down } 2, \text{ keep } 0.1\\
+0.1 \times 3 &amp;= \mathbf{0}.3 &amp; \text{write down } 0, \text{ keep } 0.3\\
+0.3 \times 3 &amp;= \mathbf{0}.9 &amp; \text{write down } 0, \text{ keep } 0.9\\
+0.9 \times 3 &amp;= \mathbf{2}.7 &amp; \text{write down } 2, \text{ keep } 0.7
 \end{align*}
 \]</span></p>
-<p>Therefore, <span class="math inline">\(0.7_{10} = 0.20202..._3\)</span></p>
-<p>Each digit in this expansion represents a fraction: <span class="math inline">\(0.20202..._3 = \frac{2}{3^1} + \frac{0}{3^2} + \frac{2}{3^3} + \frac{0}{3^4} + \frac{2}{3^5} + ...\)</span></p>
-<p>This understanding of fractions in base 3 will be crucial for our proof about the Cantor set, as we'll see that every number in the set has a special property in its base-3 representation.</p>
+<p>The leftover is <span class="math inline">\(0.7\)</span> again, exactly where we came in, so the digits now repeat forever with period 4:</p>
+<p><span class="math display">\[0.7_{10} = 0.20022002..._3 = 0.\overline{2002}_3\]</span></p>
+<p>Let's verify that, since a repeating expansion has a closed form. A block of <span class="math inline">\(n\)</span> digits repeating forever equals the block's value over <span class="math inline">\(3^n - 1\)</span>:</p>
+<p><span class="math display">\[0.\overline{2002}_3 = \frac{2 \cdot 3^3 + 0 \cdot 3^2 + 0 \cdot 3 + 2}{3^4 - 1} = \frac{56}{80} = \frac{7}{10}\]</span></p>
+<p>Notice how much less hospitable base 3 is to <span class="math inline">\(0.7\)</span> than base 10 is: the expansion never terminates. That isn't bad luck. A fraction in lowest terms terminates in base 3 exactly when its denominator is a power of 3, and <span class="math inline">\(10 = 2 \cdot 5\)</span> shares no factor with 3, so <span class="math inline">\(\frac{7}{10}\)</span> has no choice but to repeat.</p>
+<p>Happily, the numbers the Cantor set is built from are the hospitable ones. Every endpoint we will meet – <span class="math inline">\(\frac{1}{3}\)</span>, <span class="math inline">\(\frac{2}{9}\)</span>, <span class="math inline">\(\frac{7}{27}\)</span> and their relatives – has a power of 3 underneath, so each one terminates after just a few ternary digits.</p>
 <h2 id="our-intervals-in-ternary-form">Our Intervals in Ternary Form</h2>
 <p>Let's convert some of the Cantor sets' endpoints to base 3. This will reveal a beautiful pattern!</p>
 <p><span class="math inline">\(\frac{1}{3}\)</span> in base 3: <span class="math display">\[
@@ -234,30 +229,45 @@
 \end{align*}
 \]</span> Therefore, <span class="math inline">\(\frac{8}{9}_{10} = 0.22_3\)</span></p>
 <p>Now our first few intervals in ternary form are:</p>
-<ul>
-<li>Step 0: <span class="math inline">\([0.0_3, 0.2222..._3]\)</span></li>
-<li>Step 1: <span class="math inline">\([0.0_3, 0.0222..._3] \cup [0.2_3, 0.2222..._3]\)</span></li>
-<li>Step 2: <span class="math inline">\([0.0_3, 0.0022..._3] \cup [0.02_3, 0.0222..._3] \cup [0.2_3, 0.2022..._3] \cup [0.22_3, 0.2222..._3]\)</span></li>
-</ul>
+<p><span class="math display">\[
+\begin{align*}
+\text{Step 0:}\quad &amp; [0.0_3,\ 0.2222..._3]\\[3pt]
+\text{Step 1:}\quad &amp; [0.0_3,\ 0.0222..._3] \cup [0.2_3,\ 0.2222..._3]\\[3pt]
+\text{Step 2:}\quad &amp; [0.0_3,\ 0.0022..._3] \cup [0.02_3,\ 0.0222..._3]\ \cup\\[2pt]
+                    &amp; [0.2_3,\ 0.2022..._3] \cup [0.22_3,\ 0.2222..._3]
+\end{align*}
+\]</span></p>
 <h2 id="the-magic-of-base-3-removing-numbers-with-1s">The Magic of Base-3: Removing Numbers with 1s</h2>
 <p>Here's where things get interesting! When we remove the middle third of an interval, we're actually removing all numbers that have a 1 in that position of their ternary expansion.</p>
 <p>Let's look at what we remove in each step:</p>
 <ul>
-<li>Step 1: We remove <span class="math inline">\((\frac{1}{3}, \frac{2}{3})\)</span>, which in base 3 is <span class="math inline">\((0.1_3, 0.2_3)\)</span></li>
+<li>Step 1: We remove <span class="math inline">\((\tfrac{1}{3}, \tfrac{2}{3})\)</span>, which in base 3 is <span class="math inline">\((0.1_3, 0.2_3)\)</span></li>
 <li>Step 2: We remove:
 <ul>
-<li><span class="math inline">\((\frac{1}{9}, \frac{2}{9})\)</span>, which is <span class="math inline">\((0.01_3, 0.02_3)\)</span></li>
-<li><span class="math inline">\((\frac{7}{9}, \frac{8}{9})\)</span>, which is <span class="math inline">\((0.21_3, 0.22_3)\)</span></li>
+<li><span class="math inline">\((\tfrac{1}{9}, \tfrac{2}{9})\)</span>, which is <span class="math inline">\((0.01_3, 0.02_3)\)</span></li>
+<li><span class="math inline">\((\tfrac{7}{9}, \tfrac{8}{9})\)</span>, which is <span class="math inline">\((0.21_3, 0.22_3)\)</span></li>
 </ul></li>
 <li>Step 3: We remove intervals like:
 <ul>
-<li><span class="math inline">\((\frac{1}{27}, \frac{2}{27})\)</span>, which is <span class="math inline">\((0.001_3, 0.002_3)\)</span></li>
-<li><span class="math inline">\((\frac{7}{27}, \frac{8}{27})\)</span>, which is <span class="math inline">\((0.021_3, 0.022_3)\)</span></li>
-<li><span class="math inline">\((\frac{19}{27}, \frac{20}{27})\)</span>, which is <span class="math inline">\((0.201_3, 0.202_3)\)</span></li>
-<li><span class="math inline">\((\frac{25}{27}, \frac{26}{27})\)</span>, which is <span class="math inline">\((0.221_3, 0.222_3)\)</span></li>
+<li><span class="math inline">\((\tfrac{1}{27}, \tfrac{2}{27})\)</span>, which is <span class="math inline">\((0.001_3, 0.002_3)\)</span></li>
+<li><span class="math inline">\((\tfrac{7}{27}, \tfrac{8}{27})\)</span>, which is <span class="math inline">\((0.021_3, 0.022_3)\)</span></li>
+<li><span class="math inline">\((\tfrac{19}{27}, \tfrac{20}{27})\)</span>, which is <span class="math inline">\((0.201_3, 0.202_3)\)</span></li>
+<li><span class="math inline">\((\tfrac{25}{27}, \tfrac{26}{27})\)</span>, which is <span class="math inline">\((0.221_3, 0.222_3)\)</span></li>
 </ul></li>
 </ul>
 <p>In each case, we're removing numbers that have a 1 in the nth position (where n is the step number). This means the Cantor set contains exactly those numbers whose ternary expansion consists only of 0s and 2s!</p>
+<h2 id="the-one-catch-numbers-with-two-names">The One Catch: Numbers With Two Names</h2>
+<p>There's a subtlety hiding in that last sentence, and the proof doesn't stand up without it.</p>
+<p>Look at <span class="math inline">\(\frac{1}{3}\)</span>. The set we remove at step 1 is the <strong>open</strong> interval <span class="math inline">\((\frac{1}{3}, \frac{2}{3})\)</span>, which does not include its own endpoints, so <span class="math inline">\(\frac{1}{3}\)</span> is never removed at any stage. It really is in the Cantor set. Yet we computed above that <span class="math inline">\(\frac{1}{3} = 0.1_3\)</span> – an expansion with a 1 in it. Both facts can't sit comfortably beside the claim we just made.</p>
+<p>The way out is that some numbers have <strong>two</strong> ternary expansions. Alongside <span class="math inline">\(\frac{1}{3} = 0.1000..._3\)</span> we also have</p>
+<p><span class="math display">\[0.0222..._3 = \frac{0}{3} + \frac{2}{3^2} + \frac{2}{3^3} + ... = \frac{2/9}{1 - 1/3} = \frac{1}{3}\]</span></p>
+<p>Two different digit strings, one number. This is precisely the base-3 cousin of <span class="math inline">\(0.5 = 0.4999..._{10}\)</span>, and it happens for exactly those numbers whose expansion terminates – the ones of the form <span class="math inline">\(\frac{k}{3^n}\)</span>.</p>
+<p>So the honest statement of our characterisation is:</p>
+<blockquote>
+<p>The Cantor set is the set of numbers in <span class="math inline">\([0,1]\)</span> having <strong>at least one</strong> ternary expansion that uses only 0s and 2s.</p>
+</blockquote>
+<p><span class="math inline">\(\frac{1}{3}\)</span> makes the cut through its second name, <span class="math inline">\(0.0222..._3\)</span>. A number sitting strictly inside a removed middle third has no such escape route: <span class="math inline">\(\frac{1}{2} = 0.1111..._3\)</span> doesn't terminate, so that is its only expansion, and it is stuck with its 1s. Out it goes, as it should.</p>
+<p>From here on, whenever a number has two names we'll always choose the one that avoids 1s. With that convention in place, every element of the Cantor set is a string of 0s and 2s, and we can finally count them.</p>
 <h2 id="the-diagonalization-proof">The Diagonalization Proof</h2>
 <p>Now we can prove the Cantor set is uncountable. Let's proceed by contradiction.</p>
 <p>Suppose the Cantor set is countable. Then we can list all its elements:</p>
@@ -276,7 +286,9 @@ x_3 &amp;= 0.a_{31}a_{32}a_{33}..._3\\
 <li><span class="math inline">\(b_n = 2\)</span> if <span class="math inline">\(a_{nn} = 0\)</span></li>
 </ul>
 <p>Since <span class="math inline">\(y\)</span> contains only 0s and 2s, it's in the Cantor set. However, <span class="math inline">\(y\)</span> differs from each <span class="math inline">\(x_n\)</span> in the nth digit, so it can't be in our list. This contradicts our assumption that we listed all elements of the Cantor set.</p>
+<p>There's one gap left to close, and it's exactly where the two-names problem could have bitten us. Differing in a digit only shows the two <em>strings</em> are different; what we need is that the two <em>numbers</em> are different. Here our convention saves us. For two distinct strings to denote the same number, one would have to end <span class="math inline">\(...a1000...\)</span> and the other <span class="math inline">\(...a0222...\)</span> – and neither of those is free of 1s. Since every string in play consists only of 0s and 2s, distinct strings must denote distinct numbers, so <span class="math inline">\(y \neq x_n\)</span> as real numbers for every <span class="math inline">\(n\)</span>.</p>
 <p>Therefore, the Cantor set must be uncountable!</p>
+<p>(This is why the familiar "diagonalise the decimals" proof has to be handled with care, and why doing it inside the Cantor set is so much cleaner: banning the digit 1 also bans the ambiguity.)</p>
 <h2 id="why-this-matters">Why This Matters</h2>
 <p>The Cantor set is remarkably counterintuitive. Despite having zero length (its Lebesgue measure is 0), it contains uncountably many points. It's a perfect example of how infinite sets can behave in surprising ways, and it plays a crucial role in topology and analysis.</p>
 <p>This uncountability proof also introduces techniques that are useful in many other areas of mathematics. The base-3 representation gives us a concrete way to understand which points are in the Cantor set, while the diagonalization argument is a powerful tool that appears throughout mathematics.</p>
@@ -284,13 +296,12 @@ x_3 &amp;= 0.a_{31}a_{32}a_{33}..._3\\
 <ol type="1">
 <li><a href="https://people.maths.bris.ac.uk/~maxmr/analysis1/Pickering_EDITED_FINAL.pdf" target="_blank" rel="noopener noreferrer">Representing fractions using different bases</a></li>
 </ol>
-<h2 id="todos">TODOs</h2>
-<ul>
-<li>re-write the fractional ternary expansion section</li>
-</ul>
 
 </div>
 
 <div>
 <small>noticed a mistake or have a suggestion? submit a pull request <a href="https://github.com/nazariyv/blog" target="_blank">here</a></small>
 </div>
+
+</body>
+</html>

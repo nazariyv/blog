@@ -1,6 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nazariy's blog</title>
 
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="nazariy's blog" />
+<meta name="twitter:image" content="https://blog.naz.ooo/images/icon.png" />
 
 <link rel="stylesheet" type="text/css" href="/css/common-vendor.b8ecfc406ac0b5f77a26.css">
 <link rel="stylesheet" type="text/css" href="/css/fretboard.f32f2a8d5293869f0195.css">
@@ -9,44 +16,29 @@
 <link rel="stylesheet" type="text/css" href="/css/global.css">
 <link rel="stylesheet" type="text/css" href="/css/misc.css">
 
-<style>
-@font-face {
-    font-family: MJXc-TeX-math-Iw;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
-@font-face {
-    font-family: MJXZERO;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
-@font-face {
-    font-family: MJXTEX;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
+<script>
+  MathJax = {
+    tex: {
+      // the backslashes must be doubled: JS drops the backslash in '\(',
+      // which would tell MathJax that inline math is delimited by bare
+      // parens and leave pandoc's real \(...\) spans unrendered
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global',
+    }
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="/scripts/tex-svg.js"
+></script>
+</head>
 
-.math { font-family: MJXc-TeX-math-Iw }
-</style>
-
-  <script>
-    MathJax = {
-      tex: {
-        // the backslashes must be doubled: JS drops the backslash in '\(',
-        // which would tell MathJax that inline math is delimited by bare
-        // parens and leave pandoc's real \(...\) spans unrendered
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      },
-      svg: {
-        fontCache: 'global',
-      }
-    };
-  </script>
-  <script
-    type="text/javascript"
-    id="MathJax-script"
-    async
-    src="/scripts/tex-svg.js"
-  ></script>
-
+<body>
   <div
     id="doc"
     class="container-fluid markdown-body comment-enabled"
@@ -125,10 +117,6 @@
       checkColorScheme();
     </script>
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="nazariy's blog" />
-<meta name="twitter:image" content="https://blog.naz.ooo/images/icon.png" />
-
 
 <br>
 <h1>nazariy's blog</h1>
@@ -141,7 +129,7 @@
 <li>
     <span class="post-meta">2024 Sep 18</span>
     <h3>
-      <a class="post-link" href="/math/2024/09/18/necessary-sufficient">Necessary and Sufficient Conditions</a>
+      <a class="post-link" href="/math/2024/09/18/implication">Implication</a>
     </h3>
 </li>
 
@@ -150,7 +138,7 @@
 <li>
     <span class="post-meta">2024 Sep 18</span>
     <h3>
-      <a class="post-link" href="/math/2024/09/18/implication">Implication</a>
+      <a class="post-link" href="/math/2024/09/18/necessary-sufficient">Necessary and Sufficient Conditions</a>
     </h3>
 </li>
 
@@ -165,3 +153,6 @@
 
  </ul>
 </div>
+
+</body>
+</html>

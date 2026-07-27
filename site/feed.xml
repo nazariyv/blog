@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
 <channel>
   <title>nazariy's blog</title>
@@ -11,19 +11,27 @@
   </image>
 
 <item>
-<title>Necessary and Sufficient Conditions</title>
-<link>https://blog.naz.ooo/math/2024/09/18/necessary-sufficient</link>
-<guid>https://blog.naz.ooo/math/2024/09/18/necessary-sufficient</guid>
-<pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
-<description></description>
-</item>
-
-<item>
 <title>Implication</title>
 <link>https://blog.naz.ooo/math/2024/09/18/implication</link>
 <guid>https://blog.naz.ooo/math/2024/09/18/implication</guid>
 <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
-<description></description>
+<description>In mathematical logic, implication is a logical operation typically denoted as P ⇒ Q, which can be read as "if P, then Q". It's a fundamental concept that forms the basis of many logical arguments and proofs. However, its definition often leads to confusion, particularly when the hypothesis is false.</description>
+</item>
+
+<item>
+<title>Necessary and Sufficient Conditions</title>
+<link>https://blog.naz.ooo/math/2024/09/18/necessary-sufficient</link>
+<guid>https://blog.naz.ooo/math/2024/09/18/necessary-sufficient</guid>
+<pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
+<description>Oftentimes, there is considerable confusion when the concepts of necessary and sufficient conditions are taught. This article aims to make a clear exposition of these concepts from two points of view: that of set theory and logical implications.</description>
+</item>
+
+<item>
+<title>The Uncountability of the Cantor Set: A Journey Through Base-3</title>
+<link>https://blog.naz.ooo/math/2024/01/06/cantor-set-uncountable</link>
+<guid>https://blog.naz.ooo/math/2024/01/06/cantor-set-uncountable</guid>
+<pubDate>Sat, 06 Jan 2024 00:00:00 +0000</pubDate>
+<description>The Cantor set is one of the most fascinating mathematical objects ever discovered. It's a set that seems to vanish before our eyes as we construct it, yet contains so many points that they cannot be counted - even using infinite counting! Today, we'll explore this remarkable set and prove its uncountability using Georg Cantor's famous diagonalization argument.</description>
 </item>
 
 </channel>

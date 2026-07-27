@@ -1,6 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Implication</title>
 
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Implication" />
+<meta name="twitter:image" content="https://blog.naz.ooo/images/icon.png" />
 
 <link rel="stylesheet" type="text/css" href="/css/common-vendor.b8ecfc406ac0b5f77a26.css">
 <link rel="stylesheet" type="text/css" href="/css/fretboard.f32f2a8d5293869f0195.css">
@@ -9,44 +16,29 @@
 <link rel="stylesheet" type="text/css" href="/css/global.css">
 <link rel="stylesheet" type="text/css" href="/css/misc.css">
 
-<style>
-@font-face {
-    font-family: MJXc-TeX-math-Iw;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
-@font-face {
-    font-family: MJXZERO;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
-@font-face {
-    font-family: MJXTEX;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
+<script>
+  MathJax = {
+    tex: {
+      // the backslashes must be doubled: JS drops the backslash in '\(',
+      // which would tell MathJax that inline math is delimited by bare
+      // parens and leave pandoc's real \(...\) spans unrendered
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global',
+    }
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="/scripts/tex-svg.js"
+></script>
+</head>
 
-.math { font-family: MJXc-TeX-math-Iw }
-</style>
-
-  <script>
-    MathJax = {
-      tex: {
-        // the backslashes must be doubled: JS drops the backslash in '\(',
-        // which would tell MathJax that inline math is delimited by bare
-        // parens and leave pandoc's real \(...\) spans unrendered
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      },
-      svg: {
-        fontCache: 'global',
-      }
-    };
-  </script>
-  <script
-    type="text/javascript"
-    id="MathJax-script"
-    async
-    src="/scripts/tex-svg.js"
-  ></script>
-
+<body>
   <div
     id="doc"
     class="container-fluid markdown-body comment-enabled"
@@ -125,16 +117,11 @@
       checkColorScheme();
     </script>
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="Implication" />
-<meta name="twitter:image" content="https://blog.naz.ooo/images/icon.png" />
-
 <br>
 <h1 style="margin-bottom:7px"> Implication </h1>
 <small style="float:left; color: #888"> 2024 Sep 18 </small>
 <small style="float:right; color: #888"><a href="/">See all posts</a></small>
 <br> <br> <br>
-<title> Implication </title>
 <p>In mathematical logic, implication is a logical operation typically denoted as <span class="math inline">\(P \Rightarrow Q\)</span>, which can be read as "if <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span>". It's a fundamental concept that forms the basis of many logical arguments and proofs. However, its definition often leads to confusion, particularly when the hypothesis is false.</p>
 <p>Why is that dreaded implication <strong>true</strong> when the hypothesis is <strong>false</strong>?</p>
 <p>Common explanations include:</p>
@@ -348,3 +335,6 @@
 <div>
 <small>noticed a mistake or have a suggestion? submit a pull request <a href="https://github.com/nazariyv/blog" target="_blank">here</a></small>
 </div>
+
+</body>
+</html>

@@ -129,13 +129,21 @@ In computer science, necessary and sufficient conditions are often used in algor
 
 ## exercises
 
-Want to test your understanding? Try to solve these exercises before checking the answers below. These questions will help you apply the concepts of necessary and sufficient conditions to various scenarios.
+Want to test your understanding? Have a go at each one before unfolding the answer underneath it.
 
 1. **Identifying Conditions**:
 
    a) Is being a mammal a necessary or sufficient condition for being a human?
 
    b) Is being a square a necessary or sufficient condition for being a rectangle?
+
+   <details><summary>show answer</summary>
+
+   a) **Necessary**: being a mammal is necessary for being a human, but not sufficient (since not all mammals are humans).
+
+   b) **Sufficient**: being a square is sufficient for being a rectangle, but not necessary (since rectangles can be non-square).
+
+   </details>
 
 2. **Logical Implications**:
 
@@ -145,6 +153,16 @@ Want to test your understanding? Try to solve these exercises before checking th
 
    b) Is $Q$ a necessary condition for $P$?
 
+   <details><summary>show answer</summary>
+
+   a) **Not sufficient**: being a bird does not guarantee flight -- ostriches and penguins are birds that cannot fly.
+
+   b) **Not necessary**: flight is not required in order to be a bird, for the same reason.
+
+   Both parts are the same fact seen from two sides: $P \Rightarrow Q$ is simply false here, and "$P$ is sufficient for $Q$" and "$Q$ is necessary for $P$" are two readings of that one implication. A single counterexample -- one flightless bird -- kills both at once.
+
+   </details>
+
 3. **Set Theory Application**:
 
    Given sets $A$, $B$, and $C$ such that $A \subseteq B$ and $B \subseteq C$.
@@ -153,9 +171,31 @@ Want to test your understanding? Try to solve these exercises before checking th
 
    b) Is being an element of $C$ a necessary condition for being an element of $A$?
 
+   <details><summary>show answer</summary>
+
+   Subset inclusion is transitive, so $A \subseteq B$ and $B \subseteq C$ give $A \subseteq C$.
+
+   a) **Sufficient**: yes. $x \in A \Rightarrow x \in C$.
+
+   b) **Necessary**: yes -- and again it is the *same* implication, read right to left. $A$ cannot have an element that $C$ lacks.
+
+   Note that being in $C$ is necessary but not sufficient for being in $A$: $C$ may well contain elements that are outside $A$.
+
+   </details>
+
 4. **Combining Conditions**:
 
    If being enrolled in a university course requires both paying tuition and registering for classes, are these conditions necessary, sufficient, or both for enrollment?
+
+   <details><summary>show answer</summary>
+
+   Each is **necessary**: "requires" tells us $\text{enrolled} \Rightarrow \text{paid} \land \text{registered}$, so neither can be skipped.
+
+   Whether the two together are **sufficient** does not follow from the word "requires" -- and this is the trap. "$X$ requires $Y$" only ever gives you necessity. To also get sufficiency you need the converse, $\text{paid} \land \text{registered} \Rightarrow \text{enrolled}$, which is an extra claim about the university's rules. In practice there may be further hurdles (prerequisites, a place left on the course), in which case the conditions are necessary but *not* sufficient.
+
+   If the two conditions really are the whole story, then together they are necessary and sufficient, and enrollment is a biconditional: $\text{enrolled} \Leftrightarrow \text{paid} \land \text{registered}$. That is the same shape as $RC \Leftrightarrow RS \land CC$ from earlier.
+
+   </details>
 
 5. **Real-Life Scenario**:
 
@@ -165,35 +205,15 @@ Want to test your understanding? Try to solve these exercises before checking th
 
    b) Explain why or why not.
 
-## answers
+   <details><summary>show answer</summary>
 
-1. **Identifying Conditions**:
+   a) **Not necessary** -- or more precisely, the statement given does not tell us either way.
 
-   a) **Necessary Condition**: Being a mammal is necessary for being a human, but not sufficient (since not all mammals are humans).
+   b) "Having a key is sufficient" asserts only $\text{key} \Rightarrow \text{opens}$. Necessity would be the converse, $\text{opens} \Rightarrow \text{key}$, and asserting one direction never gets you the other. In the world as we know it the converse is false, since a keypad code, a locksmith, or someone opening it from the inside all work without a key.
 
-   b) **Sufficient Condition**: Being a square is sufficient for being a rectangle, but not necessary (since rectangles can be non-square).
+   This is the single most common error with these conditions: hearing "sufficient" and quietly also concluding "necessary". A sufficient condition names *one* way to reach the outcome, never the *only* way.
 
-2. **Logical Implications**:
-
-   a) **Not Sufficient**: Being a bird is not a sufficient condition for being able to fly (e.g., ostriches and penguins are birds that cannot fly).
-
-   b) **Not Necessary**: Being able to fly is not a necessary condition for being a bird (as above, some birds cannot fly).
-
-3. **Set Theory Application**:
-
-   a) **Sufficient Condition**: Yes, if an element is in $A$, it is sufficient to say it is in $C$ because $A \subseteq C$.
-
-   b) **Necessary Condition**: Yes, being in $C$ is necessary for being in $A$ since all elements of $A$ are contained in $C$. However, it's important to note that while being in $C$ is necessary for being in $A$, it's not sufficient (as there might be elements in $C$ that are not in $A$).
-
-4. **Combining Conditions**:
-
-   Both paying tuition and registering for classes are **necessary** conditions for enrollment. Together, they are **sufficient** conditions.
-
-5. **Real-Life Scenario**:
-
-   a) **Not Necessary**: Having a key is not a necessary condition to open the door (the door could be opened by other means, like someone else opening it from the inside).
-
-   b) **Explanation**: While a key is one way to open the door (sufficient condition), it's not the only way (not necessary). Other methods might include using a keypad code or having someone else open it.
+   </details>
 
 ## references and further reading
 

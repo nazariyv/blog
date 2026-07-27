@@ -2,11 +2,22 @@
 import os
 import sys
 import re
+from datetime import datetime, timezone
+from email.utils import format_datetime
+from xml.sax.saxutils import escape as xml_escape
 
-HEADER = r"""
+# The page is assembled as: HEAD_OPEN + <title> + twitter card + HEAD_CLOSE
+# + body content + FOOTER. HEAD_CLOSE and FOOTER contain literal braces (JS
+# object literals), so nothing here goes through str.format -- the pieces are
+# concatenated instead.
+HEAD_OPEN = r"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+"""
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+HEAD_CLOSE = r"""
 <link rel="stylesheet" type="text/css" href="/css/common-vendor.b8ecfc406ac0b5f77a26.css">
 <link rel="stylesheet" type="text/css" href="/css/fretboard.f32f2a8d5293869f0195.css">
 <link rel="stylesheet" type="text/css" href="/css/pretty.0ae3265014f89d9850bf.css">
@@ -14,44 +25,29 @@ HEADER = r"""
 <link rel="stylesheet" type="text/css" href="/css/global.css">
 <link rel="stylesheet" type="text/css" href="/css/misc.css">
 
-<style>
-@font-face {
-    font-family: MJXc-TeX-math-Iw;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
-@font-face {
-    font-family: MJXZERO;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
-@font-face {
-    font-family: MJXTEX;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
+<script>
+  MathJax = {
+    tex: {
+      // the backslashes must be doubled: JS drops the backslash in '\(',
+      // which would tell MathJax that inline math is delimited by bare
+      // parens and leave pandoc's real \(...\) spans unrendered
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']]
+    },
+    svg: {
+      fontCache: 'global',
+    }
+  };
+</script>
+<script
+  type="text/javascript"
+  id="MathJax-script"
+  async
+  src="/scripts/tex-svg.js"
+></script>
+</head>
 
-.math { font-family: MJXc-TeX-math-Iw }
-</style>
-
-  <script>
-    MathJax = {
-      tex: {
-        // the backslashes must be doubled: JS drops the backslash in '\(',
-        // which would tell MathJax that inline math is delimited by bare
-        // parens and leave pandoc's real \(...\) spans unrendered
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']]
-      },
-      svg: {
-        fontCache: 'global',
-      }
-    };
-  </script>
-  <script
-    type="text/javascript"
-    id="MathJax-script"
-    async
-    src="/scripts/tex-svg.js"
-  ></script>
-
+<body>
   <div
     id="doc"
     class="container-fluid markdown-body comment-enabled"
@@ -137,6 +133,9 @@ FOOTER = """
 <div>
 <small>noticed a mistake or have a suggestion? submit a pull request <a href="https://github.com/nazariyv/blog" target="_blank">here</a></small>
 </div>
+
+</body>
+</html>
 """
 
 TOC_HEADER = """
@@ -151,6 +150,9 @@ TOC_HEADER = """
 
 TOC_FOOTER = """ </ul>
 </div>
+
+</body>
+</html>
 """
 
 TOC_ITEM_TEMPLATE = """
@@ -169,6 +171,33 @@ TWITTER_CARD_TEMPLATE = """
 <meta name="twitter:title" content="{}" />
 <meta name="twitter:image" content="{}" />
 """
+
+FEED_TEMPLATE = """<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>{title}</title>
+  <link>{domain}/</link>
+  <description>{title}</description>
+  <image>
+      <url>{icon}</url>
+      <title>{title}</title>
+      <link>{domain}/</link>
+  </image>
+{items}
+</channel>
+</rss>
+"""
+
+FEED_ITEM_TEMPLATE = """
+<item>
+<title>{title}</title>
+<link>{url}</link>
+<guid>{url}</guid>
+<pubDate>{pubdate}</pubDate>
+<description>{description}</description>
+</item>
+"""
+
 
 def extract_metadata(fil, filename=None):
     metadata = {}
@@ -191,8 +220,18 @@ def metadata_to_path(metadata):
     return os.path.join(metadata['category'].lower(), metadata['date'], metadata['filename'])
 
 
+def post_url_path(metadata):
+    """Site-relative URL for a post. vercel.json sets cleanUrls, so the URL
+    drops the .html that the file on disk keeps."""
+    return os.path.join('/', metadata_to_path(metadata)).removesuffix('.html')
+
+
 def make_twitter_card(metadata, global_config):
     return TWITTER_CARD_TEMPLATE.format(metadata['title'], global_config['icon'])
+
+
+def make_head(title, twitter_card):
+    return HEAD_OPEN + '<title>{}</title>\n'.format(title) + twitter_card + HEAD_CLOSE
 
 
 def make_post_header(metadata):
@@ -204,7 +243,6 @@ def make_post_header(metadata):
 <small style="float:left; color: #888"> {year} {month} {day} </small>
 <small style="float:right; color: #888"><a href="/">See all posts</a></small>
 <br> <br> <br>
-<title> {metadata['title']} </title>
 """
 
 
@@ -219,10 +257,8 @@ def defancify(text):
 def make_toc_item(metadata):
     year, month, day = metadata['date'].split('/')
     month = 'JanFebMarAprMayJunJulAugSepOctNovDec'[int(month)*3-3:][:3]
-    # vercel.json sets cleanUrls, so link to the extensionless path to avoid a
-    # 308 redirect on every click (the file on disk stays .html)
-    link = os.path.join('/', metadata_to_path(metadata)).removesuffix('.html')
-    return TOC_ITEM_TEMPLATE.format(year+' '+month+' '+day, link, metadata['title'])
+    return TOC_ITEM_TEMPLATE.format(
+        year+' '+month+' '+day, post_url_path(metadata), metadata['title'])
 
 
 def update_image_srcs(html_content):
@@ -237,6 +273,77 @@ def update_image_srcs(html_content):
     return re.sub(pattern, replace_src, html_content)
 
 
+def unwrap_summary(html_content):
+    """pandoc parses the inside of a <details> block as markdown, which leaves
+    <summary> wrapped in a paragraph. A <summary> inside a <p> is not a valid
+    child of <details>, so the browser stops treating it as the disclosure
+    label and renders it as ordinary text. Strip the wrapping <p>."""
+    return re.sub(r'<p>\s*(<summary>.*?</summary>)\s*</p>', r'\1',
+                  html_content, flags=re.DOTALL)
+
+
+# Feed descriptions are plain text, so the little inline TeX that shows up in
+# opening paragraphs is rendered as the symbol it stands for rather than left
+# as a backslash command.
+TEX_TO_TEXT = {
+    r'\Rightarrow': '⇒', r'\implies': '⇒',
+    r'\Leftarrow': '⇐', r'\impliedby': '⇐',
+    r'\Leftrightarrow': '⇔', r'\iff': '⇔',
+    r'\land': '∧', r'\lor': '∨', r'\neg': '¬',
+    r'\subseteq': '⊆', r'\subset': '⊂', r'\cup': '∪',
+    r'\cap': '∩', r'\in': '∈', r'\notin': '∉',
+    r'\neq': '≠', r'\leq': '≤', r'\geq': '≥',
+    r'\cdot': '·', r'\times': '×', r'\ldots': '...',
+    r'\mathbb{N}': 'ℕ', r'\mathbb{R}': 'ℝ',
+}
+
+
+def detex(text):
+    """Turn the inline math in a paragraph into readable plain text."""
+    def render(match):
+        body = match.group(1)
+        for command, symbol in TEX_TO_TEXT.items():
+            body = body.replace(command, symbol)
+        return re.sub(r'\s+', ' ', body).strip()
+    return re.sub(r'\$([^$]+)\$', render, text)
+
+
+def first_paragraph(file_location):
+    """First prose paragraph of a post, used as the feed description."""
+    with open(file_location) as fil:
+        extract_metadata(fil)          # skip the [key]: <> (value) block
+        for line in fil:
+            line = line.strip()
+            if line and not line.startswith(('#', '>', '-', '!', '|', '[')):
+                # strip the markdown that would be noise in a feed reader
+                line = re.sub(r'<[^>]+>', '', line)
+                line = re.sub(r'\*\*(.*?)\*\*', r'\1', line)
+                line = re.sub(r'[_*`]', '', line)
+                return defancify(detex(line))
+    return ''
+
+
+def make_feed(metadatas, global_config):
+    domain = global_config['domain'].rstrip('/')
+    items = []
+    for metadata in metadatas:
+        year, month, day = (int(p) for p in metadata['date'].split('/'))
+        pubdate = format_datetime(
+            datetime(year, month, day, tzinfo=timezone.utc))
+        items.append(FEED_ITEM_TEMPLATE.format(
+            title=xml_escape(metadata['title']),
+            url=xml_escape(domain + post_url_path(metadata)),
+            pubdate=pubdate,
+            description=xml_escape(metadata.get('description', '')),
+        ))
+    return FEED_TEMPLATE.format(
+        title=xml_escape(global_config['title']),
+        domain=xml_escape(domain),
+        icon=xml_escape(global_config['icon']),
+        items=''.join(items),
+    )
+
+
 if __name__ == '__main__':
     # Get blog config
     global_config = extract_metadata(open('config.md'))
@@ -247,14 +354,13 @@ if __name__ == '__main__':
         print("Processing file: {}".format(filename))
 
         # Extract path
-        file_data = open(file_location).read()
         metadata = extract_metadata(open(file_location), filename)
         path = metadata_to_path(metadata)
         print("Path selected: {}".format(path))
 
         # Make sure target directory exists
         truncated_path = os.path.split(path)[0]
-        os.system('mkdir -p {}'.format(os.path.join('site', truncated_path)))
+        os.makedirs(os.path.join('site', truncated_path), exist_ok=True)
 
         # Generate the html file
         out_location = os.path.join('site', path)
@@ -262,10 +368,9 @@ if __name__ == '__main__':
 
         os.system('pandoc -o /tmp/temp_output.html {} {}'.format(file_location, options))
         temp_content = open('/tmp/temp_output.html').read()
-        processed_content = update_image_srcs(temp_content)
+        processed_content = unwrap_summary(update_image_srcs(temp_content))
         total_file_contents = (
-            HEADER +
-            make_twitter_card(metadata, global_config) +
+            make_head(metadata['title'], make_twitter_card(metadata, global_config)) +
             make_post_header(metadata) +
             defancify(processed_content) +
             FOOTER
@@ -276,19 +381,26 @@ if __name__ == '__main__':
 
     # Reset ToC
     metadatas = []
-    for filename in os.listdir('posts'):
-        if filename[-4:-1] != '.sw':
-            metadatas.append(extract_metadata(open(os.path.join('posts', filename)), filename))
+    for filename in sorted(os.listdir('posts')):
+        if filename.endswith('.md'):
+            file_location = os.path.join('posts', filename)
+            metadata = extract_metadata(open(file_location), filename)
+            metadata['description'] = first_paragraph(file_location)
+            metadatas.append(metadata)
 
     sorted_metadatas = sorted(metadatas, key=lambda x: x['date'], reverse=True)
     toc_items = [make_toc_item(metadata) for metadata in sorted_metadatas]
 
     toc = (
-        HEADER +
-        make_twitter_card(global_config, global_config) +
+        make_head(global_config['title'],
+                  make_twitter_card(global_config, global_config)) +
         TOC_HEADER.format(global_config['title']) +
         ''.join(toc_items) +
         TOC_FOOTER
     )
 
     open('site/index.html', 'w').write(toc)
+
+    # Regenerate the feed so it can never drift from the posts
+    open('site/feed.xml', 'w').write(make_feed(sorted_metadatas, global_config))
+    print("Wrote site/index.html and site/feed.xml ({} posts)".format(len(sorted_metadatas)))

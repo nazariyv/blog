@@ -50,17 +50,88 @@
 .python .cf {
   color: #a71d5d }
 
-@font-face {
-    font-family: MJXc-TeX-math-Iw;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
-@font-face {
-    font-family: MJXZERO;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
-}
-@font-face {
-    font-family: MJXTEX;
-    src: url("https://assets.hackmd.io/build/MathJax/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff")
+/*
+  Wide display math (long unions of intervals, alignments) must scroll inside
+  its own box rather than widening the page. Inline math is left alone so it
+  keeps flowing with the text.
+*/
+/* pandoc wraps display math in <span class="math display">, an inline box that
+   can itself grow wider than the paragraph -- so max-width on the inner
+   mjx-container would resolve against an already-too-wide parent and never
+   bind. The wrapper has to become the constrained block. */
+#doc span.math.display {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;              /* room for descenders once overflow is set */
 }
 
-.math { font-family: MJXc-TeX-math-Iw }
+#doc mjx-container[display="true"] {
+  max-width: 100%;
+}
+
+/* Same for tables, which are the other thing that can't be reflowed. */
+#doc .table-wrap,
+#doc table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/*
+  On a phone the default list indent eats a third of the screen, which leaves
+  nested items too narrow for even a short piece of inline math to fit. Pull the
+  indent in so the text column stays usable.
+*/
+@media only screen and (max-width: 640px) {
+  #doc ul, #doc ol {
+    padding-left: 1.3em;
+  }
+
+  #doc ul ul, #doc ul ol, #doc ol ul, #doc ol ol {
+    padding-left: 1.1em;
+  }
+}
+
+/*
+  Foldable answers under exercises.
+
+  Authored in markdown as <details><summary>show answer</summary> ... </details>;
+  publish.py unwraps the <p> that pandoc puts around the <summary>.
+  Colours come from the custom properties in global.css so both themes work.
+*/
+#doc details {
+  margin: 0.9em 0 1.4em;
+  padding: 0 0 0 0.9em;
+  border-left: 3px solid var(--color-divider);
+}
+
+#doc details > summary {
+  cursor: pointer;
+  display: list-item;          /* keeps the disclosure triangle */
+  width: fit-content;
+  padding: 0.15em 0;
+  color: var(--color-anchor);
+  font-size: 0.9em;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  user-select: none;
+}
+
+#doc details > summary:hover {
+  text-decoration: underline;
+}
+
+#doc details[open] > summary {
+  margin-bottom: 0.5em;
+}
+
+/* the answer body itself */
+#doc details > *:not(summary) {
+  font-size: 0.97em;
+}
+
+#doc details > *:last-child {
+  margin-bottom: 0.3em;
+}
