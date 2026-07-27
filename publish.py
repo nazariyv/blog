@@ -3,21 +3,16 @@ import os
 import sys
 import re
 
-HEADER = """
+HEADER = r"""
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <link rel="stylesheet" type="text/css" href="/css/common-vendor.b8ecfc406ac0b5f77a26.css">
-<link rel="stylesheet" type="text/css" href="/css/font-vendor.b86e2bf451b246b1a88e.css">
 <link rel="stylesheet" type="text/css" href="/css/fretboard.f32f2a8d5293869f0195.css">
 <link rel="stylesheet" type="text/css" href="/css/pretty.0ae3265014f89d9850bf.css">
 <link rel="stylesheet" type="text/css" href="/css/pretty-vendor.83ac49e057c3eac4fce3.css">
 <link rel="stylesheet" type="text/css" href="/css/global.css">
 <link rel="stylesheet" type="text/css" href="/css/misc.css">
-
-<script type="text/javascript" id="MathJax-script" async
-  src="/scripts/mathjax.js">
-</script>
 
 <style>
 @font-face {
@@ -36,10 +31,7 @@ HEADER = """
 .math { font-family: MJXc-TeX-math-Iw }
 </style>
 
-<div id="doc" class="container-fluid markdown-body comment-enabled" data-hard-breaks="true">
-
-  <script type="text/x-mathjax-config">
-    <script>
+  <script>
     MathJax = {
       tex: {
         inlineMath: [['$', '$'], ['\(', '\)']]
@@ -153,7 +145,9 @@ TOC_HEADER = """
 
 """
 
-TOC_FOOTER = """ </ul> """
+TOC_FOOTER = """ </ul>
+</div>
+"""
 
 TOC_ITEM_TEMPLATE = """
 
@@ -221,7 +215,9 @@ def defancify(text):
 def make_toc_item(metadata):
     year, month, day = metadata['date'].split('/')
     month = 'JanFebMarAprMayJunJulAugSepOctNovDec'[int(month)*3-3:][:3]
-    link = os.path.join('/', metadata_to_path(metadata))
+    # vercel.json sets cleanUrls, so link to the extensionless path to avoid a
+    # 308 redirect on every click (the file on disk stays .html)
+    link = os.path.join('/', metadata_to_path(metadata)).removesuffix('.html')
     return TOC_ITEM_TEMPLATE.format(year+' '+month+' '+day, link, metadata['title'])
 
 
